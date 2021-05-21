@@ -16,7 +16,7 @@ const RegisterScreen = ({ location, history }) => {
     const [confirmPassword, setConfirmPassword] = useState('')
     const [message, setMessage] = useState(null)
 
-    const reRef = useRef(ReCAPTCHA)
+    const reRef = useRef()
 
     const dispatch = useDispatch()
 
@@ -76,7 +76,7 @@ const RegisterScreen = ({ location, history }) => {
                     <Form.Control type='password' placeholder='Confirm password' value={confirmPassword} onChange={e => setConfirmPassword(e.target.value)}></Form.Control>
                 </Form.Group>
                 <Row>
-                    <Recaptcha
+                    <ReCAPTCHA
                         sitekey={process.env.RECAPTCHA_SITE_KEY}
                         size='invisible'
                         ref={reRef}
