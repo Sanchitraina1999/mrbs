@@ -16,7 +16,7 @@ const RegisterScreen = ({ location, history }) => {
     const [confirmPassword, setConfirmPassword] = useState('')
     const [message, setMessage] = useState(null)
 
-    const reRef = useRef()
+    const reRef = useRef<ReCAPTCHA>()
 
 
     const dispatch = useDispatch()
