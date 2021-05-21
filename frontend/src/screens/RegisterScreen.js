@@ -42,6 +42,9 @@ const RegisterScreen = ({ location, history }) => {
     const resetHandler = (e) => {
         e.preventDefault();
         setName('')
+        setEmail('')
+        setPassword('')
+        setConfirmPassword('')
     }
 
     return (
