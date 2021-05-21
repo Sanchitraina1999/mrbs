@@ -15,8 +15,8 @@ const App = () => {
       <main className='py-3 bg-gray'>
         <Container>
           <Route exact path='/' component={LandingPageScreen}/>
-          <Route path='/register' component={LoginScreen}/>
-          <Route path='/login' component={RegisterScreen}/>
+          <Route path='/login' component={LoginScreen}/>
+          <Route path='/register' component={RegisterScreen}/>
         </Container>
       </main>
       <Footer />
