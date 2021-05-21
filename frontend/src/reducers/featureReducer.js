@@ -4,7 +4,7 @@ import {
     FEATURE_LIST_FAIL
 } from '../constants/featureConstants'
 
-const featureReducer = (state = { features: [] }, action) => {
+export const featureReducer = (state = { features: [] }, action) => {
     switch (action.type) {
         case FEATURE_LIST_REQUEST:
             return { ...state, loading: true }
@@ -16,5 +16,3 @@ const featureReducer = (state = { features: [] }, action) => {
             return state
     }
 }
-
-export default featureReducer
