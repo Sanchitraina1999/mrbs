@@ -12,7 +12,7 @@ const LoginScreen = ({ location, history }) => {
     const [password, setPassword] = useState('')
     const [keepLoggedIn, setKeepLoggedIn] = useState(false)
     console.log(location.search)
-    const redirect = location.search ? location.search.split('=')[1] : '/'
+    const redirect = location.search ? location.search.split('=')[1] : null
     const userLogin = useSelector(state => state.userLogin)
     const { loading, error, userInfo } = userLogin
 
@@ -66,7 +66,7 @@ const LoginScreen = ({ location, history }) => {
                         <Link to={redirect ? `/register?redirect=${redirect}` : '/register'}>Register Here</Link>
                     </Col>
                     <Col>
-                        <Link to={redirect ? `/fgtpwd?redirect=${redirect}` : '/fgtpwd'}>Forgot Password?{' '}</Link>
+                        <Link to={redirect ? `/fgtpwd?redirect=${redirect}` : '/fgtpwd'}>Forgot Password?</Link>
                     </Col>
                 </Row>
             </FormContainer>
