@@ -16,10 +16,7 @@ connectDB()
 app.use(express.json())
 
 
-var recaptcha = new Recaptcha(process.env.RECAPTCHA_SITE_KEY', process.env.RECAPTCHA_);
-//or with options
-var options = {'hl':'de'};
-var recaptcha = new Recaptcha('SITE_KEY', 'SECRET_KEY', options);
+var recaptcha = new Recaptcha(process.env.RECAPTCHA_SITE_KEY, process.env.RECAPTCHA_SECRET_KEY);
 
 const PORT = process.env.PORT
 
