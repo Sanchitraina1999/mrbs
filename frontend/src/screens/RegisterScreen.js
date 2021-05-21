@@ -16,7 +16,7 @@ const RegisterScreen = ({ location, history }) => {
     const [confirmPassword, setConfirmPassword] = useState('')
     const [message, setMessage] = useState(null)
 
-    const { REACT_APP_RECAPTCHA_SITE_KEY } = process.env
+    const REACT_APP_RECAPTCHA_SITE_KEY = process.env
     const reRef = useRef(ReCAPTCHA)
 
     const dispatch = useDispatch()
