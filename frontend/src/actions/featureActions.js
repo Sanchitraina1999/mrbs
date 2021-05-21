@@ -3,7 +3,7 @@ import {
     FEATURE_LIST_REQUEST, 
     FEATURE_LIST_SUCCESS, 
     FEATURE_LIST_FAIL,
-} from '../constants/productConstants';
+} from '../constants/featureConstants';
 
 export const listFeatures = () => async (dispatch) => {
     try {
