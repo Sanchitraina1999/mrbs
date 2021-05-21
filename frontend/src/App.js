@@ -17,7 +17,7 @@ const App = () => {
       </main>
       <Footer />
     </Router>
-  );
+  )
 }
 
-export default App;
+export default App
