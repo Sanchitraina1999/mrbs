@@ -31,7 +31,7 @@ const Header = () => {
                                     LOGIN
                                 </Nav.Link>
                             </LinkContainer>
-                            <LinkContainer to='/signup'>
+                            <LinkContainer to='/register'>
                                 <Nav.Link>
                                     <i className="fas fa-shopping-cart"></i>
                                     SIGNUP
