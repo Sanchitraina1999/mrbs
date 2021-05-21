@@ -2,7 +2,8 @@ import React, { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { Form, Button, Row, Col } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
-import ReCAPTCHA from "react-google-recaptcha"
+import ReCAPTCHA from 'react-google-recaptcha'
+import asyncHandler from 'express-async-handler'
 
 import Message from '../components/Message'
 import Loader from '../components/Loader'
@@ -32,7 +33,7 @@ const RegisterScreen = ({ location, history }) => {
         }
     }, [history, userInfo, redirect])
 
-    const submitHandler = asyncHandler(async((e) => {
+    const submitHandler = asyncHandler(async(e) => {
         e.preventDefault()
         //DISPATCH LOGIN
         if (password !== confirmPassword) {
@@ -40,7 +41,6 @@ const RegisterScreen = ({ location, history }) => {
         }
         else {
             const recaptchaToken = await reRef.current.executeAsync()
-            console.log(recaptchaToken, "recaptchaToken")
             dispatch(register(username, email, password))
         }
     })
