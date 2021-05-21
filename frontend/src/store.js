@@ -3,7 +3,7 @@ import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension'
 
 import featureReducer from '../src/reducers/featureReducer'
-import userReducer from '../src/reducers/userReducer'
+import userRegisterReducer from '../src/reducers/userReducer'
 
 const reducer = combineReducers({
     featureList: featureReducer,
