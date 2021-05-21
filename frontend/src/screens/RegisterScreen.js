@@ -79,7 +79,7 @@ const RegisterScreen = ({ location, history }) => {
                 </Form.Group>
                 <Row>
                     <ReCAPTCHA
-                        sitekey=''
+                        sitekey='6LdeMuEaAAAAALeTtTk0zgqbifuJHwcBJR5Y58xw'
                         size='invisible'
                         ref={reRef}
                     />
