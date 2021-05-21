@@ -1,11 +1,10 @@
 import React, { useEffect } from "react"
 import { Row, Col } from "react-bootstrap"
 
-
-import Feature from "../components/Feature"
 import { listFeatures } from "../actions/featureActions"
 import { useDispatch, useSelector } from "react-redux"
 
+import Feature from "../components/Feature"
 import Loader from "../components/Loader"
 import Message from "../components/Message"
 
