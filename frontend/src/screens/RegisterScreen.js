@@ -2,8 +2,6 @@ import React, { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { Form, Button, Row, Col } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
-import ReCAPTCHA from 'react-google-recaptcha'
-import asyncHandler from 'express-async-handler'
 
 import Message from '../components/Message'
 import Loader from '../components/Loader'
@@ -16,9 +14,6 @@ const RegisterScreen = ({ location, history }) => {
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
     const [message, setMessage] = useState(null)
-
-    const REACT_APP_RECAPTCHA_SITE_KEY = '6Le9fOEaAAAAAGE6xgxlHXqVaJSUwt9ptXoUTUr8'
-    const reRef = useRef(ReCAPTCHA)
 
     const dispatch = useDispatch()
 
@@ -33,18 +28,16 @@ const RegisterScreen = ({ location, history }) => {
         }
     }, [history, userInfo, redirect])
 
-    const submitHandler = asyncHandler(async(e) => {
+    const submitHandler = (e) => {
         e.preventDefault()
         //DISPATCH LOGIN
         if (password !== confirmPassword) {
             setMessage('Passwords do not match')
         }
         else {
-            const recaptchaToken = await reRef.current.executeAsync()
             dispatch(register(username, email, password))
-            reRef.current.reset()
         }
-    })
+    }
 
     const resetHandler = (e) => {
         e.preventDefault()
@@ -78,11 +71,6 @@ const RegisterScreen = ({ location, history }) => {
                     <Form.Control type='password' placeholder='Confirm password' value={confirmPassword} onChange={e => setConfirmPassword(e.target.value)}></Form.Control>
                 </Form.Group>
                 <Row>
-                    <ReCAPTCHA
-                        sitekey= {REACT_APP_RECAPTCHA_SITE_KEY}
-                        size='invisible'
-                        ref={reRef}
-                    />
                     <Col>
                         <Button type='submit' variant='primary'>Sign Up</Button>
                     </Col>
