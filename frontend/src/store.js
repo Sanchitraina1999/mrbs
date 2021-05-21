@@ -9,8 +9,8 @@ const reducer = combineReducers({
     featureList: featureReducer,
     userLogin: userLoginReducer,
     userRegister: userRegisterReducer,
-    // userDetails: userDetailsReducer,
-    // userUpdateProfile: userUpdateProfileReducer
+    userDetails: userDetailsReducer,
+    userUpdateProfile: userUpdateProfileReducer
 })
 
 

@@ -34,11 +34,11 @@ const ProfileScreen = ({ location, history }) => {
             history.push('/login')
         }
         else {
-            if (!user.name) {
+            if (!user.username) {
                 dispatch(getUserDetails('profile'))
             }
             else {
-                setName(user.name)
+                setName(user.username)
                 setEmail(user.email)
             }
         }
@@ -51,7 +51,7 @@ const ProfileScreen = ({ location, history }) => {
         }
         else {
             //DISPATCH UPDATE PROFILE
-            dispatch(updateUserProfileDetails({ id: user._id, name, email, password }))
+            dispatch(updateUserProfileDetails({ id: user._id, username, email, password }))
             if (success) {
                 toast.dark('User Profile Updated!')
             }
@@ -68,7 +68,7 @@ const ProfileScreen = ({ location, history }) => {
                 <Form onSubmit={submitHandler}>
                     <Form.Group controlId='name'>
                         <Form.Label>Name</Form.Label>
-                        <Form.Control type='text' placeholder='Enter name' value={name} onChange={e => setName(e.target.value)}></Form.Control>
+                        <Form.Control type='text' placeholder='Enter name' value={username} onChange={e => setName(e.target.value)}></Form.Control>
                     </Form.Group>
                     <Form.Group controlId='email'>
                         <Form.Label>Email Address</Form.Label>
