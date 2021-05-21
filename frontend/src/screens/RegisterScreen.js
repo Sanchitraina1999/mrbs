@@ -16,7 +16,7 @@ const RegisterScreen = ({ location, history }) => {
     const [confirmPassword, setConfirmPassword] = useState('')
     const [message, setMessage] = useState(null)
 
-    const reRef = useRef<ReCAPTCHA>()
+    const reRef = useRef<ReCAPTCHA>();
 
 
     const dispatch = useDispatch()
@@ -39,7 +39,7 @@ const RegisterScreen = ({ location, history }) => {
             setMessage('Passwords do not match')
         }
         else {
-            const 
+            const recaptchaToken = await reRef.current.executeAsync()
             dispatch(register(username, email, password))
         }
     }
