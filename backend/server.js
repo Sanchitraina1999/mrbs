@@ -4,7 +4,7 @@ import colors from 'colors'
 
 import connectDB from "./config/db.js"
 import { notFound, errorHandler } from "./middleware/errorMiddleware.js"
-import featureRoutes from '../backend/routes/'
+import featureRoutes from './routes/featureRoutes.js'
 
 config()
 
