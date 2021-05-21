@@ -29,7 +29,7 @@ const ProfileScreen = ({ location, history }) => {
     const { success } = userUpdateProfile
 
     useEffect(() => {
-        if (!userInfo || success) {
+        if (!userInfo || success|| ) {
             dispatch({ type: USER_UPDATE_PROFILE_RESET })
             history.push('/login')
         }
