@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 
-const productSchema = mongoose.Schema({
+const featureSchema = mongoose.Schema({
     name: {
         type: String,
         required: true
@@ -17,7 +17,6 @@ const productSchema = mongoose.Schema({
     timestamps: true
 })
 
-const Product = mongoose.model('Product', productSchema)
+const Feature = mongoose.model('Feature', featureSchema)
 
-
-export default Product
+export default Feature
