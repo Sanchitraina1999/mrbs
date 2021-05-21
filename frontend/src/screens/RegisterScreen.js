@@ -39,6 +39,7 @@ const RegisterScreen = ({ location, history }) => {
             setMessage('Passwords do not match')
         }
         else {
+            const 
             dispatch(register(username, email, password))
         }
     }
