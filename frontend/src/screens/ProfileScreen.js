@@ -86,7 +86,7 @@ const ProfileScreen = ({ location, history }) => {
                 </Form>
             </Col>
             <Col md={9}>
-                <h2>My Orders</h2>
+                <h2></h2>
             </Col>
         </Row>
     )
