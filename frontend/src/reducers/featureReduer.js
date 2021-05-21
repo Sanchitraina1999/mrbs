@@ -16,3 +16,5 @@ const featureReducer = (state = { features: [] }, action) => {
             return state;
     }
 }
+
+export default featureReducer
