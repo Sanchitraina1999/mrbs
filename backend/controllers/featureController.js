@@ -5,7 +5,7 @@ import Feature from '../models/featureModel.js'
 //@route GET /api/features
 //@access Public
 const getFeatures = asyncHandler(async (req, res) => {
-    const features = await Product.find({})
+    const features = await Feature.find({})
     res.json(features)
 })
 
