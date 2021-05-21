@@ -77,7 +77,7 @@ const RegisterScreen = ({ location, history }) => {
                 </Form.Group>
                 <Row>
                     <ReCAPTCHA
-                        sitekey={process.env.RECAPTCHA_SITE_KEY}
+                        sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
                         size='invisible'
                         ref={reRef}
                     />
