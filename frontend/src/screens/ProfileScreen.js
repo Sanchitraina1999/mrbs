@@ -1,60 +1,59 @@
-import React, { useState, useEffect } from 'react';
-import { Form, Button, Row, Col } from 'react-bootstrap';
-import { useDispatch, useSelector } from 'react-redux';
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import React, { useState, useEffect } from 'react'
+import { Form, Button, Row, Col } from 'react-bootstrap'
+import { useDispatch, useSelector } from 'react-redux'
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
-import Message from '../components/Message';
-import Loader from '../components/Loader';
-import { getUserDetails, updateUserProfileDetails } from '../actions/userActions';
-
-import { USER_UPDATE_PROFILE_RESET } from "../constants/userConstants"
+import Message from '../components/Message'
+import Loader from '../components/Loader'
+import { getUserDetails, updateUserProfileDetails } from '../actions/userActions'
+import { USER_UPDATE_PROFILE_RESET } from '../constants/userConstants'
 
 const ProfileScreen = ({ location, history }) => {
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
-    const [message, setMessage] = useState(null);
+    const [username, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [confirmPassword, setConfirmPassword] = useState('')
+    const [message, setMessage] = useState(null)
 
 
-    const dispatch = useDispatch();
+    const dispatch = useDispatch()
 
-    const userDetails = useSelector(state => state.userDetails);
-    const { loading, error, user } = userDetails;
+    const userDetails = useSelector(state => state.userDetails)
+    const { loading, error, user } = userDetails
 
-    const userLogin = useSelector(state => state.userLogin);
-    const { userInfo } = userLogin;
+    const userLogin = useSelector(state => state.userLogin)
+    const { userInfo } = userLogin
 
-    const userUpdateProfile = useSelector(state => state.userUpdateProfile);
-    const { success } = userUpdateProfile;
+    const userUpdateProfile = useSelector(state => state.userUpdateProfile)
+    const { success } = userUpdateProfile
 
     useEffect(() => {
         if (!userInfo || success) {
             dispatch({ type: USER_UPDATE_PROFILE_RESET })
-            history.push('/login');
+            history.push('/login')
         }
         else {
             if (!user.name) {
                 dispatch(getUserDetails('profile'))
             }
             else {
-                setName(user.name);
-                setEmail(user.email);
+                setName(user.name)
+                setEmail(user.email)
             }
         }
-    }, [user, dispatch, history, userInfo, success]);
+    }, [user, dispatch, history, userInfo, success])
 
     const submitHandler = (e) => {
-        e.preventDefault();
+        e.preventDefault()
         if (password !== confirmPassword) {
             setMessage('Passwords do not match')
         }
         else {
             //DISPATCH UPDATE PROFILE
-            dispatch(updateUserProfileDetails({ id: user._id, name, email, password }));
+            dispatch(updateUserProfileDetails({ id: user._id, name, email, password }))
             if (success) {
-                toast.dark('User Profile Updated!');
+                toast.dark('User Profile Updated!')
             }
         }
     }
