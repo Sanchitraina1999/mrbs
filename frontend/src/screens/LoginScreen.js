@@ -12,7 +12,8 @@ const LoginScreen = ({ location, history }) => {
     const [password, setPassword] = useState('')
     const [keepLoggedIn, setKeepLoggedIn] = useState(false)
     console.log(location.search)
-    const redirect = location.search ? location.search.split('=')[1] : null
+    const redirect = location.search ? location.search.split('=')[1] : '/'
+    console.log('redirect: '+ redirect)
     const userLogin = useSelector(state => state.userLogin)
     const { loading, error, userInfo } = userLogin
 
