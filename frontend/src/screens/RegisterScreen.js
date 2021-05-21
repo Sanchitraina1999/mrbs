@@ -6,6 +6,7 @@ import Message from '../components/Message';
 import Loader from '../components/Loader';
 import { register } from '../actions/userActions';
 import FormContainer from '../components/FormContainer';
+import { RecaptchaV2 } from 'express-recaptcha/dist';
 
 const RegisterScreen = ({ location, history }) => {
     const [username, setName] = useState('');
@@ -71,7 +72,7 @@ const RegisterScreen = ({ location, history }) => {
                     <Form.Control type='password' placeholder='Confirm password' value={confirmPassword} onChange={e => setConfirmPassword(e.target.value)}></Form.Control>
                 </Form.Group>
                 <Row>
-                    <
+                    <RecaptchaV2 sitekey={process.env.}/>
                     <Col>
                         <Button type='submit' variant='primary'>Sign Up</Button>
                     </Col>
