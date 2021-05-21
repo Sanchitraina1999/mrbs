@@ -1,6 +1,7 @@
 import express from 'express'
 import { config } from 'dotenv'
 import colors from 'colors'
+import Recaptcha from 'express-recaptcha'
 
 import connectDB from "./config/db.js"
 import { notFound, errorHandler } from "./middleware/errorMiddleware.js"
@@ -13,6 +14,12 @@ const app = express()
 connectDB()
 
 app.use(express.json())
+
+
+var recaptcha = new Recaptcha('SITE_KEY', 'SECRET_KEY');
+//or with options
+var options = {'hl':'de'};
+var recaptcha = new Recaptcha('SITE_KEY', 'SECRET_KEY', options);
 
 const PORT = process.env.PORT
 
