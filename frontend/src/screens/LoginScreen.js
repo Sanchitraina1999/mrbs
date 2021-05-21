@@ -10,6 +10,7 @@ import FormContainer from '../components/FormContainer';
 const LoginScreen = ({ location, history }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [keepLoggedIn,setKeepLoggedIn] = useState(false);
     const redirect = location.search ? location.search.split('=')[1] : '/';
     const userLogin = useSelector(state => state.userLogin);
     const { loading, error, userInfo } = userLogin;
