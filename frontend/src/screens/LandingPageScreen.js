@@ -1,12 +1,12 @@
 import React, { useEffect } from "react"
 import { Row, Col } from "react-bootstrap"
 
-import { listFeatures } from "../actions/featureActions"
 import { useDispatch, useSelector } from "react-redux"
 
 import Feature from "../components/Feature"
 import Loader from "../components/Loader"
 import Message from "../components/Message"
+import { listFeatures } from "../actions/featureActions"
 
 const LandingPageScreen = () => {
     const dispatch = useDispatch()
@@ -28,13 +28,6 @@ const LandingPageScreen = () => {
                             </Col>
                         ))
                     }
-                    <Card className="my-3 py-3 rounded">
-                        <Card.Img src={feature.image} variant="top"></Card.Img>
-                        <Card.Body>
-                            <Card.Title as='div'><strong>{feature.name}</strong></Card.Title>
-                            <Card.Text as='h4'>${feature.description}</Card.Text>
-                        </Card.Body>
-                    </Card>
                 </Row>
             }
         </div>
