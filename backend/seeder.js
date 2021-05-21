@@ -2,7 +2,10 @@ import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 import colors from 'colors'
 import features from "./data/features.js"
-import Feature from "./models/featureModel.js"
+import products from "./data/products.js"
+import Features from "./models/featureModel.js"
+import User from "./models/userModel.js"
+import Order from "./models/orderModel.js"
 import connectDB from "./config/db.js"
 
 dotenv.config()
@@ -13,9 +16,9 @@ const importData = async () => {
     try {
         await Order.deleteMany()
 
-        // const createdUsers = await User.insertMany(users)
-        // const adminUser = createdUsers[0]._id
-        const sampleFeatures = features.map(product => {
+        const createdUsers = await User.insertMany(users)
+        const adminUser = createdUsers[0]._id
+        const sampleProducts = products.map(product => {
             return {
                 ...product,
                 user: adminUser
