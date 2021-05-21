@@ -52,9 +52,8 @@ const LoginScreen = ({ location, history }) => {
                         New Customer?{' '}
                         <Link to={redirect ? `/register?redirect=${redirect}` : '/register'}>Register Here</Link>
                     </Col>
-                    <Col>
-                        Forgot Password?{' '}
-                        <Link to={redirect ? `/fgtpwd?redirect=${redirect}` : '/fgtpwd'}></Link>
+                    <Col className=>
+                        <Link to={redirect ? `/fgtpwd?redirect=${redirect}` : '/fgtpwd'}>Forgot Password?{' '}</Link>
                     </Col>
                 </Row>
             </FormContainer>
