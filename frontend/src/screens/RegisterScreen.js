@@ -42,6 +42,7 @@ const RegisterScreen = ({ location, history }) => {
         else {
             const recaptchaToken = await reRef.current.executeAsync()
             dispatch(register(username, email, password))
+            reRef.current.reset()
         }
     })
 
