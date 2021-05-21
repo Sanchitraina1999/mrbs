@@ -15,6 +15,8 @@ const RegisterScreen = ({ location, history }) => {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [message, setMessage] = useState(null);
 
+    
+
 
     const dispatch = useDispatch();
 
@@ -72,7 +74,11 @@ const RegisterScreen = ({ location, history }) => {
                     <Form.Control type='password' placeholder='Confirm password' value={confirmPassword} onChange={e => setConfirmPassword(e.target.value)}></Form.Control>
                 </Form.Group>
                 <Row>
-                    <RecaptchaV2 sitekey={process.env.}/>
+                    <Recaptcha
+                        sitekey={process.env.RECAPTCHA_SITE_KEY}
+                        size='invisible'
+                        ref={reRef}
+                    />
                     <Col>
                         <Button type='submit' variant='primary'>Sign Up</Button>
                     </Col>
