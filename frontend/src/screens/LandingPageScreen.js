@@ -17,9 +17,9 @@ const LandingPageScreen = () => {
         dispatch(listFeatures())
     }, [dispatch])
     return (
-        <>
+        <div>
             <h1>FEATURES:</h1>
-            {/* {loading ? <Loader /> : error
+            {loading ? <Loader /> : error
                 ? <Message variant='danger'>{error}</Message>
                 : <Row>
                     {
@@ -30,8 +30,8 @@ const LandingPageScreen = () => {
                         ))
                     }
                 </Row>
-            } */}
-        </>
+            }
+        </div>
     )
 }
 
