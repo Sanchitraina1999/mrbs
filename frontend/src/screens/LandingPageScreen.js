@@ -2,20 +2,20 @@ import React, { useEffect } from "react";
 import { Row, Col } from "react-bootstrap";
 
 
-// import Feature from "../components/Feature";
-// import { listFeatures } from "../actions/featureActions";
+import Feature from "../components/Feature";
+import { listFeatures } from "../actions/featureActions";
 import { useDispatch, useSelector } from "react-redux";
 
 import Loader from "../components/Loader";
 import Message from "../components/Message";
 
 const LandingPageScreen = () => {
-    // const dispatch = useDispatch();
-    // const featureList = useSelector(state => state.featureList);
-    // const { loading, error, features } = featureList;
-    // useEffect(() => {
-    //     dispatch(listFeatures());
-    // }, [dispatch]);
+    const dispatch = useDispatch();
+    const featureList = useSelector(state => state.featureList);
+    const { loading, error, features } = featureList;
+    useEffect(() => {
+        dispatch(listFeatures());
+    }, [dispatch]);
     return (
         <>
             <h1>FEATURES:</h1>
