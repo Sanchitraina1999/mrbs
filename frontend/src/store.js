@@ -8,7 +8,7 @@ import { userLoginReducer, userRegisterReducer } from '../src/reducers/userReduc
 const reducer = combineReducers({
     featureList: featureReducer,
     userLogin: userLoginReducer,
-    userRegister: userRegisterReducer,
+    // userRegister: userRegisterReducer,
     // userDetails: userDetailsReducer,
     // userUpdateProfile: userUpdateProfileReducer
 })
