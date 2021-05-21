@@ -4,7 +4,7 @@ import { Container } from 'react-bootstrap'
 
 import Header from './components/Header'
 import Footer from './components/Footer'
-import Homepage from './components/Homepage'
+import LandingPageScreen from './components/Homepage'
 
 const App = () => {
   return (
