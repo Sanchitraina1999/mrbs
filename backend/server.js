@@ -1,7 +1,7 @@
 import express from 'express'
 import { config } from 'dotenv'
 import colors from 'colors'
-import Recaptcha from 'express-recaptcha
+import Recaptcha from 'express-recaptcha'
 
 import connectDB from "./config/db.js"
 import { notFound, errorHandler } from "./middleware/errorMiddleware.js"
