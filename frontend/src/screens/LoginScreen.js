@@ -24,12 +24,10 @@ const LoginScreen = ({ location, history }) => {
     }, [history, userInfo, redirect])
 
     const submitHandler = (e) => {
-        console.log('submit handler called')
         e.preventDefault()
         dispatch(login(email, password, keepLoggedIn))
     }
     const resetHandler = (e) => {
-        console.log('reset handler called')
         setEmail('')
         setPassword('')
         setKeepLoggedIn(false)
