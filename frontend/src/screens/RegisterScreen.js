@@ -54,7 +54,6 @@ const RegisterScreen = ({ location, history }) => {
     }
 
     return (
-        {`Hi, ${REACT_APP_RECAPTCHA_SITE_KEY}`}
         <FormContainer>
             <h1>Sign Up</h1>
             {message && <Message variant='danger'>{message}</Message>}
@@ -79,7 +78,7 @@ const RegisterScreen = ({ location, history }) => {
                 </Form.Group>
                 <Row>
                     <ReCAPTCHA
-                        sitekey= {`${REACT_APP_RECAPTCHA_SITE_KEY}`}
+                        sitekey= '6LdeMuEaAAAAALeTtTk0zgqbifuJHwcBJR5Y58xw'
                         size='invisible'
                         ref={reRef}
                     />
