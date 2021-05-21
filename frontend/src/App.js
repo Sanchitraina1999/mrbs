@@ -12,7 +12,7 @@ const App = () => {
       <Header />
       <main className='py-3 bg-gray'>
         <Container>
-          <Route exact path='/' {}/>
+          <Route exact path='/' component={Homepage}/>
         </Container>
       </main>
       <Footer />
