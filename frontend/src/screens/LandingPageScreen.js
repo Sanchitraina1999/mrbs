@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import { Row, Col } from "react-bootstrap";
 
 
-// import Product from "../components/Product";
-// import { listProducts } from "../actions/productActions";
+// import Feature from "../components/Feature";
+// import { listFeatures } from "../actions/featureActions";
 import { useDispatch, useSelector } from "react-redux";
 
 import Loader from "../components/Loader";
@@ -11,10 +11,10 @@ import Message from "../components/Message";
 
 const LandingPageScreen = () => {
     // const dispatch = useDispatch();
-    // const productList = useSelector(state => state.productList);
-    // const { loading, error, features } = productList;
+    // const featureList = useSelector(state => state.featureList);
+    // const { loading, error, features } = featureList;
     // useEffect(() => {
-    //     dispatch(listProducts());
+    //     dispatch(listFeatures());
     // }, [dispatch]);
     return (
         <>
@@ -23,7 +23,7 @@ const LandingPageScreen = () => {
                 ? <Message variant='danger'>{error}</Message>
                 : <Row>
                     {
-                        features.map(product => (
+                        features.map(Feature => (
                             <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
                                 <Product product={product} />
                             </Col>
