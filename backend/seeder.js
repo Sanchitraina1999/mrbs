@@ -3,7 +3,9 @@ import dotenv from 'dotenv'
 import colors from 'colors'
 
 import features from "./data/features.js"
+import users from "./data/users.js"
 import Feature from "./models/featureModel.js"
+import User from "./models/userModel.js"
 import connectDB from "./config/db.js"
 
 dotenv.config()
@@ -13,7 +15,10 @@ connectDB()
 const importData = async () => {
     try {
         await Feature.deleteMany()
+        await User.deleteMany()
+
         await Feature.insertMany(features)
+        await User.insertMany(users)
         console.log('Data Imported!'.green.inverse)
         process.exit()
     }
@@ -25,6 +30,8 @@ const importData = async () => {
 const destroyData = async () => {
     try {
         await Feature.deleteMany()
+        await User.deleteMany()
+        
         console.log('Data Destroyed!'.red.inverse)
         process.exit()
     }

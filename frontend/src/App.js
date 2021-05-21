@@ -6,7 +6,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import LandingPageScreen from './screens/LandingPageScreen'
 import LoginScreen from './screens/LoginScreen'
-// import RegisterScreen from './screens/RegisterScreen'
+import RegisterScreen from './screens/RegisterScreen'
 
 const App = () => {
   return (
@@ -16,7 +16,7 @@ const App = () => {
         <Container>
           <Route exact path='/' component={LandingPageScreen}/>
           <Route path='/login' component={LoginScreen}/>
-          {/* <Route path='/register' component={RegisterScreen}/> */}
+          <Route path='/register' component={RegisterScreen}/>
         </Container>
       </main>
       <Footer />

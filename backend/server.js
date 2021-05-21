@@ -5,6 +5,7 @@ import colors from 'colors'
 import connectDB from "./config/db.js"
 import { notFound, errorHandler } from "./middleware/errorMiddleware.js"
 import featureRoutes from './routes/featureRoutes.js'
+import userRoutes from './routes/userRoutes.js'
 
 config()
 
@@ -21,6 +22,7 @@ app.get('/', (req, res) => {
 })
 
 app.use('/api/features', featureRoutes)
+app.use('/api/users', userRoutes)
 
 app.use(notFound)
 app.use(errorHandler)
