@@ -39,7 +39,7 @@ const RegisterScreen = ({ location, history }) => {
             setMessage('Passwords do not match')
         }
         else {
-            const recaptchaToken = reRef.current.executeAsync()
+            const recaptchaToken = await reRef.current.executeAsync()
             console.log(recaptchaToken, "recaptchaToken")
             dispatch(register(username, email, password))
         }
