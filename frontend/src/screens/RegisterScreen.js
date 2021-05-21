@@ -55,6 +55,7 @@ const RegisterScreen = ({ location, history }) => {
 
     return (
         <FormContainer>
+            {`${REACT_APP_RECAPTCHA_SITE_KEY}`}
             <h1>Sign Up</h1>
             {message && <Message variant='danger'>{message}</Message>}
             {error && <Message variant='danger'>{error}</Message>}
