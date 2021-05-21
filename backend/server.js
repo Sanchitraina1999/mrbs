@@ -1,6 +1,8 @@
 import express from 'express'
 import { config } from 'dotenv'
 import colors from 'colors'
+
+import connectDB from "./config/db.js"
 import { notFound, errorHandler } from "./middleware/errorMiddleware.js"
 config()
 
@@ -12,6 +14,7 @@ app.use(express.json())
 const PORT = process.env.PORT
 
 app.get('/', (req, res) => {
+    console.log(process.env.MONGO_URI)
     res.send("API is running")
 })
 
