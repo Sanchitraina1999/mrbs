@@ -14,7 +14,7 @@ const importData = async () => {
     try {
         await Order.deleteMany()
 
-        await Product.insertMany(features)
+        await Feature.insertMany(features)
 
         console.log('Data Imported!'.green.inverse)
         process.exit()
