@@ -1,11 +1,9 @@
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 import colors from 'colors'
+
 import features from "./data/features.js"
-import products from "./data/products.js"
-import Features from "./models/featureModel.js"
-import User from "./models/userModel.js"
-import Order from "./models/orderModel.js"
+import Feature from "./models/featureModel.js"
 import connectDB from "./config/db.js"
 
 dotenv.config()
@@ -25,7 +23,7 @@ const importData = async () => {
             }
         })
 
-        await Product.insertMany(sampleProducts)
+        await Product.insertMany(features)
 
         console.log('Data Imported!'.green.inverse)
         process.exit()
@@ -37,9 +35,7 @@ const importData = async () => {
 }
 const destroyData = async () => {
     try {
-        await Order.deleteMany()
-        await Product.deleteMany()
-        await User.deleteMany()
+        await Feature.deleteMany()
         console.log('Data Destroyed!'.red.inverse)
         process.exit()
     }
