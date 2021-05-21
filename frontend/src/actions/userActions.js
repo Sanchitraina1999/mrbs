@@ -29,7 +29,7 @@ export const login = (email, password, keepLoggedIn) => async (dispatch) => {
             config
         )
         dispatch({ type: USER_LOGIN_SUCCESS, payload: data })
-        keepLoggedIn ? localStorage.setItem('userInfo', JSON.stringify(data)) :
+        if (keepLoggedIn) localStorage.setItem('userInfo', JSON.stringify(data))
     }
     catch (error) {
         dispatch({ type: USER_LOGIN_FAILURE, payload: error.response && error.response.data.message ? error.response.data.message : error.message })
@@ -37,7 +37,7 @@ export const login = (email, password, keepLoggedIn) => async (dispatch) => {
 }
 
 export const logout = () => async (dispatch) => {
-    localStorage.getItem('userInfo')?localStorage.removeItem('userInfo'):
+    localStorage.removeItem('userInfo')
     dispatch({ type: USER_LOGOUT })
 }
 
