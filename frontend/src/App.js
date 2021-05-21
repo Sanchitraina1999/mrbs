@@ -4,7 +4,7 @@ import { Container } from 'react-bootstrap'
 
 import Header from './components/Header'
 import Footer from './components/Footer'
-import LandingPageScreen from './components/Homepage'
+import LandingPageScreen from './screens/LandingPageScreen'
 
 const App = () => {
   return (
@@ -12,7 +12,7 @@ const App = () => {
       <Header />
       <main className='py-3 bg-gray'>
         <Container>
-          <Route exact path='/' component={Homepage}/>
+          <Route exact path='/' component={LandingPageScreen}/>
         </Container>
       </main>
       <Footer />

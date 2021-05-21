@@ -1,24 +1,25 @@
 import React, { useEffect } from "react";
-import Product from "../components/Product";
 import { Row, Col } from "react-bootstrap";
 
-import { listProducts } from "../actions/productActions";
+
+// import Product from "../components/Product";
+// import { listProducts } from "../actions/productActions";
 import { useDispatch, useSelector } from "react-redux";
 
 import Loader from "../components/Loader";
 import Message from "../components/Message";
 
 const LandingPageScreen = () => {
-    const dispatch = useDispatch();
-    const productList = useSelector(state => state.productList);
-    const { loading, error, products } = productList;
-    useEffect(() => {
-        dispatch(listProducts());
-    }, [dispatch]);
+    // const dispatch = useDispatch();
+    // const productList = useSelector(state => state.productList);
+    // const { loading, error, products } = productList;
+    // useEffect(() => {
+    //     dispatch(listProducts());
+    // }, [dispatch]);
     return (
         <>
             <h1>Latest Products</h1>
-            {loading ? <Loader /> : error
+            {/* {loading ? <Loader /> : error
                 ? <Message variant='danger'>{error}</Message>
                 : <Row>
                     {
@@ -29,7 +30,7 @@ const LandingPageScreen = () => {
                         ))
                     }
                 </Row>
-            }
+            } */}
         </>
     )
 }
