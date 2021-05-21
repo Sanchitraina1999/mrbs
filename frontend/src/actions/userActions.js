@@ -17,6 +17,7 @@ import {
 
 export const login = (email, password, keepLoggedIn) => async (dispatch) => {
     try {
+        console.log(keepLoggedIn)
         dispatch({ type: USER_LOGIN_REQUEST })
         const config = {
             headers: {
