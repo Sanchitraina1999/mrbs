@@ -16,7 +16,7 @@ const RegisterScreen = ({ location, history }) => {
     const [confirmPassword, setConfirmPassword] = useState('')
     const [message, setMessage] = useState(null)
 
-    const REACT_APP_RECAPTCHA_SITE_KEY = process.env
+    const REACT_APP_RECAPTCHA_SITE_KEY = '6Le9fOEaAAAAAGE6xgxlHXqVaJSUwt9ptXoUTUr8'
     const reRef = useRef(ReCAPTCHA)
 
     const dispatch = useDispatch()
@@ -55,7 +55,6 @@ const RegisterScreen = ({ location, history }) => {
 
     return (
         <FormContainer>
-            {`${REACT_APP_RECAPTCHA_SITE_KEY}`}
             <h1>Sign Up</h1>
             {message && <Message variant='danger'>{message}</Message>}
             {error && <Message variant='danger'>{error}</Message>}
