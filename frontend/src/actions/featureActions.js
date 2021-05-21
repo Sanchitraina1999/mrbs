@@ -8,7 +8,7 @@ import {
 export const listFeatures = () => async (dispatch) => {
     try {
         dispatch({ type: FEATURE_LIST_REQUEST });
-        const { data } = await axios.get('/api/products');
+        const { data } = await axios.get('/api/features');
         dispatch({ type: FEATURE_LIST_SUCCESS, payload: data });
     }
     catch (error) {
