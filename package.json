@@ -17,6 +17,7 @@
     "dotenv": "^9.0.2",
     "express": "^4.17.1",
     "express-async-handler": "^1.1.4",
+    "express-recaptcha": "^5.0.2",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.12.10"
   },
