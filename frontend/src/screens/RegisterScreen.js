@@ -1,10 +1,10 @@
-import React, { useState, useEffect,useRef } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { Form, Button, Row, Col } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import ReCAPTCHA from "react-google-recaptcha"
 
-let {REACT_APP_VAR_NAME} = process.env
+// const { REACT_APP_RECAPTCHA_SITE_KEY } = process.env
 import Message from '../components/Message'
 import Loader from '../components/Loader'
 import { register } from '../actions/userActions'
@@ -17,7 +17,7 @@ const RegisterScreen = ({ location, history }) => {
     const [confirmPassword, setConfirmPassword] = useState('')
     const [message, setMessage] = useState(null)
 
-    const reRef = useRef<ReCAPTCHA>()
+    const reRef = useRef < ReCAPTCHA > ()
 
     const dispatch = useDispatch()
 
@@ -40,7 +40,7 @@ const RegisterScreen = ({ location, history }) => {
         }
         else {
             const recaptchaToken = reRef.current.executeAsync()
-            console.log(recaptchaToken,"recaptchaToken")
+            console.log(recaptchaToken, "recaptchaToken")
             dispatch(register(username, email, password))
         }
     }
