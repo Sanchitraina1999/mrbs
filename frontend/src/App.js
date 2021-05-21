@@ -4,7 +4,7 @@ import { Container } from 'react-bootstrap'
 
 import Header from './components/Header'
 import Footer from './components/Footer'
-import Homepagee from './components/Homepagee'
+import Homepage from './components/Homepage'
 
 const App = () => {
   return (
@@ -12,6 +12,7 @@ const App = () => {
       <Header />
       <main className='py-3 bg-gray'>
         <Container>
+          <Route exact path='/' {}/>
         </Container>
       </main>
       <Footer />
