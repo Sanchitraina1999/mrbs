@@ -87,7 +87,6 @@ const updateUserProfile = asyncHandler(async (req, res) => {
             _id: updatedUser._id,
             name: updatedUser.name,
             email: updatedUser.email,
-            isAdmin: updatedUser.isAdmin,
             token: generateToken(updatedUser._id)
         })
     }
@@ -97,4 +96,4 @@ const updateUserProfile = asyncHandler(async (req, res) => {
     }
 })
 
-export { authUser, registerUser }
+export { authUser, registerUser, getUserProfile, updateUserProfile }
