@@ -43,7 +43,7 @@ const LoginScreen = ({ location, history }) => {
                         <Form.Control type='password' placeholder='Enter password' value={password} onChange={e => setPassword(e.target.value)}></Form.Control>
                     </Form.Group>
                     <Form.Group controlId='keepLoggedIn'>
-                        <Form.Check type='checkbox' label='Remember ' />
+                        <Form.Check type='checkbox' label='Remember me' />
                     </Form.Group>
                     <Button type='submit' variant='primary'>Sign In</Button>
                 </Form>
