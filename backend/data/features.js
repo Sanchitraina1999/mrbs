@@ -7,12 +7,12 @@ const features = [
     {
         name: 'Manage meetings on the move',
         image: '/images/asset1.svg',
-        description: ''
+        description: 'Find meeting rooms on the go, manage bookings and extend your meetings. Keep a check on the people present in meeting, remotely.'
     },
     {
         name: 'Get workspace insight',
         image: '/images/asset2.svg',
-        description: ''
+        description: 'Get a clear understanding of space usage and resource requirements with detailed reporting, enabling you to make better decisions about your space and manage costs more effectively.'
     }
 ]
 
