@@ -16,6 +16,7 @@ const RegisterScreen = ({ location, history }) => {
     const [confirmPassword, setConfirmPassword] = useState('')
     const [message, setMessage] = useState(null)
 
+    const { REACT_APP_RECAPTCHA_SITE_KEY } = process.env
     const reRef = useRef(ReCAPTCHA)
 
     const dispatch = useDispatch()
@@ -77,7 +78,7 @@ const RegisterScreen = ({ location, history }) => {
                 </Form.Group>
                 <Row>
                     <ReCAPTCHA
-                        sitekey='6LdeMuEaAAAAALeTtTk0zgqbifuJHwcBJR5Y58xw'
+                        sitekey= `${REACT_APP_RECAPTCHA_SITE_KEY}`
                         size='invisible'
                         ref={reRef}
                     />
