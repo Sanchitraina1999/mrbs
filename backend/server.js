@@ -16,7 +16,7 @@ app.use(express.json())
 const PORT = process.env.PORT
 
 app.get('/', (req, res) => {
-    console.log(process.env.MONGO_URI)
+    console.log(typeof process.env.MONGO_URI)
     res.send("API is running")
 })
 
