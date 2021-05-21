@@ -18,7 +18,6 @@ const RegisterScreen = ({ location, history }) => {
 
     const reRef = useRef(ReCAPTCHA)
 
-
     const dispatch = useDispatch()
 
     const redirect = location.search ? location.search.split('=')[1] : '/'
