@@ -42,6 +42,9 @@ const LoginScreen = ({ location, history }) => {
                         <Form.Label>Password</Form.Label>
                         <Form.Control type='password' placeholder='Enter password' value={password} onChange={e => setPassword(e.target.value)}></Form.Control>
                     </Form.Group>
+                    <Form.Group controlId='formBasicCheckbox'>
+                        <Form.Check type='checkbox' label='Keep me logged in' />
+                    </Form.Group>
                     <Button type='submit' variant='primary'>Sign In</Button>
                 </Form>
                 <Row className='py-3'>
