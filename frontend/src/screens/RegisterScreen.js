@@ -1,49 +1,49 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { Form, Button, Row, Col } from 'react-bootstrap';
-import { useDispatch, useSelector } from 'react-redux';
-import Message from '../components/Message';
-import Loader from '../components/Loader';
-import { register } from '../actions/userActions';
-import FormContainer from '../components/FormContainer';
-import { RecaptchaV2 } from 'express-recaptcha/dist';
+import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
+import { Form, Button, Row, Col } from 'react-bootstrap'
+import { useDispatch, useSelector } from 'react-redux'
+import Message from '../components/Message'
+import Loader from '../components/Loader'
+import { register } from '../actions/userActions'
+import FormContainer from '../components/FormContainer'
+import { RecaptchaV2 } from 'express-recaptcha/dist'
 
 const RegisterScreen = ({ location, history }) => {
-    const [username, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
-    const [message, setMessage] = useState(null);
+    const [username, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [confirmPassword, setConfirmPassword] = useState('')
+    const [message, setMessage] = useState(null)
 
-    
+    const reRef = useRef()
 
 
-    const dispatch = useDispatch();
+    const dispatch = useDispatch()
 
-    const redirect = location.search ? location.search.split('=')[1] : '/';
-    const userRegister = useSelector(state => state.userRegister);
-    const { loading, error, userInfo } = userRegister;
+    const redirect = location.search ? location.search.split('=')[1] : '/'
+    const userRegister = useSelector(state => state.userRegister)
+    const { loading, error, userInfo } = userRegister
 
 
     useEffect(() => {
         if (userInfo) {
-            history.push(redirect);
+            history.push(redirect)
         }
-    }, [history, userInfo, redirect]);
+    }, [history, userInfo, redirect])
 
     const submitHandler = (e) => {
-        e.preventDefault();
+        e.preventDefault()
         //DISPATCH LOGIN
         if (password !== confirmPassword) {
             setMessage('Passwords do not match')
         }
         else {
-            dispatch(register(username, email, password));
+            dispatch(register(username, email, password))
         }
     }
 
     const resetHandler = (e) => {
-        e.preventDefault();
+        e.preventDefault()
         setName('')
         setEmail('')
         setPassword('')
