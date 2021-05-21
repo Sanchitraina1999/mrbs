@@ -40,7 +40,7 @@ const RegisterScreen = ({ location, history }) => {
         }
         else {
             const recaptchaToken = await reRef.current.executeAsync()
-            console.log(recaptchaToken)
+            console.log(recaptchaToken,"recaptchToken")
             dispatch(register(username, email, password))
         }
     }
