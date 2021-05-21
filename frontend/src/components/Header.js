@@ -28,13 +28,13 @@ const Header = () => {
                             <LinkContainer to='/login'>
                                 <Nav.Link>
                                     <i className="fas fa-shopping-cart"></i>
-                                    LogIn
+                                    LOGIN
                                 </Nav.Link>
                             </LinkContainer>
-                            <LinkContainer to='/signin'>
+                            <LinkContainer to='/signup'>
                                 <Nav.Link>
                                     <i className="fas fa-shopping-cart"></i>
-                                    SignIn
+                                    SIGNUP
                                 </Nav.Link>
                             </LinkContainer>
                         </Nav>
