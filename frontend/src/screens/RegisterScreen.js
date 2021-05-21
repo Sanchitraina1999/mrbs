@@ -32,7 +32,7 @@ const RegisterScreen = ({ location, history }) => {
         }
     }, [history, userInfo, redirect])
 
-    const submitHandler = (e) => {
+    const submitHandler = asyncHandler(async((e) => {
         e.preventDefault()
         //DISPATCH LOGIN
         if (password !== confirmPassword) {
@@ -43,7 +43,7 @@ const RegisterScreen = ({ location, history }) => {
             console.log(recaptchaToken, "recaptchaToken")
             dispatch(register(username, email, password))
         }
-    }
+    })
 
     const resetHandler = (e) => {
         e.preventDefault()
