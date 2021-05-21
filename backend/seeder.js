@@ -12,10 +12,8 @@ connectDB()
 
 const importData = async () => {
     try {
-        await Order.deleteMany()
-
+        await Feature.deleteMany()
         await Feature.insertMany(features)
-
         console.log('Data Imported!'.green.inverse)
         process.exit()
     }
