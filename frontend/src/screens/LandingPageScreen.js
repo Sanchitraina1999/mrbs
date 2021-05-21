@@ -23,7 +23,7 @@ const LandingPageScreen = () => {
                 : <Row>
                     {
                         features.map(feature => (
-                            <Col key={feature._id} sm={12} md={6} lg={3} xl={2}>
+                            <Col key={feature._id}>
                                 <Feature feature={feature} />
                             </Col>
                         ))
