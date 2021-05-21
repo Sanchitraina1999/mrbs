@@ -5,7 +5,7 @@ import { notFound, errorHandler } from "./middleware/errorMiddleware.js"
 config()
 
 const app = express()
-// connectDB()
+connectDB()
 
 app.use(express.json())
 
