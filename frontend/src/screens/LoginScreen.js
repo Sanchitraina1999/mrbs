@@ -25,7 +25,6 @@ const LoginScreen = ({ location, history }) => {
 
     const submitHandler = (e) => {
         e.preventDefault();
-        //DISPATCH LOGIN
         dispatch(login(email, password));
     }
     return (
@@ -44,7 +43,7 @@ const LoginScreen = ({ location, history }) => {
                         <Form.Control type='password' placeholder='Enter password' value={password} onChange={e => setPassword(e.target.value)}></Form.Control>
                     </Form.Group>
                     <Form.Group controlId='formBasicCheckbox'>
-                        <Form.Check type='checkbox' label='Keep me logged in' checked/>
+                        <Form.Check type='checkbox' label='Keep me logged in' />
                     </Form.Group>
                     <Button type='submit' variant='primary'>Sign In</Button>
                 </Form>
