@@ -4,7 +4,7 @@ import {
     FEATURE_LIST_FAIL
 } from '../constants/featureConstants';
 
-export const featureReducer = (state = { features: [] }, action) => {
+const featureReducer = (state = { features: [] }, action) => {
     switch (action.type) {
         case FEATURE_LIST_REQUEST:
             return { ...state, loading: true };
