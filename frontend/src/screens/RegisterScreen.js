@@ -62,7 +62,15 @@ const RegisterScreen = ({ location, history }) => {
                     <Form.Label>Confirm Password</Form.Label>
                     <Form.Control type='password' placeholder='Confirm password' value={confirmPassword} onChange={e => setConfirmPassword(e.target.value)}></Form.Control>
                 </Form.Group>
-                <Button type='submit' variant='primary'>Sign Up</Button>
+                <Row>
+                    <Col>
+                        <Button type='submit' variant='primary'>Sign Up</Button>
+                    </Col>
+                    <Col>
+                        <Button type='reset' variant='primary'>Reset</Button>
+                    </Col>
+                </Row>
+
             </Form>
             <Row className='py-3'>
                 <Col>
