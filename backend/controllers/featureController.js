@@ -1,14 +1,14 @@
-import asyncHandler from 'express-async-handler';
-import Product from '../models/productModel.js';
+import asyncHandler from 'express-async-handler'
+import Feature from '../models/featureModel.js'
 
-//@desc Fetch all products
-//@route GET /api/products
+//@desc Fetch all features
+//@route GET /api/features
 //@access Public
-const getProducts = asyncHandler(async (req, res) => {
-    const products = await Product.find({});
-    res.json(products);
+const getFeatures = asyncHandler(async (req, res) => {
+    const features = await Product.find({})
+    res.json(features)
 })
 
-export{
-    getProducts
+export {
+    getFeatures
 }
