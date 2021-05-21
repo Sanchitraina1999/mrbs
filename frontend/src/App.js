@@ -7,6 +7,7 @@ import Footer from './components/Footer'
 import LandingPageScreen from './screens/LandingPageScreen'
 import LoginScreen from './screens/LoginScreen'
 import RegisterScreen from './screens/RegisterScreen'
+import ProfileScreen from './screens/ProfileScreen'
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
           <Route exact path='/' component={LandingPageScreen}/>
           <Route path='/login' component={LoginScreen}/>
           <Route path='/register' component={RegisterScreen}/>
+          <Route path='/profile' component={ProfileScreen}/>
         </Container>
       </main>
       <Footer />
