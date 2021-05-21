@@ -16,7 +16,7 @@ const RegisterScreen = ({ location, history }) => {
     const [confirmPassword, setConfirmPassword] = useState('')
     const [message, setMessage] = useState(null)
 
-    const reRef = useRef<ReCAPTCHA>()
+    const reRef = useRef()
 
 
     const dispatch = useDispatch()
@@ -32,7 +32,7 @@ const RegisterScreen = ({ location, history }) => {
         }
     }, [history, userInfo, redirect])
 
-    const submitHandler = (e) => {
+    const submitHandler = asyncHandler(async(e) => {
         e.preventDefault()
         //DISPATCH LOGIN
         if (password !== confirmPassword) {
