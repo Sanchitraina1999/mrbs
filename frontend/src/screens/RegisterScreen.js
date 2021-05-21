@@ -32,7 +32,7 @@ const RegisterScreen = ({ location, history }) => {
         }
     }, [history, userInfo, redirect])
 
-    const submitHandler = asyncHandler(async(e) => {
+    const submitHandler = (e) => {
         e.preventDefault()
         //DISPATCH LOGIN
         if (password !== confirmPassword) {
