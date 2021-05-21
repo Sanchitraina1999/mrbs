@@ -4,7 +4,7 @@ import { Form, Button, Row, Col } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import ReCAPTCHA from "react-google-recaptcha"
 
-import {process.env.REACT_APP_}
+import {process.env.REACT_APP_RECAPTCHA_SITE_KEY} from ''
 import Message from '../components/Message'
 import Loader from '../components/Loader'
 import { register } from '../actions/userActions'
