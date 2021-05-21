@@ -4,7 +4,7 @@ import { Form, Button, Row, Col } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import ReCAPTCHA from "react-google-recaptcha"
 
-import {process.env.REACT_APP_RECAPTCHA_SITE_KEY} from ''
+let {REACT_APP_VAR_NAME} = process.env
 import Message from '../components/Message'
 import Loader from '../components/Loader'
 import { register } from '../actions/userActions'
@@ -78,7 +78,7 @@ const RegisterScreen = ({ location, history }) => {
                 </Form.Group>
                 <Row>
                     <ReCAPTCHA
-                        sitekey={RECAPTCHA_SITE_KEY}
+                        sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
                         size='invisible'
                         ref={reRef}
                     />
