@@ -7,7 +7,7 @@ import Loader from '../components/Loader';
 import { login } from '../actions/userActions';
 import FormContainer from '../components/FormContainer';
 
-const LogInScreen = ({ location, history }) => {
+const LoginScreen = ({ location, history }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const redirect = location.search ? location.search.split('=')[1] : '/';
@@ -55,4 +55,4 @@ const LogInScreen = ({ location, history }) => {
     )
 }
 
-export default LogInScreen
+export default LoginScreen
