@@ -37,11 +37,11 @@ const BookingPageScreen = ({ history, match }) => {
                                             {meetingRoom.roomName}
                                         </ListGroup.Item>
                                         <ListGroup.Item>
-                                            {`${meetingRoom.location.address} ${meetingRoom.location.city}`}
+                                            {/* {`${meetingRoom.location.address} ${meetingRoom.location.city}`} */}
                                         </ListGroup.Item>
                                         <ListGroup.Item>
                                             For more details:
-                                            {`${meetingRoom.pointOfContact.name} ${meetingRoom.pointOfContact.mobile} ${meetingRoom.pointOfContact.email}`}
+                                            {/* {`${meetingRoom.pointOfContact.name} ${meetingRoom.pointOfContact.mobile} ${meetingRoom.pointOfContact.email}`} */}
                                         </ListGroup.Item>
                                     </ListGroup>
                                     <Card className='card bg-dark mb-3'>
