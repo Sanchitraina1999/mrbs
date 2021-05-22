@@ -29,7 +29,9 @@ const ProfileScreen = ({ location, history }) => {
 
     const meetingRoomList = useSelector(state => state.meetingRoomList)
     const { meetingRooms } = meetingRoomList
-    var meetingsOfCurrentUser
+
+    // var meetingsOfCurrentUser
+
     useEffect(() => {
         dispatch(listMeetingRooms())
         if (!userInfo || success) {
