@@ -12,8 +12,8 @@ const users = [
         },
         bookedTimes: [
             {
-                startDate: { type: Date, required: true },
-                endDate: { type: Date, required: true },
+                startDate: 'Sat, 22 May 2021 08:54:22 GMT',
+                endDate: 'Sat, 22 May 2021 08:54:22 GMT',
                 bookedBy: { type: String, required: true },
                 name: { type: mongoose.Schema.Types.ObjectId, required: true, ref: 'User' },
                 image: { type: String, required: true }
