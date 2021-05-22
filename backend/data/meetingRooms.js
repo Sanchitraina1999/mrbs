@@ -14,8 +14,7 @@ const users = [
             {
                 startDate: 'Sat, 22 May 2021 08:54:22 GMT',
                 endDate: 'Sat, 22 May 2021 08:54:22 GMT',
-                bookedBy: { type: String, required: true },
-                name: { type: mongoose.Schema.Types.ObjectId, required: true, ref: 'User' },
+                bookedBy: ,
                 image: { type: String, required: true }
             }
         ]
