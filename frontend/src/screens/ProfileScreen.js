@@ -5,6 +5,7 @@ import { ToastContainer, toast } from 'react-toastify'
 
 import Message from '../components/Message'
 import Loader from '../components/Loader'
+import { listMeetingRooms } from '../actions/meetingRoomActions'
 import { getUserDetails, updateUserProfileDetails } from '../actions/userActions'
 import { USER_UPDATE_PROFILE_RESET } from '../constants/userConstants'
 
@@ -30,6 +31,7 @@ const ProfileScreen = ({ location, history }) => {
     const { meetingRooms } = meetingRoomList
 
     useEffect(() => {
+        dispatch(listMeetingRooms())
         if (!userInfo || success) {
             dispatch({ type: USER_UPDATE_PROFILE_RESET })
             history.push('/login')
@@ -89,7 +91,7 @@ const ProfileScreen = ({ location, history }) => {
             <Col md={9}>
                 <ListGroup variant='flush'>
                     <h2>My Meetings</h2>
-                    {console.log(meetingRooms.length)}
+                    {console.log(meetingRooms)}
                     {/* {meetingRooms.filter((room)=>(
 
                     ))}
