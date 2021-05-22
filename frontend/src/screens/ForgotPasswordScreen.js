@@ -19,6 +19,8 @@ const ForgotPasswordScreen = ({ location, history }) => {
     const submitHandler = (e) => {
         e.preventDefault()
         dispatch(getUser(email))
+        if(userExists)
+            console.log('found')
     }
     const resetHandler = (e) => {
         e.preventDefault()
