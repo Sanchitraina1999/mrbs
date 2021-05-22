@@ -1,9 +1,8 @@
 import express from 'express'
 const router = express.Router()
-import { authUser, registerUser, getUserProfile, updateUserProfile, getUserExists } from '../controllers/userController.js'
+import { updateUserProfile } from '../controllers/meetingRoomController.js'
 import { protect } from '../middleware/authMiddleware.js'
 
-router.post('/login', authUser)
-router.route('/').post(registerUser)
+router.route('/').put(protect, updateUserProfile)
 
 export default router
