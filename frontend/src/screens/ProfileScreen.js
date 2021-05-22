@@ -45,11 +45,7 @@ const ProfileScreen = ({ location, history }) => {
                 setEmail(user.email)
             }
         }
-        if(meetingRooms)
-            meetingsOfCurrentUser = meetingRooms.filter((room)=> {
-                return room.bookedTimes.some((bookedTime)=>bookedTime.bookedBy === userInfo._id)
-            })
-    }, [user, dispatch, history, userInfo, success,meetingRooms])
+    }, [user, dispatch, history, userInfo, success])
 
     const submitHandler = (e) => {
         e.preventDefault()
@@ -95,7 +91,6 @@ const ProfileScreen = ({ location, history }) => {
             <Col md={9}>
                 <ListGroup variant='flush'>
                     <h2>My Meetings</h2>
-                    {console.log(meetingsOfCurrentUser)}
                     {/* {meetingRooms.bookedTimes.length === 0 ? <Message>You don't have any booked meetings</Message> : (
                         <ListGroup variant='flush'>
                             {meetingRooms.bookedTimes.map((item, index) => (
