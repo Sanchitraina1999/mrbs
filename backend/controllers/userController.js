@@ -126,7 +126,7 @@ const getUserExists = asyncHandler(async (req, res) => {
             from: 'mrbsadmiun@gmail.com',
             to: email.toString(),
             subject: 'PASSWORD RECOVERY',
-            text: `Your password has been reset to ${pass}. Regards, MRBS Admin.`
+            text: `Your password has been reset to 123456. Regards, MRBS Admin.`
         }
 
         transporter.sendMail(mailOptions, function (error, info) {
