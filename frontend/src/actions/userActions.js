@@ -140,9 +140,9 @@ export const updateUserProfileDetails = (user) => async (dispatch, getState) => 
 }
 
 export const getUser = (email) => async (dispatch) => {
+    console.log(email)
     try {
         dispatch({ type: USER_EMAIL_REQUEST })
-        console.log(email)
         const config = {
             headers: {
                 'Content-Type': 'application/json'
