@@ -2,6 +2,10 @@ import mongoose from 'mongoose'
 
 const meetingRoomSchema = mongoose.Schema({
     roomName: { type: String, required: true },
+    image: {
+        type: String,
+        required: true
+    },
     location: {
         address: { type: String, required: true },
         city: { type: String, required: true }
