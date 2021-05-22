@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Form, Button, Row, Col } from 'react-bootstrap'
+import { Form, Button, Row, Col, ListGroup } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { ToastContainer, toast } from 'react-toastify'
 
@@ -85,6 +85,9 @@ const ProfileScreen = ({ location, history }) => {
             </Col>
             <Col md={9}>
                 <h2>My Meetings</h2>
+                <ListGroup variant='flush'>
+                    
+                </ListGroup>
             </Col>
         </Row>
     )
