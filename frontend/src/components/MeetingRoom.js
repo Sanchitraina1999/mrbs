@@ -2,8 +2,9 @@ import React from 'react';
 // import { Link } from "react-router-dom";
 import { Card } from "react-bootstrap";
 const MeetingRoom = ({ room }) => {
-    return (</>
-        // <Link to={`/products/${product._id}`}>
+    return (<>
+        {room}
+        {/*  <Link to={`/products/${product._id}`}> */}
             <Card className="my-3 py-3 rounded">
                 <Card.Img src={room.image} variant="top"></Card.Img>
                 <Card.Body>
@@ -11,7 +12,8 @@ const MeetingRoom = ({ room }) => {
                     <Card.Text as='h4'>${room.pointOfContact.name}</Card.Text>
                 </Card.Body>
             </Card>
-        // </Link >
+        {/*  </Link > */}
+        </>
     )
 }
 
