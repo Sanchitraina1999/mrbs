@@ -7,7 +7,7 @@ import Loader from "../components/Loader";
 import Message from "../components/Message";
 import { listProductDetails } from '../actions/productActions';
 
-const ProductScreen = ({ history, match }) => {
+const BookingPageScreen = ({ history, match }) => {
 
     const [qty, setQty] = useState(1);
 
@@ -101,4 +101,4 @@ const ProductScreen = ({ history, match }) => {
     )
 }
 
-export default ProductScreen
+export default BookingPageScreen
