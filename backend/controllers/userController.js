@@ -132,7 +132,7 @@ const getUserExists = asyncHandler(async (req, res) => {
     const { email } = req.body
     const user = await User.findOne({ email })
     if (user) {
-        recipientEmail = email
+        recipientEmail = email.toString()
         res.json({
             _id: user._id,
             username: user.username,
