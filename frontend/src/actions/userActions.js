@@ -149,6 +149,7 @@ export const getUser = (email) => async (dispatch) => {
             }
         }
         const { data } = await axios.get(
+            /api/users/profileByEmail
             '/api/users/profileByEmail',
             { email},
             config
