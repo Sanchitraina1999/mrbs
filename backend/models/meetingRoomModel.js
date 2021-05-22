@@ -11,13 +11,11 @@ const meetingRoomSchema = mongoose.Schema({
         mobile: { type: Number, required: true},
         email: { type: String, required: true}
     },
-    user: {
-        type: mongoose.Schema.Types.ObjectId,
-        required: true,
-        ref: 'User'
-    },
-    orderItems: [
+    bookedTimes: [
         {
+            startDate: { type: Date, required: true},
+            endDate: { type: Date, required: true},
+            bookedBy: { type: String, required: true}
             name: { type: String, required: true },
             qty: { type: Number, required: true },
             image: { type: String, required: true },
