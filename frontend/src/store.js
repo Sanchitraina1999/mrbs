@@ -3,7 +3,8 @@ import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension'
 
 import { featureReducer } from '../src/reducers/featureReducer'
-import { userLoginReducer, userRegisterReducer,userDetailsReducer,userUpdateProfileReducer, getUserReducer } from '../src/reducers/userReducer'
+import { userLoginReducer, userRegisterReducer, userDetailsReducer, userUpdateProfileReducer, getUserReducer } from '../src/reducers/userReducer'
+import { meetingRoomReducer } from '../src/reducers/meetingRoomReducer'
 
 const reducer = combineReducers({
     featureList: featureReducer,
@@ -12,7 +13,7 @@ const reducer = combineReducers({
     userDetails: userDetailsReducer,
     userUpdateProfile: userUpdateProfileReducer,
     userReducer: getUserReducer,
-    meetingRoom: meetingRoomReducer
+    meetingRoomList: meetingRoomReducer
 })
 
 const userInfoFromStorage = localStorage.getItem('userInfo') ?
