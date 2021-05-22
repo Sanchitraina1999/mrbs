@@ -6,22 +6,13 @@ import generateToken from '../utils/generateTokens.js'
 //@route POST /api/users/login
 //@access Public
 const getMeetingRooms = asyncHandler(async (req, res) => {
-
-    const rooms = await Feature.find({})
-    res.json(rooms)
-    const { email, password } = req.body
-    const user = await MeetingRoom.findOne({ email })
-    if (user && (await user.matchPassword(password))) {
-        res.json({
-            _id: user._id,
-            username: user.username,
-            email: user.email,
-            token: generateToken(user._id)
-        })
+    const meetingRooms = await Feature.find({})
+    if (meetingRooms) {
+        res.json(meetingRooms)
     }
     else {
-        res.status(401)
-        throw new Error('Invalid email or password')
+        res.status(404)
+        throw new Error('Cannot get meeting rooms')
     }
 })
 
