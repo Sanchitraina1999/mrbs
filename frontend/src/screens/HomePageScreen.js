@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
 
-const HomeScreen = ({location,history}) => {
+const HomeScreen = ({}) => {
     const dispatch = useDispatch()
     const meetingRoomList = useSelector(state => state.meetingRoomList)
     const { loading, error, meetingRooms } = meetingRoomList
