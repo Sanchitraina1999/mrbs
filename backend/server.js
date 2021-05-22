@@ -6,7 +6,7 @@ import connectDB from "./config/db.js"
 import { notFound, errorHandler } from "./middleware/errorMiddleware.js"
 import featureRoutes from './routes/featureRoutes.js'
 import userRoutes from './routes/userRoutes.js'
-import userRoutes from './routes/userRoutes.js'
+import meetingRoomRoutes from './routes/meetingRoomRoutes.js'
 
 config()
 
