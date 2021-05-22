@@ -98,10 +98,33 @@ const updateUserProfile = asyncHandler(async (req, res) => {
     }
 })
 
-const sendMail = () => {
-   
+const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: process.env.EMAIL_ID,
+        pass: process.env.EMAIL_PASSWORD
+    }
+})
+
+var recipientEmail
+const sentPassword = '123456'
+
+var mailOptions = {
+    from: process.env.EMAIL_ID,
+    to: `${recipientEmail}`,
+    subject: 'PASSWORD RECOVERY',
+    text: `Your password is : ${sentPassword}. Regards, MRBS Admin.`
 }
 
+const sendMail = () => {
+    transporter.sendMail(mailOptions, function (error, info) {
+        if (error) {
+            console.log(error)
+        } else {
+            console.log('Email sent: ' + info.response)
+        }
+    })
+}
 //@desc Get user exists
 //@route POST /api/users/profileByEmail
 //@access Public
