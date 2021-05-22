@@ -35,7 +35,7 @@ const destroyData = async () => {
     try {
         await Feature.deleteMany()
         await User.deleteMany()
-        
+        await MeetingRoom.deleteMany()
         console.log('Data Destroyed!'.red.inverse)
         process.exit()
     }
