@@ -26,8 +26,8 @@ const BookingPageScreen = ({ history, match }) => {
                 loading ? <Loader />
                     : error ? (<Message variant='danger'>{error}</Message>)
                         : (
-                            // <Row>
-                            //     <Col md={6}>
+                            <Row>
+                            {/* //     <Col md={6}>
                             //         <Image src={meetingRoom.image} alt={meetingRoom.name} fluid />
                             //     </Col>
                             //     <Col md={6}>
@@ -46,8 +46,8 @@ const BookingPageScreen = ({ history, match }) => {
                             //                 </ListGroup.Item>
                             //             </ListGroup>
                             //         </Card>
-                            //     </Col>
-                            // </Row>
+                            //     </Col> */}
+                            </Row>
                         )
             }
         </>
