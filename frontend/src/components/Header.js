@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.css'
 import { ToastContainer, toast } from 'react-toastify'
 
 import { logout } from '../actions/userActions'
+import { Redirect } from 'react-router'
 
 const Header = ({history}) => {
     const dispatch = useDispatch()
@@ -15,6 +16,7 @@ const Header = ({history}) => {
     const logoutHandler = () => {
         toast.dark('Successfully Logged Out!')
         dispatch(logout())
+        return <Redirect to='/'/>
     }
     return (
         <header>
