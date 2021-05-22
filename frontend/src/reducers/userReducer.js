@@ -73,3 +73,18 @@ export const userUpdateProfileReducer = (state = {}, action) => {
             return state;
     }
 }
+
+export const getUserReducer = (state = {}, action) => {
+    switch (action.type) {
+        case USER_EMAIL_REQUEST:
+            return { loading: true };
+        case USER_EMAIL_SUCCESS:
+            return { loading: false, userInfo: action.payload }
+        case USER_EMAIL_FAILURE:
+            return { loading: false, error: action.payload }
+        case USER_LOGOUT:
+            return {}
+        default:
+            return state;
+    }
+}
