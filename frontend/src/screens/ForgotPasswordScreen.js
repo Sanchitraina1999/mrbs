@@ -49,7 +49,7 @@ const ForgotPasswordScreen = ({ location, history }) => {
                     </Form.Group>
                     <Row>
                         <Col>
-                            <Button type='submit' variant='primary'>Get Password</Button>
+                            <Button type='submit' variant='primary'>RESET Password</Button>
                         </Col>
                         <Col>
                             <Button type='reset' variant='primary'>Reset</Button>
