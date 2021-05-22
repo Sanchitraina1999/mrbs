@@ -22,7 +22,7 @@ const importData = async () => {
 
         await Feature.insertMany(features)
         await User.insertMany(users)
-        await MeetingRoom.insertMany(meetingRoom)
+        await MeetingRoom.insertMany(meetingrooms)
         console.log('Data Imported!'.green.inverse)
         process.exit()
     }

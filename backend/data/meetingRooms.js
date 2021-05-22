@@ -21,4 +21,4 @@ const meetingrooms = [
     }
 ]
 
-export default users
+export default meetingrooms
