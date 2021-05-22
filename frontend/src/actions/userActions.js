@@ -12,7 +12,10 @@ import {
     USER_DETAILS_FAILURE,
     USER_UPDATE_PROFILE_REQUEST,
     USER_UPDATE_PROFILE_SUCCESS,
-    USER_UPDATE_PROFILE_FAILURE
+    USER_UPDATE_PROFILE_FAILURE,
+    USER_EMAIL_REQUEST,
+    USER_EMAIL_SUCCESS,
+    USER_EMAIL_FAILURE
 } from '../constants/userConstants'
 
 export const login = (email, password, keepLoggedIn) => async (dispatch) => {
