@@ -11,9 +11,9 @@ const MeetingRoom = ({ room }) => {
                     <Card.Subtitle className='mb-2 text-muted'>{`${room.location.address}, ${room.location.city}`}</Card.Subtitle>
                     <Card className="my-3 py-2 rounded">
                         <Card.Body>
-                            <Card.Text as='h5'>{room.pointOfContact.name}</Card.Text>
+                            <Card.Text as='h5' className='text-info'>{room.pointOfContact.name}</Card.Text>
                             <Card.Text className='text-muted'>{room.pointOfContact.mobile}</Card.Text>
-                            <Card.Text className='text-info'>{room.pointOfContact.email}</Card.Text>
+                            <Card.Text className='text-muted'>{room.pointOfContact.email}</Card.Text>
                         </Card.Body>
                     </Card>
                 </Card.Body>
