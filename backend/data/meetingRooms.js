@@ -49,16 +49,16 @@ const meetingrooms = [
             city: 'Mumbai'
         },
         pointOfContact: {
-            name: 'Sahil Singh',
-            mobile: '+91 7006683179',
-            email: 'sahilbhau74@gmail.com'
+            name: 'Nikhil Kulkarni',
+            mobile: '+91 7889706221',
+            email: 'nikhil2001@gmail.com'
         },
         bookedTimes: [
             {
                 startDate: 'Sat, 22 May 2021 08:54:22 GMT',
                 endDate: 'Sat, 22 May 2021 08:54:22 GMT',
                 bookedBy: '60a87d34068c169b2810942b',
-                purposeOfBooking: 'Company Meeting'
+                purposeOfBooking: 'Student Branch Meeting'
             }
         ]
     }
