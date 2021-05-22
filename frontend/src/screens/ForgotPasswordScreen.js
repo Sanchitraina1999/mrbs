@@ -9,6 +9,7 @@ import FormContainer from '../components/FormContainer'
 
 const ForgotPasswordScreen = ({ location, history }) => {
     const [email, setEmail] = useState('')
+    const [message, setMessage] = useState(null)
 
     const dispatch = useDispatch()
 
@@ -20,7 +21,7 @@ const ForgotPasswordScreen = ({ location, history }) => {
         e.preventDefault()
         dispatch(getUser(email))
         if(userExists)
-            console.log('found')
+            setMessage(`Hi, ${userExists.username} ! An e-mail has been sent to ${userExists.email}`)
     }
     const resetHandler = (e) => {
         e.preventDefault()
@@ -30,6 +31,7 @@ const ForgotPasswordScreen = ({ location, history }) => {
         <div>
             <FormContainer>
                 <h1>FORGOT PASSWORD</h1>
+                {message && <Message variant='info'>{message}</Message>}
                 {error && <Message variant='danger'>{error}</Message>}
                 {loading && <Loader />}
                 <Form onSubmit={submitHandler} onReset={resetHandler}>
