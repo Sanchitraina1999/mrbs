@@ -5,7 +5,7 @@ import {
     MEETING_ROOM_LIST_FAIL,
 } from '../constants/meetingRoomConstants'
 
-export const listMeetingRooms = () => async (dispatch) => {
+export const listMeetingRooms = () => async (dispatch,getState) => {
     try {
         dispatch({ type: MEETING_ROOM_LIST_REQUEST })
         const { userLogin: { userInfo } } = getState()
