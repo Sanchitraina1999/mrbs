@@ -4,7 +4,7 @@ import {
     MEETING_ROOM_LIST_FAIL
 } from '../constants/meetingRoomConstants'
 
-export const featureReducer = (state = { meetingRooms: [] }, action) => {
+export const meetingRoomReducer = (state = { meetingRooms: [] }, action) => {
     switch (action.type) {
         case MEETING_ROOM_LIST_REQUEST:
             return { ...state, loading: true }

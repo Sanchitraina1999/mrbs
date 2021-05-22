@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import MeetingRoom from '../components/MeetingRoom'
 import { Row, Col } from 'react-bootstrap'
 
-import { listMeetingRooms } from '../actions/productActions'
+import { listMeetingRooms } from '../actions/meetingRoomActions'
 import { useDispatch, useSelector } from 'react-redux'
 
 import Loader from '../components/Loader'
