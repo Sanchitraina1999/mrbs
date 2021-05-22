@@ -148,7 +148,7 @@ export const getUser = (email) => async (dispatch) => {
                 'Content-Type': 'application/json'
             }
         }
-        const { data } = await axios.get(
+        const { data } = await axios.post(
             '/api/users/profileByEmail',
             { email},
             config
