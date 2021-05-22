@@ -47,6 +47,12 @@ const ProfileScreen = ({ location, history }) => {
         }
     }, [user, dispatch, history, userInfo, success])
 
+    const meetingsOfCurrentUser = meetingRooms.filter((room)=> {
+        room.bookedTimes.any((bookedTime)=>{
+            bookedTime.bookedBy === userInfo._id
+        })
+    })
+
     const submitHandler = (e) => {
         e.preventDefault()
         if (password !== confirmPassword) {
@@ -91,11 +97,8 @@ const ProfileScreen = ({ location, history }) => {
             <Col md={9}>
                 <ListGroup variant='flush'>
                     <h2>My Meetings</h2>
-                    {console.log(meetingRooms)}
-                    {/* {meetingRooms.filter((room)=>(
-
-                    ))}
-                    {meetingRooms.bookedTimes.length === 0 ? <Message>You don't have any booked meetings</Message> : (
+                    {meetingsOfCurrentUser}
+                    {/* {meetingRooms.bookedTimes.length === 0 ? <Message>You don't have any booked meetings</Message> : (
                         <ListGroup variant='flush'>
                             {meetingRooms.bookedTimes.map((item, index) => (
                                 <ListGroup.Item key={index}>
