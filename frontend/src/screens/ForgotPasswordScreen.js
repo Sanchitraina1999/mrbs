@@ -9,29 +9,15 @@ import FormContainer from '../components/FormContainer'
 
 const ForgotPasswordScreen = ({ location, history }) => {
     const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const [keepLoggedIn, setKeepLoggedIn] = useState(false)
-    const redirect = location.search ? location.search.split('=')[1] : '/'
-    const userLogin = useSelector(state => state.userLogin)
-    const { loading, error, userInfo } = userLogin
 
     const dispatch = useDispatch()
-
-    useEffect(() => {
-        if (userInfo) {
-            history.push(redirect)
-        }
-    }, [history, userInfo, redirect])
-
+    
     const submitHandler = (e) => {
         e.preventDefault()
-        dispatch(login(email, password, keepLoggedIn))
     }
     const resetHandler = (e) => {
         e.preventDefault()
         setEmail('')
-        setPassword('')
-        setKeepLoggedIn(false)
     }
     return (
         <div>
