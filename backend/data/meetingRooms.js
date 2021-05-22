@@ -1,4 +1,4 @@
-const users = [
+const meetingrooms = [
     {
         roomName: 'Room Name',
         location: {

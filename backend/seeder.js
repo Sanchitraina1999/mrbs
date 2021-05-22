@@ -4,6 +4,7 @@ import colors from 'colors'
 
 import features from './data/features.js'
 import users from './data/users.js'
+import meetingrooms from './data/meetingRooms.js'
 import Feature from './models/featureModel.js'
 import User from './models/userModel.js'
 import MeetingRoom from './models/meetingRoomModel.js'
@@ -17,10 +18,11 @@ const importData = async () => {
     try {
         await Feature.deleteMany()
         await User.deleteMany()
-        await 
+        await MeetingRoom.deleteMany()
 
         await Feature.insertMany(features)
         await User.insertMany(users)
+        await MeetingRoom.insertMany(meetingRoom)
         console.log('Data Imported!'.green.inverse)
         process.exit()
     }
