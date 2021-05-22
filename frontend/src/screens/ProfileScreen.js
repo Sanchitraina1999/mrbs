@@ -5,7 +5,6 @@ import { ToastContainer, toast } from 'react-toastify'
 
 import Message from '../components/Message'
 import Loader from '../components/Loader'
-import { listMeetingRooms } from '../actions/meetingRoomActions'
 import { getUserDetails, updateUserProfileDetails } from '../actions/userActions'
 import { USER_UPDATE_PROFILE_RESET } from '../constants/userConstants'
 
