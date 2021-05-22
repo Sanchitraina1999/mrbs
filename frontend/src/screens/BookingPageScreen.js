@@ -1,24 +1,24 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from 'react-redux';
-import { Form, Row, Col, Image, ListGroup, Card, Button } from "react-bootstrap";
-import Rating from "../components/Rating";
-import Loader from "../components/Loader";
-import Message from "../components/Message";
-import { listProductDetails } from '../actions/productActions';
+import { Link } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { Form, Row, Col, Image, ListGroup, Card, Button } from 'react-bootstrap'
+import Rating from '../components/Rating'
+import Loader from '../components/Loader'
+import Message from '../components/Message'
+import { listMeetingRoomDetails } from '../actions/meetingRoomActions'
 
 const BookingPageScreen = ({ history, match }) => {
 
-    const [qty, setQty] = useState(1);
+    const [qty, setQty] = useState(1)
 
-    const dispatch = useDispatch();
-    const productDetails = useSelector(state => state.productDetails);
+    const dispatch = useDispatch()
+    const productDetails = useSelector(state => state.productDetails)
 
-    const { loading, error, product } = productDetails;
+    const { loading, error, product } = productDetails
 
     useEffect(() => {
-        dispatch(listProductDetails(match.params.id));
-    }, [dispatch, match]);
+        dispatch(listProductDetails(match.params.id))
+    }, [dispatch, match])
 
     const addToCartHandler = () => {
         history.push(`/cart/${match.params.id}?qty=${qty}`)
@@ -26,7 +26,7 @@ const BookingPageScreen = ({ history, match }) => {
 
     return (
         <>
-            <Link className="btn btn-dark my-3" to='/'>
+            <Link className='btn btn-dark my-3' to='/'>
                 Go Back
             </Link>
             {
@@ -53,7 +53,7 @@ const BookingPageScreen = ({ history, match }) => {
                                 </ListGroup>
                             </Col>
                             <Col md={3}>
-                                <Card className="card bg-dark mb-3">
+                                <Card className='card bg-dark mb-3'>
                                     <ListGroup variant='flush'>
                                         <ListGroup.Item>
                                             <Row>
@@ -88,7 +88,7 @@ const BookingPageScreen = ({ history, match }) => {
                                         }
 
                                         <ListGroup.Item>
-                                            <Button onClick={addToCartHandler} className="btn btn-block" type="button" disabled={product.countInStock === 0}>
+                                            <Button onClick={addToCartHandler} className='btn btn-block' type='button' disabled={product.countInStock === 0}>
                                                 Add to Cart
                                             </Button>
                                         </ListGroup.Item>
