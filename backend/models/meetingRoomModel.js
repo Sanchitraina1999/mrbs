@@ -1,29 +1,23 @@
 import mongoose from 'mongoose'
 
 const meetingRoomSchema = mongoose.Schema({
-    roomName: {type: String,required: true},
+    roomName: { type: String, required: true },
     location: {
         address: { type: String, required: true },
         city: { type: String, required: true }
     },
     pointOfContact: {
-        name: { type: String, required: true},
-        mobile: { type: Number, required: true},
-        email: { type: String, required: true}
+        name: { type: String, required: true },
+        mobile: { type: Number, required: true },
+        email: { type: String, required: true }
     },
     bookedTimes: [
         {
-            startDate: { type: Date, required: true},
-            endDate: { type: Date, required: true},
-            bookedBy: { type: String, required: true},
-            name: { type:  mongoose.Schema.Types.ObjectId, required: true,
-                ref: 'User' },
-            image: { type: String, required: true },
-            product: {
-                type: mongoose.Schema.Types.ObjectId,
-                required: true,
-                ref: 'User'
-            }
+            startDate: { type: Date, required: true },
+            endDate: { type: Date, required: true },
+            bookedBy: { type: String, required: true },
+            name: { type: mongoose.Schema.Types.ObjectId, required: true, ref: 'User' },
+            image: { type: String, required: true }
         }
     ]
 }, {
