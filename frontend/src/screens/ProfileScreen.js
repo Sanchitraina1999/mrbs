@@ -48,9 +48,7 @@ const ProfileScreen = ({ location, history }) => {
     }, [user, dispatch, history, userInfo, success])
 
     const meetingsOfCurrentUser = meetingRooms.filter((room)=> {
-        room.bookedTimes.any((bookedTime)=>{
-            bookedTime.bookedBy === userInfo._id
-        })
+        return room.bookedTimes.some((bookedTime)=>bookedTime.bookedBy === userInfo._id)
     })
 
     const submitHandler = (e) => {
