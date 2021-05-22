@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Product from "../components/Product";
+import MeetingRoom from "../components/MeetingRoom";
 import { Row, Col } from "react-bootstrap";
 
 import { listProducts } from "../actions/productActions";
@@ -10,8 +10,8 @@ import Message from "../components/Message";
 
 const HomeScreen = () => {
     const dispatch = useDispatch();
-    const productList = useSelector(state => state.productList);
-    const { loading, error, products } = productList;
+    const meetingRoomList = useSelector(state => state.meetingRoomList);
+    const { loading, error, products } = meetingRoomList;
     useEffect(() => {
         dispatch(listProducts());
     }, [dispatch]);
@@ -22,9 +22,9 @@ const HomeScreen = () => {
                 ? <Message variant='danger'>{error}</Message>
                 : <Row>
                     {
-                        products.map(product => (
+                        products.map(room => (
                             <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
-                                <Product product={product} />
+                                <MeetingRoom room={room}/>
                             </Col>
                         ))
                     }
