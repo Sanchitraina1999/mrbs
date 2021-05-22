@@ -49,7 +49,7 @@ const ProfileScreen = ({ location, history }) => {
             meetingsOfCurrentUser = meetingRooms.filter((room)=> {
                 return room.bookedTimes.some((bookedTime)=>bookedTime.bookedBy === userInfo._id)
             })
-    }, [user, dispatch, history, userInfo, success])
+    }, [user, dispatch, history, userInfo, success,meetingRooms])
 
     const submitHandler = (e) => {
         e.preventDefault()
