@@ -113,7 +113,7 @@ const getUserExists = asyncHandler(async (req, res) => {
         })
     }
     else {
-        res.status(404)
+        res.status(400)
         throw new Error('User not found')
     }
 })
