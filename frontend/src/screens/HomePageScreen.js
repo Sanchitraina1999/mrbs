@@ -13,7 +13,7 @@ const HomeScreen = ({}) => {
     const meetingRoomList = useSelector(state => state.meetingRoomList)
     const { loading, error, meetingRooms } = meetingRoomList
     const userLogin = useSelector(state => state.userLogin)
-    const { loading, error, userInfo,loginSuccess } = userLogin
+    const { userInfo } = userLogin
     useEffect(() => {
         dispatch(listMeetingRooms())
     }, [dispatch])
