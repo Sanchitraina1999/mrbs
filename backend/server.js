@@ -24,6 +24,7 @@ app.get('/', (req, res) => {
 
 app.use('/api/features', featureRoutes)
 app.use('/api/users', userRoutes)
+app.use('/api/meetings', meetingRoutes)
 
 app.use(notFound)
 app.use(errorHandler)
