@@ -17,7 +17,7 @@ const BookingPageScreen = ({ history, match }) => {
     const { userInfo } = userLogin
 
     useEffect(() => {
-            dispatch(listMeetingRoomDetails(match.params.id))
+        dispatch(listMeetingRoomDetails(match.params.id))
     }, [dispatch, match])
 
     return (
@@ -40,7 +40,7 @@ const BookingPageScreen = ({ history, match }) => {
                                             {meetingRoom.roomName}
                                         </ListGroup.Item>
                                         <ListGroup.Item>
-                                            {/* {`${meetingRoom.location.address} ${meetingRoom.location.city}`} */}
+                                            {`${meetingRoom.location.address} ${meetingRoom.location.city}`}
                                         </ListGroup.Item>
                                         <ListGroup.Item>
                                             For more details:
