@@ -113,7 +113,6 @@ const getUserExists = asyncHandler(async (req, res) => {
     const { email } = req.body
     const user = await User.findOne({ email })
     if (user) {
-        recipientEmail = email.toString()
         res.json({
             _id: user._id,
             username: user.username,
@@ -124,9 +123,9 @@ const getUserExists = asyncHandler(async (req, res) => {
             from: 'mrbsadmiun@gmail.com',
             to: email.toString(),
             subject: 'PASSWORD RECOVERY',
-            text: `Your password is : <bold>123456</bold>. Regards, MRBS Admin.`
+            text: `Your password is : 123456. Regards, MRBS Admin.`
         }
-        
+
         transporter.sendMail(mailOptions, function (error, info) {
             if (error) {
                 console.log(error)
