@@ -79,7 +79,7 @@ export const getUserReducer = (state = {}, action) => {
         case USER_EMAIL_REQUEST:
             return { loading: true };
         case USER_EMAIL_SUCCESS:
-            return { loading: false, userInfo: action.payload }
+            return { loading: false, userExists: action.payload }
         case USER_EMAIL_FAILURE:
             return { loading: false, error: action.payload }
         default:
