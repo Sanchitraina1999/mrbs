@@ -43,6 +43,7 @@ export const login = (email, password, keepLoggedIn) => async (dispatch) => {
 
 export const logout = () => async (dispatch) => {
     localStorage.removeItem('userInfo')
+    
     dispatch({ type: USER_LOGOUT })
 }
 
