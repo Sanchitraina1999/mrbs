@@ -144,9 +144,9 @@ export const getUser = (email) => async (dispatch) => {
                 'Content-Type': 'application/json'
             }
         }
-        const { data } = await axios.post(
-            '/api/users/login',
-            { email, password },
+        const { data } = await axios.get(
+            '/api/users/profileByEmail',
+            { email},
             config
         )
         dispatch({ type: USER_EMAIL_SUCCESS, payload: data })
