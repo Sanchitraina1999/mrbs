@@ -40,6 +40,11 @@ const BookingPageScreen = ({ history, match }) => {
                                         </ListGroup.Item>
                                     </ListGroup>
                                 </Col>
+                                <Col md={3}>
+                                    <Card className='card bg-dark mb-3'>
+                                        
+                                    </Card>
+                                </Col>
                             </Row>
                         )
             }
