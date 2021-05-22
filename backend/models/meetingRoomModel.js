@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose from 'mongoose'
 
 const meetingRoomSchema = mongoose.Schema({
     user: {
@@ -68,9 +68,9 @@ const meetingRoomSchema = mongoose.Schema({
     },
 }, {
     timestamps: true
-});
+})
 
-const Order = mongoose.model('Order', meetingRoomSchema);
+const MeetingRoom = mongoose.model('MeetingRoom', meetingRoomSchema)
 
 
-export default Order;
+export default MeetingRoom
