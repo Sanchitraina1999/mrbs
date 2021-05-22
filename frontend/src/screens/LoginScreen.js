@@ -13,7 +13,7 @@ const LoginScreen = ({ location, history }) => {
     const [keepLoggedIn, setKeepLoggedIn] = useState(false)
     const redirect = location.search ? location.search.split('=')[1] : '/'
     const userLogin = useSelector(state => state.userLogin)
-    const { loading, error, userInfo } = userLogin
+    const { loading, error, userInfo,loginSuccess } = userLogin
 
     const dispatch = useDispatch()
 
@@ -21,6 +21,8 @@ const LoginScreen = ({ location, history }) => {
         if (userInfo) {
             history.push(redirect)
         }
+        if(loginSuccess)
+            history.push('/homepage')
     }, [history, userInfo, redirect])
 
     const submitHandler = (e) => {
