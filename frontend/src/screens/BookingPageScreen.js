@@ -17,13 +17,13 @@ const BookingPageScreen = ({ history, match }) => {
     const { userInfo } = userLogin
 
     useEffect(() => {
+        if(!!Object.keys(meetingRoom).length)dispatch(listMeetingRoomDetails(match.params.id))
         dispatch(listMeetingRoomDetails(match.params.id))
-    }, [dispatch, match])
+    }, [dispatch, match,meetingRoom])
 
     return (
         <>
             {!userInfo && history.push('/login')}
-            {!!Object.keys(meetingRoom).length && dispatch(listMeetingRoomDetails(match.params.id))}
             <Link className='btn btn-dark my-3' to='/'>
                 Go Back
             </Link>
