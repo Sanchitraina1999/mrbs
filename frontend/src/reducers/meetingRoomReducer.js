@@ -16,3 +16,16 @@ export const meetingRoomReducer = (state = { meetingRooms: [] }, action) => {
             return state
     }
 }
+
+export const meetingRoomDetailsReducer = (state = { meetingRoom: { } }, action) => {
+    switch (action.type) {
+        case PRODUCT_DETAILS_REQUEST:
+            return { loading: true, ...state };
+        case PRODUCT_DETAILS_SUCCESS:
+            return { loading: false, meetingRoom: action.payload }
+        case PRODUCT_DETAILS_FAIL:
+            return { loading: false, error: action.payload }
+        default:
+            return state;
+    }
+}
