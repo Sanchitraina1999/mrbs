@@ -100,6 +100,7 @@ const updateUserProfile = asyncHandler(async (req, res) => {
 //@route GET /api/users/profileByEmail
 //@access Public
 const getUserExists = asyncHandler(async (req, res) => {
+    console.log(req)
     const { email } = req.body
     console.log("email in usercontroller: "+ email)
     const user = await User.findOne({email})
