@@ -4,7 +4,7 @@ import { Form, Button, Row, Col } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
-import { login } from '../actions/userActions'
+import { getUser } from '../actions/userActions'
 import FormContainer from '../components/FormContainer'
 
 const ForgotPasswordScreen = ({ location, history }) => {
@@ -14,6 +14,7 @@ const ForgotPasswordScreen = ({ location, history }) => {
     
     const submitHandler = (e) => {
         e.preventDefault()
+        dispatch(getUser(email))
     }
     const resetHandler = (e) => {
         e.preventDefault()
