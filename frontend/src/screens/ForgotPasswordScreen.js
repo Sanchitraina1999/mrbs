@@ -20,6 +20,9 @@ const ForgotPasswordScreen = ({ location, history }) => {
     useEffect(() => {
         if (userExists) {
             setMessage(`Hi, ${userExists.username} ! An e-mail has been sent to ${userExists.email}`)
+            setTimeout(() =>{
+                setMessage('')
+            },5000)
         }
     }, [history, userExists]);
 
