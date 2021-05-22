@@ -10,8 +10,10 @@ const MeetingRoom = ({ room }) => {
                     <Card.Title as='div'><strong>{room.roomName}</strong></Card.Title>
                     <Card className="my-3 py-3 rounded">
                         <Card.Body>
-                            <Card.Text as='h4'>{room.pointOfContact.name}</Card.Text>
+                            <Card.Text as='h5'>{room.pointOfContact.name}</Card.Text>
+                            <Card.Text as='tel'>{room.pointOfContact.mobile}</Card.Text>
                         </Card.Body>
+                    </Card>
                 </Card.Body>
             </Card>
         {/*  </Link > */}
