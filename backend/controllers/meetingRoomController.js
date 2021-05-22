@@ -1,5 +1,5 @@
 import asyncHandler from 'express-async-handler'
-import User from '../models/userModel.js'
+import MeetingRoom from '../models/meetingRoomModel.js'
 import generateToken from '../utils/generateTokens.js'
 
 //@desc Auth a User & get a taken

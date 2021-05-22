@@ -31,5 +31,4 @@ const meetingRoomSchema = mongoose.Schema({
 
 const MeetingRoom = mongoose.model('MeetingRoom', meetingRoomSchema)
 
-
 export default MeetingRoom
