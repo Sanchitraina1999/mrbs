@@ -8,6 +8,7 @@ import LandingPageScreen from './screens/LandingPageScreen'
 import LoginScreen from './screens/LoginScreen'
 import RegisterScreen from './screens/RegisterScreen'
 import ProfileScreen from './screens/ProfileScreen'
+import ForgotPasswordScreen from './screens/ForgotPasswordScreen'
 
 const App = () => {
   return (
