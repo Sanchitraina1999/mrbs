@@ -20,8 +20,8 @@ const getMeetingRooms = asyncHandler(async (req, res) => {
 //@route GET /api/meetingRooms/id
 //@access Private
 const getMeetingRoomById = asyncHandler(async (req, res) => {
-    console.log(req.body.id)
-    const meetingRoom = await MeetingRoom.findById(req.body.id)
+    console.log(req.params.id)
+    const meetingRoom = await MeetingRoom.findById(req.params.id)
     if (meetingRoom) {
         res.json(meetingRoom)
     }
