@@ -30,7 +30,7 @@ const BookingPageScreen = ({ history, match }) => {
                                 <Col md={6}>
                                     <Image src={meetingRoom.image} alt={meetingRoom.name} fluid />
                                 </Col>
-                                <Col md={3}>
+                                <Col md={6}>
                                     <ListGroup variant='flush'>
                                         <ListGroup.Item >
                                             {meetingRoom.roomName}
@@ -39,10 +39,12 @@ const BookingPageScreen = ({ history, match }) => {
                                             {`${meetingRoom.location.address} ${meetingRoom.location.city}`}
                                         </ListGroup.Item>
                                     </ListGroup>
-                                </Col>
-                                <Col md={3}>
                                     <Card className='card bg-dark mb-3'>
-                                        
+                                        <ListGroup variant='flush'>
+                                            <ListGroup.Item>
+                                                
+                                            </ListGroup.Item>
+                                        </ListGroup>
                                     </Card>
                                 </Col>
                             </Row>
