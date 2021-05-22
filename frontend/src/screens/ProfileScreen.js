@@ -50,7 +50,6 @@ const ProfileScreen = ({ location, history }) => {
             setMessage('Passwords do not match')
         }
         else {
-            //DISPATCH UPDATE PROFILE
             dispatch(updateUserProfileDetails({ id: user._id, username, email, password }))
             if (success) {
                 toast.dark('User Profile Updated!')
@@ -61,6 +60,7 @@ const ProfileScreen = ({ location, history }) => {
     return (
         <Row>
             <Col md={3}>
+                <ToastProvider/>
                 <h1>User Profile</h1>
                 {message && <Message variant='danger'>{message}</Message>}
                 {error && <Message variant='danger'>{error}</Message>}
