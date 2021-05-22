@@ -11,6 +11,10 @@ const ForgotPasswordScreen = ({ location, history }) => {
     const [email, setEmail] = useState('')
 
     const dispatch = useDispatch()
+
+    const userExists = useSelector(state => state.userLogin);
+    const { loading, error, userInfo } = userLogin;
+
     
     const submitHandler = (e) => {
         e.preventDefault()
@@ -24,8 +28,8 @@ const ForgotPasswordScreen = ({ location, history }) => {
         <div>
             <FormContainer>
                 <h1>FORGOT PASSWORD</h1>
-                {/* {error && <Message variant='danger'>{error}</Message>} */}
-                {/* {loading && <Loader />} */}
+                {error && <Message variant='danger'>{error}</Message>}
+                {loading && <Loader />}
                 <Form onSubmit={submitHandler} onReset={resetHandler}>
                     <Form.Group controlId='email'>
                         <Form.Label>Email Address</Form.Label>
