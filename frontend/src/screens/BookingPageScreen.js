@@ -51,7 +51,7 @@ const BookingPageScreen = ({ history, match }) => {
                                         <ListGroup variant='flush'>
                                             <ListGroup.Item>
                                                 <Form.Control>
-                                                    
+
                                                 </Form.Control>
                                             </ListGroup.Item>
                                         </ListGroup>
