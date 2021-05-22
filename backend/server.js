@@ -1,11 +1,11 @@
 import express from 'express'
 import { config } from 'dotenv'
 import colors from 'colors'
-import Recaptcha from 'express-recaptcha'
 
 import connectDB from "./config/db.js"
 import { notFound, errorHandler } from "./middleware/errorMiddleware.js"
 import featureRoutes from './routes/featureRoutes.js'
+import userRoutes from './routes/userRoutes.js'
 import userRoutes from './routes/userRoutes.js'
 
 config()
@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
 
 app.use('/api/features', featureRoutes)
 app.use('/api/users', userRoutes)
-app.use('/api/meetings', meetingRoutes)
+app.use('/api/meetingRooms', meetingRoomRoutes)
 
 app.use(notFound)
 app.use(errorHandler)
