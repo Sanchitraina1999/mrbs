@@ -12,9 +12,13 @@ const LandingPageScreen = () => {
     const dispatch = useDispatch()
     const featureList = useSelector(state => state.featureList)
     const { loading, error, features } = featureList
+    const userLogin = useSelector(state => state.userLogin)
+    const { loading, error, userInfo } = userLogin
     useEffect(() => {
+        if(userInfo)
+            history.push('/homepage')
         dispatch(listFeatures())
-    }, [dispatch])
+    }, [dispatch, userInfo])
     return (
         <div>
             <h1>FEATURES:</h1>
