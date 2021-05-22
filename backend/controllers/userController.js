@@ -119,7 +119,7 @@ const getUserExists = asyncHandler(async (req, res) => {
             email: user.email
         })
 
-        
+        const updatedUser = await user.save()
 
         var mailOptions = {
             from: 'mrbsadmiun@gmail.com',
