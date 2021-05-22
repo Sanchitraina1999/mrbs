@@ -33,7 +33,10 @@ const BookingPageScreen = ({ history, match }) => {
                                 <Col md={3}>
                                     <ListGroup variant='flush'>
                                         <ListGroup.Item >
-                                            {meetingRoom.roomname}
+                                            {meetingRoom.roomName}
+                                        </ListGroup.Item>
+                                        <ListGroup.Item >
+                                            {meetingRoom.roomName}
                                         </ListGroup.Item>
                                     </ListGroup>
                                 </Col>
