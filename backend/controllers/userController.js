@@ -107,7 +107,7 @@ const transporter = nodemailer.createTransport({
 })
 
 var recipientEmail
-sentPassword = '123456'
+const sentPassword = '123456'
 
 var mailOptions = {
     from: process.env.EMAIL_ID,
