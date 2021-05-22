@@ -13,6 +13,9 @@ const BookingPageScreen = ({ history, match }) => {
     const meetingRoomDetails = useSelector(state => state.meetingRoomDetails)
     const { loading, error, meetingRoom } = meetingRoomDetails
 
+    const userLogin = useSelector(state => state.userLogin)
+    const { userInfo } = userLogin
+
     useEffect(() => {
         if(!meetingRoom)
             dispatch(listMeetingRoomDetails(match.params.id))
@@ -20,6 +23,7 @@ const BookingPageScreen = ({ history, match }) => {
 
     return (
         <>
+            {!userInfo && history.push('/login')}
             <Link className='btn btn-dark my-3' to='/'>
                 Go Back
             </Link>
@@ -27,7 +31,6 @@ const BookingPageScreen = ({ history, match }) => {
                 loading ? <Loader />
                     : error ? (<Message variant='danger'>{error}</Message>)
                         : (
-                            {!userInfo && history.push('/login')}
                             <Row>
                                 <Col md={6}>
                                     <Image src={meetingRoom.image} alt={meetingRoom.name} fluid />
