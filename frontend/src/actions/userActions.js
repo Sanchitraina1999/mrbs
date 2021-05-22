@@ -44,10 +44,9 @@ export const login = (email, password, keepLoggedIn) => async (dispatch) => {
     }
 }
 
-export const logout = ({history}) => async (dispatch) => {
+export const logout = () => async (dispatch) => {
     localStorage.removeItem('userInfo')
     dispatch({ type: USER_LOGOUT })
-    history.push('/')
 }
 
 export const register = (username, email, password) => async (dispatch) => {
