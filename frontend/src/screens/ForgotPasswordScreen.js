@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Form, Button, Row, Col } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
@@ -16,12 +16,17 @@ const ForgotPasswordScreen = ({ location, history }) => {
     const userReducer = useSelector(state => state.userReducer);
     const { loading, error, userExists } = userReducer;
 
-    
+
+    useEffect(() => {
+        if (userExists) {
+            setMessage(`Hi, ${userExists.username} ! An e-mail has been sent to ${userExists.email}`)
+        }
+    }, [history, userExists]);
+
     const submitHandler = (e) => {
         e.preventDefault()
         dispatch(getUser(email))
-        if(userExists)
-            setMessage(`Hi, ${userExists.username} ! An e-mail has been sent to ${userExists.email}`)
+
     }
     const resetHandler = (e) => {
         e.preventDefault()
