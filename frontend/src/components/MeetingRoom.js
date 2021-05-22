@@ -14,7 +14,7 @@ const MeetingRoom = ({ room }) => {
                         <Card.Body>
                             <Card.Text as='h5' className='text-info'>{room.pointOfContact.name}</Card.Text>
                             <Card.Text className='text-muted'>{room.pointOfContact.mobile}</Card.Text>
-                            <Card.Text className='text-muted' as='p small-font'>{room.pointOfContact.email}</Card.Text>
+                            <Card.Text className='text-muted p small-font'>{room.pointOfContact.email}</Card.Text>
                         </Card.Body>
                     </Card>
                 </Card.Body>
