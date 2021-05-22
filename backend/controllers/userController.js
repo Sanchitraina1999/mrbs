@@ -97,7 +97,7 @@ const updateUserProfile = asyncHandler(async (req, res) => {
 })
 
 //@desc Get user exists
-//@route GET /api/users/profileByEmail
+//@route POST /api/users/profileByEmail
 //@access Public
 const getUserExists = asyncHandler(async (req, res) => {
     console.log(req)
