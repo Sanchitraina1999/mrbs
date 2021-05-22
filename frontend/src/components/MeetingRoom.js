@@ -1,10 +1,11 @@
 import React from 'react'
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { Card } from 'react-bootstrap'
 
 const MeetingRoom = ({ room }) => {
-    return (<>
-        {/*  <Link to={`/products/${product._id}`}> */}
+    return (
+    <>
+         <Link to={`/products/${product._id}`}>
             <Card className='my-3 py-3 rounded btn-outline-dark'>
                 <Card.Img src={room.image} variant='top'></Card.Img>
                 <Card.Body>
@@ -20,7 +21,7 @@ const MeetingRoom = ({ room }) => {
                     </Card>
                 </Card.Body>
             </Card>
-        {/*  </Link > */}
+         </Link >
         </>
     )
 }
