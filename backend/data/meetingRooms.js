@@ -24,20 +24,20 @@ const meetingrooms = [
         roomName: 'Thunderdome',
         image: '/images/room2.jpg',
         location: {
-            address: 'Thane',
+            address: 'Hiranandani Gardens, Powai',
             city: 'Mumbai'
         },
         pointOfContact: {
-            name: 'Sanchit Raina',
-            mobile: '+91 9149659875',
-            email: 'sanchitraina1999@gmail.com'
+            name: 'Sahil Singh',
+            mobile: '+91 7006683179',
+            email: 'sahilbhau74@gmail.com'
         },
         bookedTimes: [
             {
                 startDate: 'Sat, 22 May 2021 08:54:22 GMT',
                 endDate: 'Sat, 22 May 2021 08:54:22 GMT',
                 bookedBy: '60a87d34068c169b2810942b',
-                purposeOfBooking: 'AI conference'
+                purposeOfBooking: 'Company Meeting'
             }
         ]
     }
