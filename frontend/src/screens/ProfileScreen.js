@@ -89,7 +89,7 @@ const ProfileScreen = ({ location, history }) => {
             <Col md={9}>
                 <ListGroup variant='flush'>
                     <h2>My Meetings</h2>
-                    {console.log(meetingRooms)}
+                    {console.log(meetingRooms.length)}
                     {/* {meetingRooms.filter((room)=>(
 
                     ))}
