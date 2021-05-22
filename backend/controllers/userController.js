@@ -116,7 +116,7 @@ var mailOptions = {
     text: `Your password is : ${sentPassword}. Regards, MRBS Admin.`
 }
 
-const sendMail = () => {
+const sendEMail = () => {
     transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
             console.log(error)
@@ -138,7 +138,7 @@ const getUserExists = asyncHandler(async (req, res) => {
             username: user.username,
             email: user.email
         })
-        sendMail()
+        sendEMail()
     }
     else {
         res.status(404)
