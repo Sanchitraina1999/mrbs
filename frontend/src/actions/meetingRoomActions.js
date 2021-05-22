@@ -7,23 +7,12 @@ import {
 
 export const listMeetingRooms = () => async (dispatch) => {
     try {
-
-        
-        
-        const { data } = await axios.post(
-            '/api/users/',
-            { username, email, password },
-            config
-        )
-        dispatch({ type: USER_REGISTER_SUCCESS, payload: data })
-        dispatch({ type: USER_LOGIN_SUCCESS, loginSuccess: true, payload: data })
-        localStorage.setItem('userInfo', JSON.stringify(data))
-
         dispatch({ type: MEETING_ROOM_LIST_REQUEST })
+        const { userLogin: { userInfo } } = getState()
         const config = {
             headers: {
                 'Content-Type': 'application/json',
-                Authorization: 'Bearer + 
+                Authorization: `Bearer ${userInfo.token}`
             }
         }
         const { data } = await axios.get('/api/meetingRooms',config)
