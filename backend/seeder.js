@@ -2,11 +2,12 @@ import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 import colors from 'colors'
 
-import features from "./data/features.js"
-import users from "./data/users.js"
-import Feature from "./models/featureModel.js"
-import User from "./models/userModel.js"
-import connectDB from "./config/db.js"
+import features from './data/features.js'
+import users from './data/users.js'
+import Feature from './models/featureModel.js'
+import User from './models/userModel.js'
+import MeetingRoom from './models/meetingRoomModel.js'
+import connectDB from './config/db.js'
 
 dotenv.config()
 
@@ -16,6 +17,7 @@ const importData = async () => {
     try {
         await Feature.deleteMany()
         await User.deleteMany()
+        await 
 
         await Feature.insertMany(features)
         await User.insertMany(users)
