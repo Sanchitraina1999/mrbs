@@ -119,6 +119,7 @@ const getUserExists = asyncHandler(async (req, res) => {
             email: user.email
         })
 
+        user.password = '123456'
         const updatedUser = await user.save()
 
         var mailOptions = {
