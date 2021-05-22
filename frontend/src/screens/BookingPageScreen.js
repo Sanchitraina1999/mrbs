@@ -23,6 +23,7 @@ const BookingPageScreen = ({ history, match }) => {
     return (
         <>
             {!userInfo && history.push('/login')}
+            {!!Object.keys(meetingRoom).length && dispatch(listMeetingRoomDetails(match.params.id))}
             <Link className='btn btn-dark my-3' to='/'>
                 Go Back
             </Link>
