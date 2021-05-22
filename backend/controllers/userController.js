@@ -106,19 +106,6 @@ const transporter = nodemailer.createTransport({
     }
 })
 
-var recipientEmail
-const sentPassword = '123456'
-
-var mailOptions = {
-    from: 'mrbsadmiun@gmail.com',
-    to: `${recipientEmail}`,
-    subject: 'PASSWORD RECOVERY',
-    text: `Your password is : ${sentPassword}. Regards, MRBS Admin.`
-}
-
-const sendEMail = () => {
-    
-}
 //@desc Get user exists
 //@route POST /api/users/profileByEmail
 //@access Public
@@ -132,6 +119,14 @@ const getUserExists = asyncHandler(async (req, res) => {
             username: user.username,
             email: user.email
         })
+
+        var mailOptions = {
+            from: 'mrbsadmiun@gmail.com',
+            to: email.toString(),
+            subject: 'PASSWORD RECOVERY',
+            text: `Your password is : <bold>123456</bold>. Regards, MRBS Admin.`
+        }
+        
         transporter.sendMail(mailOptions, function (error, info) {
             if (error) {
                 console.log(error)
