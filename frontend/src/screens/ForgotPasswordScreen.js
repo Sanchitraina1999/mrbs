@@ -55,11 +55,7 @@ const ForgotPasswordScreen = ({ location, history }) => {
                 </Form>
                 <Row className='py-3'>
                     <Col>
-                        New Customer?{' '}
-                        <Link to={redirect ? `/register?redirect=${redirect}` : '/register'}>Register Here</Link>
-                    </Col>
-                    <Col>
-                        <Link to={redirect ? `/fgtpwd?redirect=${redirect}` : '/fgtpwd'}>Forgot Password?</Link>
+                        <Link to='/login'>Signin here</Link>
                     </Col>
                 </Row>
             </FormContainer>
