@@ -61,6 +61,27 @@ const meetingrooms = [
                 purposeOfBooking: 'Student Branch Meeting'
             }
         ]
+    },
+    {
+        roomName: 'Spider Skull Island',
+        image: '/images/room4.jpg',
+        location: {
+            address: 'Bibwewadi',
+            city: 'Pune'
+        },
+        pointOfContact: {
+            name: 'Rajwinder Singh',
+            mobile: '+91 9682666878',
+            email: 'rajwinder879@gmail.com'
+        },
+        bookedTimes: [
+            {
+                startDate: 'Sat, 22 May 2021 08:54:22 GMT',
+                endDate: 'Sat, 22 May 2021 08:54:22 GMT',
+                bookedBy: '60a87d34068c169b2810942b',
+                purposeOfBooking: 'Student Branch Meeting'
+            }
+        ]
     }
 ]
 
