@@ -101,7 +101,9 @@ const updateUserProfile = asyncHandler(async (req, res) => {
 //@access Private
 const getUserExists = asyncHandler(async (req, res) => {
     const { email } = req.body
+    console.log(email)
     const user = await User.findOne({email})
+    console.log(user)
     if (user) {
         res.json({
             _id: user._id,
