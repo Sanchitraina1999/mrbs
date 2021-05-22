@@ -14,7 +14,8 @@ const BookingPageScreen = ({ history, match }) => {
     const { loading, error, meetingRoom } = meetingRoomDetails
 
     useEffect(() => {
-        dispatch(listMeetingRoomDetails(match.params.id))
+        if(!meetingRoom)
+            dispatch(listMeetingRoomDetails(match.params.id))
     }, [dispatch, match])
 
     return (
