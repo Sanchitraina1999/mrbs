@@ -11,7 +11,7 @@ const MeetingRoom = ({ room }) => {
                     <Card className="my-3 py-3 rounded">
                         <Card.Body>
                             <Card.Text as='h5'>{room.pointOfContact.name}</Card.Text>
-                            <Card.Text as='tel'>{room.pointOfContact.mobile}</Card.Text>
+                            <Card.Text>{room.pointOfContact.mobile}</Card.Text>
                         </Card.Body>
                     </Card>
                 </Card.Body>
