@@ -16,6 +16,7 @@ const Header = ({history}) => {
     const logoutHandler = () => {
         toast.dark('Successfully Logged Out!')
         dispatch(logout())
+        history.push('/')
     }
     return (
         <header>
