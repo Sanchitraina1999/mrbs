@@ -27,26 +27,26 @@ const BookingPageScreen = ({ history, match }) => {
                     : error ? (<Message variant='danger'>{error}</Message>)
                         : (
                             <Row>
-                            {/* //     <Col md={6}>
-                            //         <Image src={meetingRoom.image} alt={meetingRoom.name} fluid />
-                            //     </Col>
-                            //     <Col md={6}>
-                            //         <ListGroup variant='flush'>
-                            //             <ListGroup.Item >
-                            //                 {meetingRoom.roomName}
-                            //             </ListGroup.Item>
-                            //             <ListGroup.Item >
-                            //                 {`${meetingRoom.location.address} ${meetingRoom.location.city}`}
-                            //             </ListGroup.Item>
-                            //         </ListGroup>
-                            //         <Card className='card bg-dark mb-3'>
-                            //             <ListGroup variant='flush'>
-                            //                 <ListGroup.Item>
+                                <Col md={6}>
+                                    <Image src={meetingRoom.image} alt={meetingRoom.name} fluid />
+                                </Col>
+                                <Col md={6}>
+                                    <ListGroup variant='flush'>
+                                        <ListGroup.Item >
+                                            {meetingRoom.roomName}
+                                        </ListGroup.Item>
+                                        <ListGroup.Item >
+                                            {`${meetingRoom.location.address} ${meetingRoom.location.city}`}
+                                        </ListGroup.Item>
+                                    </ListGroup>
+                                    <Card className='card bg-dark mb-3'>
+                                        <ListGroup variant='flush'>
+                                            <ListGroup.Item>
 
-                            //                 </ListGroup.Item>
-                            //             </ListGroup>
-                            //         </Card>
-                            //     </Col> */}
+                                            </ListGroup.Item>
+                                        </ListGroup>
+                                    </Card>
+                                </Col>
                             </Row>
                         )
             }
