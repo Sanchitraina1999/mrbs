@@ -3,11 +3,11 @@ const users = [
         roomName: 'Room Name',
         location: {
             address: 'Address',
-            city: { type: String, required: true }
+            city: 'City'
         },
         pointOfContact: {
-            name: { type: String, required: true },
-            mobile: { type: Number, required: true },
+            name: 'POC Name',
+            mobile: '+91 1234567890',
             email: { type: String, required: true }
         },
         bookedTimes: [

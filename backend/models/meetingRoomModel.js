@@ -8,7 +8,7 @@ const meetingRoomSchema = mongoose.Schema({
     },
     pointOfContact: {
         name: { type: String, required: true },
-        mobile: { type: Number, required: true },
+        mobile: { type: String, required: true },
         email: { type: String, required: true }
     },
     bookedTimes: [
