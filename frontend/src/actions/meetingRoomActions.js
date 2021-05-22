@@ -5,7 +5,7 @@ import {
     MEETING_ROOM_LIST_FAIL,
 } from '../constants/meetingRoomConstants'
 
-export const listFeatures = () => async (dispatch) => {
+export const listMeetingRooms = () => async (dispatch) => {
     try {
         dispatch({ type: MEETING_ROOM_LIST_REQUEST })
         const { data } = await axios.get('/api/meetingRooms')
