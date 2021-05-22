@@ -20,7 +20,7 @@ const Header = ({history}) => {
             <ToastContainer/>
             <Navbar bg="dark" variant='dark' expand="lg" collapseOnSelect>
                 <Container>
-                    <LinkContainer to={loginSuccess?:'/'}>
+                    <LinkContainer to={loginSuccess?'/homepage':'/'}>
                         <Navbar.Brand>Meeting Room Booking System</Navbar.Brand>
                     </LinkContainer>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
