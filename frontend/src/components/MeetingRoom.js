@@ -9,7 +9,7 @@ const MeetingRoom = ({ room }) => {
                 <Card.Body>
                     <Card.Title as='div'><strong>{room.roomName}</strong></Card.Title>
                     <Card.Subtitle className='mb-2 text-muted'>{`${room.location.address}, ${room.location.city}`}</Card.Subtitle>
-                    <Card className="mt-3 py-2 rounded">
+                    <Card className="mt-3 py-2 rounded btn-outline-warning">
                         <Card.Body>
                             <Card.Text as='h5' className='text-info'>{room.pointOfContact.name}</Card.Text>
                             <Card.Text className='text-muted'>{room.pointOfContact.mobile}</Card.Text>
