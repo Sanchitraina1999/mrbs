@@ -117,13 +117,7 @@ var mailOptions = {
 }
 
 const sendEMail = () => {
-    transporter.sendMail(mailOptions, function (error, info) {
-        if (error) {
-            console.log(error)
-        } else {
-            console.log('Email sent: ' + info.response)
-        }
-    })
+    
 }
 //@desc Get user exists
 //@route POST /api/users/profileByEmail
@@ -138,7 +132,13 @@ const getUserExists = asyncHandler(async (req, res) => {
             username: user.username,
             email: user.email
         })
-        sendEMail()
+        transporter.sendMail(mailOptions, function (error, info) {
+            if (error) {
+                console.log(error)
+            } else {
+                console.log('Email sent: ' + info.response)
+            }
+        })
     }
     else {
         res.status(404)
