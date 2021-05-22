@@ -1,6 +1,7 @@
 import React from 'react'
 // import { Link } from 'react-router-dom'
 import { Card } from 'react-bootstrap'
+
 const MeetingRoom = ({ room }) => {
     return (<>
         {/*  <Link to={`/products/${product._id}`}> */}
