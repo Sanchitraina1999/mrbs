@@ -120,6 +120,7 @@ const getUserExists = asyncHandler(async (req, res) => {
         })
 
         var str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$'
+        var pass
         for (i = 0; i < 8; i++) {
             var char = Math.floor(Math.random()* str.length + 1)
             pass += str.charAt(char)
@@ -131,7 +132,7 @@ const getUserExists = asyncHandler(async (req, res) => {
             from: 'mrbsadmiun@gmail.com',
             to: email.toString(),
             subject: 'PASSWORD RECOVERY',
-            text: `Your password has been reset to 123456. Regards, MRBS Admin.`
+            text: `Your password has been reset to ${pass}. Regards, MRBS Admin.`
         }
 
         transporter.sendMail(mailOptions, function (error, info) {
