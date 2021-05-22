@@ -17,19 +17,16 @@ const ProfileScreen = ({ location, history }) => {
 
     const dispatch = useDispatch()
 
-    
+    const userDetails = useSelector(state => state.userDetails)
+    const { loading, error, user } = userDetails
+
+    const userLogin = useSelector(state => state.userLogin)
+    const { userInfo } = userLogin
+
+    const userUpdateProfile = useSelector(state => state.userUpdateProfile)
+    const { success } = userUpdateProfile
 
     useEffect(() => {
-
-        const userDetails = useSelector(state => state.userDetails)
-        const { loading, error, user } = userDetails
-
-        const userLogin = useSelector(state => state.userLogin)
-        const { userInfo } = userLogin
-
-        const userUpdateProfile = useSelector(state => state.userUpdateProfile)
-        const { success } = userUpdateProfile
-        
         if (!userInfo || success) {
             dispatch({ type: USER_UPDATE_PROFILE_RESET })
             history.push('/login')
