@@ -4,12 +4,12 @@ import { Card } from "react-bootstrap";
 const MeetingRoom = ({ room }) => {
     return (<>
         {/*  <Link to={`/products/${product._id}`}> */}
-            <Card className="my-3 py-3 rounded">
+            <Card className="my-3 py-3 rounded outline-dark">
                 <Card.Img src={room.image} variant="top"></Card.Img>
                 <Card.Body>
                     <Card.Title as='div'><strong>{room.roomName}</strong></Card.Title>
                     <Card.Subtitle className='mb-2 text-muted'>{`${room.location.address}, ${room.location.city}`}</Card.Subtitle>
-                    <Card className="my-3 py-2 rounded">
+                    <Card className="mt-3 py-2 rounded">
                         <Card.Body>
                             <Card.Text as='h5' className='text-info'>{room.pointOfContact.name}</Card.Text>
                             <Card.Text className='text-muted'>{room.pointOfContact.mobile}</Card.Text>
