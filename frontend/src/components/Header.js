@@ -10,7 +10,7 @@ import { logout } from '../actions/userActions'
 const Header = ({history}) => {
     const dispatch = useDispatch()
     const userLogin = useSelector(state => state.userLogin)
-    const { userInfo } = userLogin
+    const { userInfo,loginSuccess } = userLogin
     const logoutHandler = () => {
         toast.dark('Successfully Logged Out!')
         dispatch(logout())
@@ -20,7 +20,7 @@ const Header = ({history}) => {
             <ToastContainer/>
             <Navbar bg="dark" variant='dark' expand="lg" collapseOnSelect>
                 <Container>
-                    <LinkContainer to='/'>
+                    <LinkContainer to={loginSuccess?:'/'}>
                         <Navbar.Brand>Meeting Room Booking System</Navbar.Brand>
                     </LinkContainer>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
