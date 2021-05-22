@@ -27,7 +27,7 @@ const importData = async () => {
         process.exit()
     }
     catch (err) {
-        console.error(`${error}`.red.inverse)
+        console.error(`${err}`.red.inverse)
         process.exit(1)
     }
 }
