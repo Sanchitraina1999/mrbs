@@ -3,6 +3,9 @@ import {
     MEETING_ROOM_LIST_REQUEST, 
     MEETING_ROOM_LIST_SUCCESS, 
     MEETING_ROOM_LIST_FAIL,
+    MEETING_ROOM_DETAILS_REQUEST,
+    MEETING_ROOM_DETAILS_SUCCESS,
+    MEETING_ROOM_DETAILS_FAIL
 } from '../constants/meetingRoomConstants'
 
 export const listMeetingRooms = () => async (dispatch,getState) => {
