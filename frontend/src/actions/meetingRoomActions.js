@@ -26,7 +26,7 @@ export const listMeetingRooms = () => async (dispatch, getState) => {
     }
 }
 
-export const listMeetingRoomDetails = (id) => async (dispatch) => {
+export const listMeetingRoomDetails = (id) => async (dispatch,getState) => {
     try {
         dispatch({ type: MEETING_ROOM_DETAILS_REQUEST })
         const { userLogin: { userInfo } } = getState()
