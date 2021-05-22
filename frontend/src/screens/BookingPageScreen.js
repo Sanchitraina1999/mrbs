@@ -30,6 +30,7 @@ const BookingPageScreen = ({ history, match }) => {
                 loading ? <Loader />
                     : error ? (<Message variant='danger'>{error}</Message>)
                         : (
+                            {console.log(mee)}
                             <Row>
                                 <Col md={6}>
                                     <Image src={meetingRoom.image} alt={meetingRoom.name} fluid />
@@ -40,7 +41,8 @@ const BookingPageScreen = ({ history, match }) => {
                                             {meetingRoom.roomName}
                                         </ListGroup.Item>
                                         <ListGroup.Item>
-                                           {meetingRoom.location.}
+                                           {meetingRoom.location.address}{','}
+                                           {meetingRoom.location.city}
                                         </ListGroup.Item>
                                         <ListGroup.Item>
                                             For more details:
