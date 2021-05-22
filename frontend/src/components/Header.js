@@ -7,7 +7,7 @@ import { ToastContainer, toast } from 'react-toastify'
 
 import { logout } from '../actions/userActions'
 
-const Header = ({}) => {
+const Header = ({location,history}) => {
     const dispatch = useDispatch()
     const userLogin = useSelector(state => state.userLogin)
     const { userInfo,loginSuccess } = userLogin
@@ -16,7 +16,7 @@ const Header = ({}) => {
         toast.dark('Successfully Logged Out!')
         dispatch(logout())
     }
-    
+
     return (
         <header>
             <ToastContainer/>

@@ -11,7 +11,7 @@ import ProfileScreen from './screens/ProfileScreen'
 import ForgotPasswordScreen from './screens/ForgotPasswordScreen'
 import HomePageScreen from './screens/HomePageScreen'
 
-const App = () => {
+const App = ({ location, history}) => {
   return (
     <Router>
       <Header />
