@@ -100,22 +100,23 @@ const updateUserProfile = asyncHandler(async (req, res) => {
 //@route POST /api/users/profileByEmail
 //@access Private
 const getUserExists = asyncHandler(async (req, res) => {
-    try{
-        const { email } = req.body
-        console.log(email)
-        const user = await User.findOne({email})
-        console.log(user)
-        if (user) {
-            res.json({
-                _id: user._id,
-                username: user.username,
-                email: user.email
-            })
-        }
-        else {
-            res.status(404)
-            throw new Error('User not found')
-        }
+    
+
+    const { email } = req.body
+    console.log(email)
+    const user = await User.findOne({email})
+    console.log(user)
+    
+    if (user) {
+        res.json({
+            _id: user._id,
+            username: user.username,
+            email: user.email
+        })
+    }
+    else {
+        res.status(404)
+        throw new Error('User not found')
     }
 })
 
