@@ -12,8 +12,8 @@ const ForgotPasswordScreen = ({ location, history }) => {
 
     const dispatch = useDispatch()
 
-    const userExists = useSelector(state => state.userLogin);
-    const { loading, error, userInfo } = userLogin;
+    const userReducer = useSelector(state => state.userReducer);
+    const { loading, error, userExists } = userReducer;
 
     
     const submitHandler = (e) => {
