@@ -31,7 +31,7 @@ export const login = (email, password, keepLoggedIn) => async (dispatch) => {
             { email, password },
             config
         )
-        dispatch({ type: USER_LOGIN_SUCCESS, loginSuccess: true,payload: data })
+        dispatch({ type: USER_LOGIN_SUCCESS, loginSuccess: true, payload: data })
         if (keepLoggedIn) localStorage.setItem('userInfo', JSON.stringify(data))
     }
     catch (error) {
@@ -46,7 +46,7 @@ export const login = (email, password, keepLoggedIn) => async (dispatch) => {
 
 export const logout = () => async (dispatch) => {
     localStorage.removeItem('userInfo')
-    
+
     dispatch({ type: USER_LOGOUT })
 }
 
@@ -149,7 +149,7 @@ export const getUser = (email) => async (dispatch) => {
         }
         const { data } = await axios.post(
             '/api/users/profileByEmail',
-            { email},
+            { email },
             config
         )
         dispatch({ type: USER_EMAIL_SUCCESS, payload: data })
