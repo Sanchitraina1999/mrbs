@@ -1,15 +1,14 @@
 import mongoose from 'mongoose'
 
 const meetingRoomSchema = mongoose.Schema({
-    roomName: { 
-        type: String, 
-        required: true
-    },
-    shippingAddress: {
+    roomName: {type: String,required: true},
+    location: {
         address: { type: String, required: true },
-        city: { type: String, required: true },
-        postalCode: { type: String, required: true },
-        country: { type: String, required: true }
+        city: { type: String, required: true }
+    },
+    pointOfContact: {
+        name: { type: String, required: true},
+        mobile: { type: String, required: true}
     }
     user: {
         type: mongoose.Schema.Types.ObjectId,
