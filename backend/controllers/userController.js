@@ -97,7 +97,7 @@ const updateUserProfile = asyncHandler(async (req, res) => {
 })
 
 //@desc Get user exists
-//@route POST /api/users/profile
+//@route POST /api/users/profileByEmail
 //@access Private
 const getUserExists = asyncHandler(async (req, res) => {
     const { email } = req.body
@@ -115,4 +115,4 @@ const getUserExists = asyncHandler(async (req, res) => {
     }
 })
 
-export { authUser, registerUser, getUserProfile, updateUserProfile }
+export { authUser, registerUser, getUserProfile, updateUserProfile,getUserExists }
