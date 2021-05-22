@@ -17,7 +17,6 @@ import {
 
 export const login = (email, password, keepLoggedIn) => async (dispatch) => {
     try {
-        console.log(keepLoggedIn)
         dispatch({ type: USER_LOGIN_REQUEST })
         const config = {
             headers: {
@@ -33,7 +32,12 @@ export const login = (email, password, keepLoggedIn) => async (dispatch) => {
         if (keepLoggedIn) localStorage.setItem('userInfo', JSON.stringify(data))
     }
     catch (error) {
-        dispatch({ type: USER_LOGIN_FAILURE, payload: error.response && error.response.data.message ? error.response.data.message : error.message })
+        dispatch({
+            type: USER_LOGIN_FAILURE,
+            payload: error.response && error.response.data.message ?
+                error.response.data.message :
+                error.message
+        })
     }
 }
 
