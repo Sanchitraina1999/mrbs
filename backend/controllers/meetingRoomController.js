@@ -6,8 +6,11 @@ import generateToken from '../utils/generateTokens.js'
 //@route POST /api/users/login
 //@access Public
 const getMeetingRooms = asyncHandler(async (req, res) => {
+
+    const rooms = await Feature.find({})
+    res.json(rooms)
     const { email, password } = req.body
-    const user = await User.findOne({ email })
+    const user = await MeetingRoom.findOne({ email })
     if (user && (await user.matchPassword(password))) {
         res.json({
             _id: user._id,
