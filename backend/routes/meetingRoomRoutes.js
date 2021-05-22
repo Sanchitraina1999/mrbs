@@ -1,8 +1,8 @@
 import express from 'express'
 const router = express.Router()
-import { updateUserProfile } from '../controllers/meetingRoomController.js'
+import { getMeetingRooms } from '../controllers/meetingRoomController.js'
 import { protect } from '../middleware/authMiddleware.js'
 
-router.route('/').get(protect, updateUserProfile)
+router.route('/').get(protect, getMeetingRooms)
 
 export default router

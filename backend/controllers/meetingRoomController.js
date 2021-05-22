@@ -5,7 +5,7 @@ import generateToken from '../utils/generateTokens.js'
 //@desc Auth a User & get a taken
 //@route POST /api/users/login
 //@access Public
-const authUser = asyncHandler(async (req, res) => {
+const getMeetingRooms = asyncHandler(async (req, res) => {
     const { email, password } = req.body
     const user = await User.findOne({ email })
     if (user && (await user.matchPassword(password))) {
@@ -22,4 +22,4 @@ const authUser = asyncHandler(async (req, res) => {
     }
 })
 
-export { authUser }
+export { getMeetingRooms }
