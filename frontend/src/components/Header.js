@@ -4,6 +4,7 @@ import { LinkContainer } from "react-router-bootstrap"
 import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap'
 import 'react-toastify/dist/ReactToastify.css'
 import { ToastContainer, toast } from 'react-toastify'
+
 import { logout } from '../actions/userActions'
 
 const Header = ({history}) => {
