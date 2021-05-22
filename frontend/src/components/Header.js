@@ -1,14 +1,13 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { LinkContainer } from "react-router-bootstrap"
-import {useHistory} from 'react-router-dom'
 import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap'
 import 'react-toastify/dist/ReactToastify.css'
 import { ToastContainer, toast } from 'react-toastify'
 
 import { logout } from '../actions/userActions'
 
-const Header = ({history}) => {
+const Header = ({}) => {
     const dispatch = useDispatch()
     const userLogin = useSelector(state => state.userLogin)
     const { userInfo,loginSuccess } = userLogin
@@ -16,7 +15,6 @@ const Header = ({history}) => {
     const logoutHandler = () => {
         toast.dark('Successfully Logged Out!')
         dispatch(logout())
-        history.push('/')
     }
     return (
         <header>
