@@ -9,7 +9,7 @@ const meetingrooms = [
         pointOfContact: {
             name: 'Sanchit Raina',
             mobile: '+91 9149659875',
-            email: 'email@example.com'
+            email: 'sanchitraina1999@gmail.com'
         },
         bookedTimes: [
             {
