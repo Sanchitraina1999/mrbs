@@ -99,6 +99,7 @@ const updateUserProfile = asyncHandler(async (req, res) => {
 })
 
 const transporter = nodemailer.createTransport({
+    host: 'smtp.gmail.com',
     service: 'gmail',
     port: 465,
     secure: true, // use SSL
