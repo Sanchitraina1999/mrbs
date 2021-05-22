@@ -26,6 +26,9 @@ const ProfileScreen = ({ location, history }) => {
     const userUpdateProfile = useSelector(state => state.userUpdateProfile)
     const { success } = userUpdateProfile
 
+    const meetingRoomList = useSelector(state => state.meetingRoomList)
+    const { meetingRooms } = meetingRoomList
+
     useEffect(() => {
         if (!userInfo || success) {
             dispatch({ type: USER_UPDATE_PROFILE_RESET })
@@ -58,7 +61,7 @@ const ProfileScreen = ({ location, history }) => {
     return (
         <Row>
             <Col md={3}>
-                <ToastContainer/>
+                <ToastContainer />
                 <h1>User Profile</h1>
                 {message && <Message variant='danger'>{message}</Message>}
                 {error && <Message variant='danger'>{error}</Message>}
@@ -84,9 +87,33 @@ const ProfileScreen = ({ location, history }) => {
                 </Form>
             </Col>
             <Col md={9}>
-                <h2>My Meetings</h2>
                 <ListGroup variant='flush'>
-                    
+                    <h2>My Meetings</h2>
+                    {console.log(meetingRooms)}
+                    {/* {meetingRooms.filter((room)=>(
+
+                    ))}
+                    {meetingRooms.bookedTimes.length === 0 ? <Message>You don't have any booked meetings</Message> : (
+                        <ListGroup variant='flush'>
+                            {meetingRooms.bookedTimes.map((item, index) => (
+                                <ListGroup.Item key={index}>
+                                    <Row>
+                                        <Col md={1}>
+                                            <Image src={item.image} alt={item.name} fluid rounded></Image>
+                                        </Col>
+                                        <Col>
+                                            <Link to={`/product/${item.product}`}>
+                                                {item.name}
+                                            </Link>
+                                        </Col>
+                                        <Col md={4}>
+                                            {item.qty} x ${item.price} = ${item.qty * item.price}
+                                        </Col>
+                                    </Row>
+                                </ListGroup.Item>
+                            ))}
+                        </ListGroup>
+                    )} */}
                 </ListGroup>
             </Col>
         </Row>
