@@ -11,10 +11,15 @@ const Header = ({history}) => {
     const dispatch = useDispatch()
     const userLogin = useSelector(state => state.userLogin)
     const { userInfo,loginSuccess } = userLogin
+
+    useSelector(()=>{
+        if(loginSuccess)
+            history.push('/')
+    })
+
     const logoutHandler = () => {
         toast.dark('Successfully Logged Out!')
         dispatch(logout())
-        history.push('/')
     }
     return (
         <header>
