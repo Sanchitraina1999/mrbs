@@ -87,27 +87,6 @@ const ProfileScreen = ({ location, history }) => {
             <Col md={9}>
                 <ListGroup variant='flush'>
                     <h2>My Meetings</h2>
-                    {/* {meetingRooms.bookedTimes.length === 0 ? <Message>You don't have any booked meetings</Message> : (
-                        <ListGroup variant='flush'>
-                            {meetingRooms.bookedTimes.map((item, index) => (
-                                <ListGroup.Item key={index}>
-                                    <Row>
-                                        <Col md={1}>
-                                            <Image src={item.image} alt={item.name} fluid rounded></Image>
-                                        </Col>
-                                        <Col>
-                                            <Link to={`/product/${item.product}`}>
-                                                {item.name}
-                                            </Link>
-                                        </Col>
-                                        <Col md={4}>
-                                            {item.qty} x ${item.price} = ${item.qty * item.price}
-                                        </Col>
-                                    </Row>
-                                </ListGroup.Item>
-                            ))}
-                        </ListGroup>
-                    )} */}
                 </ListGroup>
             </Col>
         </Row>
