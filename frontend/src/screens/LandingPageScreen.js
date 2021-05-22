@@ -18,7 +18,7 @@ const LandingPageScreen = ({location, history}) => {
         if(userInfo)
             history.push('/homepage')
         dispatch(listFeatures())
-    }, [dispatch, userInfo])
+    }, [dispatch, history,userInfo])
     return (
         <div>
             <h1>FEATURES:</h1>
