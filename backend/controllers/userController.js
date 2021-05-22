@@ -99,10 +99,7 @@ const updateUserProfile = asyncHandler(async (req, res) => {
 })
 
 const transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
     service: 'gmail',
-    port: 465,
-    secure: true, // use SSL
     auth: {
         user: process.env.EMAIL_ID,
         pass: process.env.EMAIL_PASSWORD
