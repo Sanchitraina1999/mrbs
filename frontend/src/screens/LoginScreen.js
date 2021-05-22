@@ -23,7 +23,7 @@ const LoginScreen = ({ location, history }) => {
         }
         if(loginSuccess)
             history.push('/homepage')
-    }, [history, userInfo, redirect])
+    }, [history, userInfo, redirect,loginSuccess])
 
     const submitHandler = (e) => {
         e.preventDefault()
