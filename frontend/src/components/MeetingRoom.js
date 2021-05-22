@@ -8,6 +8,7 @@ const MeetingRoom = ({ room }) => {
                 <Card.Img src={room.image} variant="top"></Card.Img>
                 <Card.Body>
                     <Card.Title as='div'><strong>{room.roomName}</strong></Card.Title>
+                    
                     <Card className="my-3 py-3 rounded">
                         <Card.Body>
                             <Card.Text as='h5'>{room.pointOfContact.name}</Card.Text>
