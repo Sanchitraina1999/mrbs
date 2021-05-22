@@ -29,7 +29,7 @@ const ProfileScreen = ({ location, history }) => {
 
     const meetingRoomList = useSelector(state => state.meetingRoomList)
     const { meetingRooms } = meetingRoomList
-    const meetingsOfCurrentUser = ''
+    var meetingsOfCurrentUser
     useEffect(() => {
         dispatch(listMeetingRooms())
         if (!userInfo || success) {
@@ -45,9 +45,10 @@ const ProfileScreen = ({ location, history }) => {
                 setEmail(user.email)
             }
         }
-        meetingsOfCurrentUser = meetingRooms.filter((room)=> {
-            return room.bookedTimes.some((bookedTime)=>bookedTime.bookedBy === userInfo._id)
-        })
+        if(meetingRooms)
+            meetingsOfCurrentUser = meetingRooms.filter((room)=> {
+                return room.bookedTimes.some((bookedTime)=>bookedTime.bookedBy === userInfo._id)
+            })
     }, [user, dispatch, history, userInfo, success])
 
     const submitHandler = (e) => {
