@@ -36,7 +36,7 @@ const ForgotPasswordScreen = ({ location, history }) => {
     return (
         <div>
             <FormContainer>
-                <h1>Sign In</h1>
+                <h1>FORGOT PASSWORD</h1>
                 {error && <Message variant='danger'>{error}</Message>}
                 {loading && <Loader />}
                 <Form onSubmit={submitHandler} onReset={resetHandler}>
@@ -44,16 +44,9 @@ const ForgotPasswordScreen = ({ location, history }) => {
                         <Form.Label>Email Address</Form.Label>
                         <Form.Control type='email' placeholder='Enter email' value={email} onChange={e => setEmail(e.target.value)}></Form.Control>
                     </Form.Group>
-                    <Form.Group controlId='password'>
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control type='password' placeholder='Enter password' value={password} onChange={e => setPassword(e.target.value)}></Form.Control>
-                    </Form.Group>
-                    <Form.Group controlId='keepLoggedIn'>
-                        <Form.Check type='checkbox' label='Remember me' value={keepLoggedIn} onChange={e => setKeepLoggedIn(!keepLoggedIn)} />
-                    </Form.Group>
                     <Row>
                         <Col>
-                            <Button type='submit' variant='primary'>Sign In</Button>
+                            <Button type='submit' variant='primary'>Get Password</Button>
                         </Col>
                         <Col>
                             <Button type='reset' variant='primary'>Reset</Button>
