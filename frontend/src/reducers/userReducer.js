@@ -82,8 +82,6 @@ export const getUserReducer = (state = {}, action) => {
             return { loading: false, userInfo: action.payload }
         case USER_EMAIL_FAILURE:
             return { loading: false, error: action.payload }
-        case USER_LOGOUT:
-            return {}
         default:
             return state;
     }

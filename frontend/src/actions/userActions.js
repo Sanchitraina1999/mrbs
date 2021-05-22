@@ -138,7 +138,7 @@ export const updateUserProfileDetails = (user) => async (dispatch, getState) => 
 
 export const getUser = (email) => async (dispatch) => {
     try {
-        dispatch({ type: USER_LOGIN_REQUEST })
+        dispatch({ type: USER_EMAIL_REQUEST })
         const config = {
             headers: {
                 'Content-Type': 'application/json'
@@ -149,12 +149,11 @@ export const getUser = (email) => async (dispatch) => {
             { email, password },
             config
         )
-        dispatch({ type: USER_LOGIN_SUCCESS, payload: data })
-        if (keepLoggedIn) localStorage.setItem('userInfo', JSON.stringify(data))
+        dispatch({ type: USER_EMAIL_SUCCESS, payload: data })
     }
     catch (error) {
         dispatch({
-            type: USER_LOGIN_FAILURE,
+            type: USER_EMAIL_FAILURE,
             payload: error.response && error.response.data.message ?
                 error.response.data.message :
                 error.message
