@@ -8,7 +8,7 @@ const users = [
         pointOfContact: {
             name: 'POC Name',
             mobile: '+91 1234567890',
-            email: { type: String, required: true }
+            email: 'email@example.com'
         },
         bookedTimes: [
             {
