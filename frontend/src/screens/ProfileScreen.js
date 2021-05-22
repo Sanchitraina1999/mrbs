@@ -95,7 +95,7 @@ const ProfileScreen = ({ location, history }) => {
             <Col md={9}>
                 <ListGroup variant='flush'>
                     <h2>My Meetings</h2>
-                    {meetingsOfCurrentUser}
+                    {console.log(meetingsOfCurrentUser)}
                     {/* {meetingRooms.bookedTimes.length === 0 ? <Message>You don't have any booked meetings</Message> : (
                         <ListGroup variant='flush'>
                             {meetingRooms.bookedTimes.map((item, index) => (
