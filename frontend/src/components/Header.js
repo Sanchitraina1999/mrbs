@@ -1,12 +1,12 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { LinkContainer } from "react-router-bootstrap"
+import {useHistory} from 'react-router-dom'
 import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap'
 import 'react-toastify/dist/ReactToastify.css'
 import { ToastContainer, toast } from 'react-toastify'
 
 import { logout } from '../actions/userActions'
-import { Redirect } from 'react-router'
 
 const Header = ({history}) => {
     const dispatch = useDispatch()
