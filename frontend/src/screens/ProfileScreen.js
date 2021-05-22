@@ -40,8 +40,6 @@ const ProfileScreen = ({ location, history }) => {
             else {
                 setName(user.username)
                 setEmail(user.email)
-                setPassword('******')
-                setConfirmPassword('******')
             }
         }
     }, [user, dispatch, history, userInfo, success])
