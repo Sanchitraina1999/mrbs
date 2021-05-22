@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Form, Button, Row, Col } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
-import { toast } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
+import { ToastContainer, toast } from 'react-toastify'
 
 import Message from '../components/Message'
 import Loader from '../components/Loader'
@@ -60,7 +59,7 @@ const ProfileScreen = ({ location, history }) => {
     return (
         <Row>
             <Col md={3}>
-                <ToastProvider/>
+                <ToastContainer/>
                 <h1>User Profile</h1>
                 {message && <Message variant='danger'>{message}</Message>}
                 {error && <Message variant='danger'>{error}</Message>}
