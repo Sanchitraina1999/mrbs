@@ -96,11 +96,12 @@ const updateUserProfile = asyncHandler(async (req, res) => {
     }
 })
 
-//@desc Get user profile
+//@desc Get user exists
 //@route POST /api/users/profile
 //@access Private
-const getUserProfile = asyncHandler(async (req, res) => {
-    const user = await User.findById(req.user._id)
+const getUserExists = asyncHandler(async (req, res) => {
+    const { email } = req.body
+    const user = await User.findOne({email})
     if (user) {
         res.json({
             _id: user._id,
