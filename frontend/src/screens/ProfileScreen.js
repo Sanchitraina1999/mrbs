@@ -27,13 +27,7 @@ const ProfileScreen = ({ location, history }) => {
     const userUpdateProfile = useSelector(state => state.userUpdateProfile)
     const { success } = userUpdateProfile
 
-    const meetingRoomList = useSelector(state => state.meetingRoomList)
-    const { meetingRooms } = meetingRoomList
-
-    // var meetingsOfCurrentUser
-
     useEffect(() => {
-        dispatch(listMeetingRooms())
         if (!userInfo || success) {
             dispatch({ type: USER_UPDATE_PROFILE_RESET })
             history.push('/login')
