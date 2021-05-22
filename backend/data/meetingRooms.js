@@ -1,6 +1,7 @@
 const meetingrooms = [
     {
         roomName: 'Room Name',
+        image: '/images/room.jpg',
         location: {
             address: 'Address',
             city: 'City'
@@ -15,7 +16,7 @@ const meetingrooms = [
                 startDate: 'Sat, 22 May 2021 08:54:22 GMT',
                 endDate: 'Sat, 22 May 2021 08:54:22 GMT',
                 bookedBy: '60a87d34068c169b2810942b',
-                image: '/images/room.jpg'
+                purposeOfBooking: 'AI conference'
             }
         ]
     }

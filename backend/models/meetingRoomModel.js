@@ -20,7 +20,7 @@ const meetingRoomSchema = mongoose.Schema({
             startDate: { type: Date, required: true },
             endDate: { type: Date, required: true },
             bookedBy: { type: mongoose.Schema.Types.ObjectId, required: true, ref: 'User' },
-            image: { type: String, required: true }
+            purposeOfBooking: {type: String, required: true}
         }
     ]
 }, {
