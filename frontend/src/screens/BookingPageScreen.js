@@ -30,7 +30,7 @@ const BookingPageScreen = ({ history, match }) => {
                 loading ? <Loader />
                     : error ? (<Message variant='danger'>{error}</Message>)
                         : (
-                            {console.log(mee)}
+                            {meetingRoom}
                             <Row>
                                 <Col md={6}>
                                     <Image src={meetingRoom.image} alt={meetingRoom.name} fluid />
