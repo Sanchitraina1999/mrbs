@@ -1,16 +1,16 @@
 import {
-    FEATURE_LIST_REQUEST,
-    FEATURE_LIST_SUCCESS,
-    FEATURE_LIST_FAIL
+    MEETING_ROOM_LIST_REQUEST,
+    MEETING_ROOM_LIST_SUCCESS,
+    MEETING_ROOM_LIST_FAIL
 } from '../constants/featureConstants'
 
-export const featureReducer = (state = { features: [] }, action) => {
+export const featureReducer = (state = { meetingRooms: [] }, action) => {
     switch (action.type) {
-        case FEATURE_LIST_REQUEST:
+        case MEETING_ROOM_LIST_REQUEST:
             return { ...state, loading: true }
-        case FEATURE_LIST_SUCCESS:
+        case MEETING_ROOM_LIST_SUCCESS:
             return { loading: false, features: action.payload }
-        case FEATURE_LIST_FAIL:
+        case MEETING_ROOM_LIST_FAIL:
             return { loading: false, error: action.payload }
         default:
             return state
