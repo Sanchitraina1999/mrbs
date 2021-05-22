@@ -3,7 +3,7 @@ import {
     MEETING_ROOM_LIST_REQUEST, 
     MEETING_ROOM_LIST_SUCCESS, 
     MEETING_ROOM_LIST_FAIL,
-} from '../constants/featureConstants'
+} from '../constants/meetingRoomConstants'
 
 export const listFeatures = () => async (dispatch) => {
     try {

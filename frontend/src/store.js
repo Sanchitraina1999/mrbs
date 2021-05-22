@@ -11,7 +11,8 @@ const reducer = combineReducers({
     userRegister: userRegisterReducer,
     userDetails: userDetailsReducer,
     userUpdateProfile: userUpdateProfileReducer,
-    userReducer: getUserReducer
+    userReducer: getUserReducer,
+    meetingRoom: meetingRoomReducer
 })
 
 const userInfoFromStorage = localStorage.getItem('userInfo') ?
