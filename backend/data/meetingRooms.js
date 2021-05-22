@@ -1,14 +1,14 @@
 const meetingrooms = [
     {
-        roomName: 'Room Name',
-        image: '/images/room.jpg',
+        roomName: 'Executive Playground',
+        image: '/images/room1.jpg',
         location: {
-            address: 'Address',
-            city: 'City'
+            address: 'Katraj',
+            city: 'Pune'
         },
         pointOfContact: {
-            name: 'POC Name',
-            mobile: '+91 1234567890',
+            name: 'Sanchit Raina',
+            mobile: '+91 9149659875',
             email: 'email@example.com'
         },
         bookedTimes: [
