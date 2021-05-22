@@ -101,8 +101,8 @@ const updateUserProfile = asyncHandler(async (req, res) => {
 const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: ,
-        pass: process.env.EMAIL_PASSWORD
+        user: 'mrbsadmiun@gmail.com',
+        pass: 'mrbs1234'
     }
 })
 
@@ -110,7 +110,7 @@ var recipientEmail
 const sentPassword = '123456'
 
 var mailOptions = {
-    from: process.env.EMAIL_ID,
+    from: 'mrbsadmiun@gmail.com',
     to: `${recipientEmail}`,
     subject: 'PASSWORD RECOVERY',
     text: `Your password is : ${sentPassword}. Regards, MRBS Admin.`
