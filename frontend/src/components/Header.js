@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { LinkContainer } from "react-router-bootstrap"
 import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap'
@@ -12,10 +12,10 @@ const Header = ({history}) => {
     const userLogin = useSelector(state => state.userLogin)
     const { userInfo,loginSuccess } = userLogin
 
-    useSelector(()=>{
-        if(loginSuccess)
+    useEffect(()=>{
+        if(!loginSuccess)
             history.push('/')
-    })
+    },[history])
 
     const logoutHandler = () => {
         toast.dark('Successfully Logged Out!')
