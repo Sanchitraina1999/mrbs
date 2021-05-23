@@ -45,7 +45,8 @@ const BookingPageScreen = ({ history, match }) => {
             setMessage('End Time can not be before Start Time')
         else if(purposeOfBooking.replace(/\s/g,'').length<=0)
             setMessage('Purpose of Meeting cannot be empty')
-        else
+        // else
+            // dispatch()
     }
 
     return (
