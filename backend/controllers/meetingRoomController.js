@@ -86,6 +86,7 @@ const getMyMeetings = asyncHandler(async (req, res) => {
     const meetingRooms = await MeetingRoom.find({})
     if (meetingRooms) {
         var myMeetings = []
+        {console.log(meetingRooms.push,'meetingRooms')}
         meetingRooms.map((room) => (
             room.bookedTimes.map((booking) => (
                 (booking.bookedBy === req.params.id)?(
