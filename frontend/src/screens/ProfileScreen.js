@@ -37,7 +37,7 @@ const ProfileScreen = ({ location, history }) => {
 
     useEffect(() => {
         if (!myMeetings)
-            dispatch(getMyMeetings())
+            dispatch(getMyMeetings(userInfo._id))
         if (!userInfo || success) {
             dispatch({ type: USER_UPDATE_PROFILE_RESET })
             history.push('/login')
