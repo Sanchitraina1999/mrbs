@@ -6,6 +6,7 @@ import { ToastContainer, toast } from 'react-toastify'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
 import { getUserDetails, updateUserProfileDetails } from '../actions/userActions'
+import { listMeetingRooms } from '../actions/meetingRoomActions'
 import { USER_UPDATE_PROFILE_RESET } from '../constants/userConstants'
 
 const ProfileScreen = ({ location, history }) => {
@@ -36,6 +37,7 @@ const ProfileScreen = ({ location, history }) => {
         }
         else {
             if(!meetingRooms.length)
+                dispatch(listMeetingRooms())
             if (!user.username) {
                 dispatch(getUserDetails('profile'))
             }
