@@ -57,7 +57,10 @@ export const getAvailablityOfMeetingRoom = (id, startDateTime, endDateTime) => a
                 Authorization: `Bearer ${userInfo.token}`
             }
         }
-        const { data } = await axios.get(`/api/meetingRooms/availability/${id}`,{startDateTime, endDateTime}, config)
+        const { data } = await axios.get(
+            `/api/meetingRooms/availability/${id}`,
+            {startDateTime, endDateTime},
+             config)
         dispatch({ type: MEETING_ROOM_AVAILABILITY_SUCCESS, payload: data })
     }
     catch (error) {
