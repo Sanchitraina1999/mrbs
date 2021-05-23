@@ -26,11 +26,9 @@ const BookingPageScreen = ({ history, match }) => {
     const [endTime, setEndTime] = useState(moment(moment(new Date()).add(70, 'm')).format('HH:mm'))
     const [purposeOfBooking, setPurposeOfBooking] = useState('')
     const [message, setMessage] = useState(null)
-    const [bookingAvailable, setBookingAvailable] = useState(false)
 
     useEffect(() => {
         setMessage(null)
-        setBookingAvailable(false)
         if (!Object.keys(meetingRoom).length)
             dispatch(listMeetingRoomDetails(match.params.id))
         if (!userInfo)
@@ -40,7 +38,6 @@ const BookingPageScreen = ({ history, match }) => {
     const submitHandler = (e) => {
         e.preventDefault()
         setMessage(null)
-        setBookingAvailable(false)
         var currentDateTime = moment(moment(new Date()).add(30, 'm')).format('yyyy-MM-DD[T]HH:mm')
         var startDateTime = startDate + "T" + startTime
         var endDateTime = endDate + "T" + endTime
@@ -59,11 +56,9 @@ const BookingPageScreen = ({ history, match }) => {
                 dispatch(getAvailablityOfMeetingRoom(match.params.id, startDateTime, endDateTime))
                 if (available) {
                     setMessage('Meeting room available')
-                    setBookingAvailable(true)
                 }
                 else {
-                    setMessage('Meeting room unavailable') 
-                    setBookingAvailable(false)
+                    setMessage('Meeting room unavailable')
                 }
             }
         }
@@ -126,7 +121,7 @@ const BookingPageScreen = ({ history, match }) => {
                                                         <Form.Label>Purpose of meeting</Form.Label>
                                                         <Form.Control type='text' value={purposeOfBooking} onChange={e => setPurposeOfBooking(e.target.value)}></Form.Control>
                                                     </Form.Group>
-                                                    {!bookingAvailable ? (
+                                                    {!available ? (
                                                         <Button variant='primary' type='submit' className='my -3 py-3'>
                                                             GET availability
                                                         </Button>) : (
