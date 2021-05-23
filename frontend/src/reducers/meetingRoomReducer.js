@@ -71,7 +71,7 @@ export const meetingRoomBookingReducer = (state = {}, action) => {
 export const myMeetingListReducer = (state = { loaded:false, myMeetings: [] }, action) => {
     switch (action.type) {
         case MY_MEETINGS_REQUEST:
-            return { ...state, loadingMyMeetings: true };
+            return { loaded:true,loadingMyMeetings: true };
         case MY_MEETINGS_SUCCESS:
             return { loadingMyMeetings: false, myMeetings: action.payload }
         case MY_MEETINGS_FAIL:

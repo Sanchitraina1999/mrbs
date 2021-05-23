@@ -99,8 +99,8 @@ const getMyMeetings = asyncHandler(async (req, res) => {
                 )
             ))
         ))
-        myMeetings.sort((a, b) => (a.startDateTime > b.startDateTime) ? 1 : ((b.startDateTime > a.startDateTime) ? -1 : 0))
-        { console.log(myMeetings) }
+        // myMeetings.sort((a, b) => (a.startDateTime > b.startDateTime) ? 1 : ((b.startDateTime > a.startDateTime) ? -1 : 0))
+        { console.log(myMeetings, 'myMeetings') }
         res.json(myMeetings)
     }
     else {

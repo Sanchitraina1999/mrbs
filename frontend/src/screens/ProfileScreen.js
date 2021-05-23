@@ -33,10 +33,10 @@ const ProfileScreen = ({ location, history }) => {
     const { meetingRooms } = meetingRoomList
 
     const myMeetingList = useSelector(state => state.myMeetingList)
-    const { loadingMyMeetings, myMeetings } = myMeetingList
+    const { loaded,loadingMyMeetings, myMeetings } = myMeetingList
 
     useEffect(() => {
-        if(!myMeetings)
+        if(!loaded)
             dispatch(getMyMeetings(userInfo._id))
         if (!userInfo || success) {
             dispatch({ type: USER_UPDATE_PROFILE_RESET })
