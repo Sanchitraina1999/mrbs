@@ -57,7 +57,7 @@ export const getAvailablityOfMeetingRoom = (id, startDateTime, endDateTime) => a
                 Authorization: `Bearer ${userInfo.token}`
             }
         }
-        const { data } = await axios.get(
+        const { data } = await axios.post(
             `/api/meetingRooms/availability/${id}`,
             {startDateTime, endDateTime},
              config)

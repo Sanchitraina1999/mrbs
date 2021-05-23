@@ -31,7 +31,7 @@ const getMeetingRoomById = asyncHandler(async (req, res) => {
 })
 
 //@desc  Get meeting room availability by Id
-//@route GET /api/meetingRooms/availability/id
+//@route POST /api/meetingRooms/availability/id
 //@access Public
 const getAvailabilityById = asyncHandler(async (req, res) => {
     const { startDateTime, endDateTime } = req.body
