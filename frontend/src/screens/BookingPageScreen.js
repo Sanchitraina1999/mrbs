@@ -55,28 +55,30 @@ const BookingPageScreen = ({ history, match }) => {
                                 </Col>
                                 <Col md={6}>
                                     {message && <Message variant='danger'>{message}</Message>}
-                                    <Card className='card bg-dark mb-3'>
+                                    <Card className='card bg-dark mb-3 rounded'>
                                         <ListGroup variant='flush'>
                                             <ListGroup.Item>
                                                 <Form onSubmit={submitHandler}>
-                                                    <Form.Group controlId='bookingForm'>
-                                                        <Form.Label>Start Date & Time</Form.Label>
-                                                        <Form.Text className='text-muted'>
-                                                            The Date & Time when your meet starts
-                                                        </Form.Text>
-                                                        <Form.Control type='date' value={startDate} onChange={e => setStartDate(e.target.value)}></Form.Control>
-                                                        <Form.Control type='time' value={startTime} onChange={e => setStartTime(e.target.value)}></Form.Control>
+                                                        <Form.Group controlId='startDate'>
+                                                            <Form.Label>Start Date & Time</Form.Label>
+                                                            <Form.Text className='text-muted'>
+                                                                The Date & Time when your meet starts
+                                                            </Form.Text>
+                                                            <Form.Control type='date' value={startDate} onChange={e => setStartDate(e.target.value)}></Form.Control>
+                                                            <Form.Control type='time' value={startTime} onChange={e => setStartTime(e.target.value)}></Form.Control>
+                                                        </Form.Group>
 
-                                                        <Form.Label>End Date & Time</Form.Label><Form.Text className='text-muted'>
-                                                            The Date & Time when your meet ends
-                                                        </Form.Text>
-                                                        <Form.Control type='date' value={endDate} onChange={e => setEndDate(e.target.value)}></Form.Control>
-                                                        <Form.Control type='time' value={endTime} onChange={e => setEndTime(e.target.value)}></Form.Control>
 
+                                                        <Form.Group controlId='startDate'>
+                                                            <Form.Label>End Date & Time</Form.Label><Form.Text className='text-muted'>
+                                                                The Date & Time when your meet ends
+                                                            </Form.Text>
+                                                            <Form.Control type='date' value={endDate} onChange={e => setEndDate(e.target.value)}></Form.Control>
+                                                            <Form.Control type='time' value={endTime} onChange={e => setEndTime(e.target.value)}></Form.Control>
+                                                        </Form.Group>
                                                         <Button variant='primary' type='submit' className='my -3 py-3'>
                                                             Book Room
                                                         </Button>
-                                                    </Form.Group>
                                                 </Form>
                                             </ListGroup.Item>
                                         </ListGroup>
