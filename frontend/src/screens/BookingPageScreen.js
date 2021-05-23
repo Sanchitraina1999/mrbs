@@ -105,7 +105,7 @@ const BookingPageScreen = ({ history, match }) => {
                                                     </Form.Group>
 
                                                     <Button variant='primary' type='submit' className='my -3 py-3'>
-                                                        {!available ? 'GET AVAIBILITY' : 'BOOK ROOM'}
+                                                        {!available ? 'GET Availability' : 'BOOK ROOM'}
                                                     </Button>
                                                 </Form>
                                             </ListGroup.Item>
