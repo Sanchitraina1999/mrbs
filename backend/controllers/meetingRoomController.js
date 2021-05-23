@@ -84,17 +84,13 @@ const bookMeetingRoom = asyncHandler(async (req, res) => {
 //@access Private
 const getMyMeetings = asyncHandler(async (req, res) => {
     const meetingRooms = await MeetingRoom.find({})
+    {console.log(req.params.id)}
     if (meetingRooms) {
         var myMeetings = []
         {console.log(meetingRooms,'meetingRooms')}
-        meetingRooms.map((room)=>(
-            room.bookedTimes.map((booking)=>(
-                
-            ))
-        ))
-        meetingRooms.map((room) => (
-            room.bookedTimes.map((booking) => (
-                (booking.bookedBy === req.params.id)?(
+        meetingRooms.map((room)=>{
+            room.bookedTimes.map((booking)=>{
+                if(booking.bookedBy === req.params.id){
                     myMeetings.push({
                         room: room._id,
                         roomName: room.roomName,
@@ -102,9 +98,22 @@ const getMyMeetings = asyncHandler(async (req, res) => {
                         endDateTime: booking.endDate,
                         purposeOfBooking: booking.purposeOfBooking
                     })
-                ):(1)
-            ))
-        ))
+                }
+            })
+        })
+        // meetingRooms.map((room) => (
+        //     room.bookedTimes.map((booking) => (
+        //         (booking.bookedBy === req.params.id)?(
+        //             myMeetings.push({
+        //                 room: room._id,
+        //                 roomName: room.roomName,
+        //                 startDateTime: booking.startDate,
+        //                 endDateTime: booking.endDate,
+        //                 purposeOfBooking: booking.purposeOfBooking
+        //             })
+        //         ):(1)
+        //     ))
+        // ))
         // myMeetings.sort((a, b) => (a.startDateTime > b.startDateTime) ? 1 : ((b.startDateTime > a.startDateTime) ? -1 : 0))
         { console.log(myMeetings, 'myMeetings') }
         res.json(myMeetings)
