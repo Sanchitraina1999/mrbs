@@ -1,12 +1,12 @@
-import React, { useEffect } from "react"
-import { Row, Col } from "react-bootstrap"
+import React, { useEffect } from 'react'
+import { Row, Col } from 'react-bootstrap'
 
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch, useSelector } from 'react-redux'
 
-import Feature from "../components/Feature"
-import Loader from "../components/Loader"
-import Message from "../components/Message"
-import { listFeatures } from "../actions/featureActions"
+import Feature from '../components/Feature'
+import Loader from '../components/Loader'
+import Message from '../components/Message'
+import { listFeatures } from '../actions/featureActions'
 
 const LandingPageScreen = ({location, history}) => {
     const dispatch = useDispatch()
