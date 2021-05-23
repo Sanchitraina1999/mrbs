@@ -18,10 +18,11 @@ const BookingPageScreen = ({ history, match }) => {
 
     useEffect(() => {
         dispatch(listMeetingRoomDetails(match.params.id))
-    }, [dispatch, match,meetingRoom])
+    }, [dispatch, match, meetingRoom])
 
     return (
         <>
+            { console.log(meetingRoom) }
             {!userInfo && history.push('/login')}
             <Link className='btn btn-dark my-3' to='/'>
                 Go Back
@@ -30,8 +31,7 @@ const BookingPageScreen = ({ history, match }) => {
                 loading ? <Loader />
                     : error ? (<Message variant='danger'>{error}</Message>)
                         : (
-                            {meetingRoom}
-                            <Row>
+                            < Row >
                                 <Col md={6}>
                                     <Image src={meetingRoom.image} alt={meetingRoom.name} fluid />
                                 </Col>
@@ -45,7 +45,7 @@ const BookingPageScreen = ({ history, match }) => {
                                            {meetingRoom.location.city}
                                         </ListGroup.Item>
                                         <ListGroup.Item>
-                                            For more details:
+                                        For more details:
                                             {`${meetingRoom.pointOfContact.name} ${meetingRoom.pointOfContact.mobile} ${meetingRoom.pointOfContact.email}`}
                                         </ListGroup.Item>
                                     </ListGroup>
@@ -60,8 +60,8 @@ const BookingPageScreen = ({ history, match }) => {
                                     </Card>
                                 </Col>
                             </Row>
-                        )
-            }
+    )
+}
         </>
     )
 }
