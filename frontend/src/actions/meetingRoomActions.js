@@ -139,7 +139,7 @@ export const removeMeeting = (roomId, id) => async (dispatch, getState) => {
                 Authorization: `Bearer ${userInfo.token}`
             }
         }
-        const { data } = await axios.delete(
+        const { data } = await axios.put(
             `/api/meetingRooms/deleteMeeting/${id}`,
             {roomId},
             config
