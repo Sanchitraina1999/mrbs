@@ -74,9 +74,9 @@ const ProfileScreen = ({ location, history }) => {
     }
 
     const deleteCurrent = (roomId, bookedTimeId) => {
-        console.log(roomId,bookedTimeId)
-        dispatch(removeMeeting(roomId,bookedTimeId))
-        dispatch(getMyMeetings(userInfo._id))
+        console.log(roomId, bookedTimeId)
+        dispatch(removeMeeting(roomId, bookedTimeId))
+        setTimeout(dispatch(getMyMeetings(userInfo._id)), 2000)
     }
 
     return (
@@ -132,7 +132,7 @@ const ProfileScreen = ({ location, history }) => {
                                                 Purpose: <br />{item.purposeOfBooking}
                                             </Col>
                                             <Col md={1}>
-                                                <Button onClick={()=>deleteCurrent(item.room, item.id)}><FaTrash /></Button>
+                                                <Button onClick={() => deleteCurrent(item.room, item.id)}><FaTrash /></Button>
                                             </Col>
                                         </Row>
                                     </ListGroup.Item>
