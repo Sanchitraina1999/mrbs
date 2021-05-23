@@ -9,15 +9,13 @@ import { listMeetingRoomDetails } from '../actions/meetingRoomActions'
 const BookingPageScreen = ({ history, match }) => {
 
     const dispatch = useDispatch()
-
     const meetingRoomDetails = useSelector(state => state.meetingRoomDetails)
     const { loading, error, meetingRoom } = meetingRoomDetails
-
     const userLogin = useSelector(state => state.userLogin)
     const { userInfo } = userLogin
-
     useEffect(() => {
-        dispatch(listMeetingRoomDetails(match.params.id))
+        if(userInfo || !Object.keys(meetingRoom).length)
+            dispatch(listMeetingRoomDetails(match.params.id))
     }, [dispatch, match])
 
     return (
