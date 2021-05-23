@@ -43,17 +43,10 @@ const getAvailabilityById = asyncHandler(async (req, res) => {
     const meetingRoom = await MeetingRoom.findById(req.params.id)
     if (meetingRoom) {
         const bookedTimes = meetingRoom.bookedTimes
-        console.log(bookedTimes, 'bookedTimes')
-        console.log(startDateTime, 'startDateTime')
-        console.log(endDateTime, 'endDateTime')
         const isAvailable = bookedTimes.every((time) => {
             return (((startDateTime < time.startDate) && (endDateTime < time.startDate)) || ((startDateTime > time.endDate) && (endDateTime > time.endDate)))
         })
-        console.log(isAvailable, 'isAvailable')
-        if (isAvailable)
-            res.json(true)
-        else
-            res.json(false)
+        res.json(isAvailable)
     }
     else {
         res.status(404)
@@ -119,7 +112,6 @@ const getMyMeetings = asyncHandler(async (req, res) => {
 //@access Private
 const deleteMeeting = asyncHandler(async (req, res) => {
     const { roomId } = req.body
-    console.log(roomId)
     const meetingRoom = await MeetingRoom.findById(roomId)
     if (meetingRoom) {
         meetingRoom.bookedTimes = meetingRoom.bookedTimes.filter((booking) => booking._id != req.params.id)
