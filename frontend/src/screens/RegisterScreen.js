@@ -30,8 +30,10 @@ const RegisterScreen = ({ location, history }) => {
 
     const submitHandler = (e) => {
         e.preventDefault()
-        //DISPATCH LOGIN
-        if (password !== confirmPassword) {
+        var regex = new RegExp(/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/)
+        if(password.length<0)
+            setMessage('Password length should be atleast 8 characters')
+        else if (password !== confirmPassword) {
             setMessage('Passwords do not match')
         }
         else {
