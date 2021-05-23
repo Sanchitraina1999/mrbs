@@ -32,11 +32,11 @@ const BookingPageScreen = ({ history, match }) => {
                     : error ? (<Message variant='danger'>{error}</Message>)
                         : (
                             < Row >
-                                <Col md={6}>
+                                <Col md={5}>
                                     <Image src={meetingRoom.image} alt={meetingRoom.roomName} fluid />
                                 </Col>
                                 <Col md={6}>
-                                    {meetingRoom.roomName}<br/>
+                                    {meetingRoom.roomName}<br />
                                     {meetingRoom.location.address}{', '}
                                     {meetingRoom.location.city}
                                 </Col>
@@ -50,34 +50,36 @@ const BookingPageScreen = ({ history, match }) => {
                                         </ListGroup.Item> */}
                                     </ListGroup>
                                 </Col>
-                                <Card className='card bg-dark mb-3'>
-                                    <ListGroup variant='flush'>
-                                        <ListGroup.Item>
-                                            <Form>
-                                                <Form.Group controlId='bookingForm'>
-                                                    <Form.Label>Start Date & Time</Form.Label>
-                                                    <Form.Control type='date'></Form.Control>
-                                                    <Form.Control type='time'></Form.Control>
-                                                    <Form.Text className='text-muted'>
-                                                        The Date & Time when your meet starts
-                                                        </Form.Text>
-                                                    <Form.Label>End Date & Time</Form.Label>
-                                                    <Form.Control type='date'></Form.Control>
-                                                    <Form.Control type='time'></Form.Control>
-                                                    <Form.Text className='text-muted'>
-                                                        The Date & Time when your meet ends
-                                                        </Form.Text>
-                                                    <Button variant='primary' type='submit'>
-                                                        Book Room
-                                                        </Button>
-                                                </Form.Group>
-                                            </Form>
-                                        </ListGroup.Item>
-                                    </ListGroup>
-                                </Card>
+                                <Col md={6}>
+                                    <Card className='card bg-dark mb-3'>
+                                        <ListGroup variant='flush'>
+                                            <ListGroup.Item>
+                                                <Form>
+                                                    <Form.Group controlId='bookingForm'>
+                                                        <Form.Label>Start Date & Time</Form.Label>
+                                                        <Form.Control type='date'></Form.Control>
+                                                        <Form.Control type='time'></Form.Control>
+                                                        <Form.Text className='text-muted'>
+                                                            The Date & Time when your meet starts
+                                                            </Form.Text>
+                                                        <Form.Label>End Date & Time</Form.Label>
+                                                        <Form.Control type='date'></Form.Control>
+                                                        <Form.Control type='time'></Form.Control>
+                                                        <Form.Text className='text-muted'>
+                                                            The Date & Time when your meet ends
+                                                            </Form.Text>
+                                                        <Button variant='primary' type='submit'>
+                                                            Book Room
+                                                            </Button>
+                                                    </Form.Group>
+                                                </Form>
+                                            </ListGroup.Item>
+                                        </ListGroup>
+                                    </Card>
+                                </Col>
                             </Row>
-    )
-}
+                        )
+            }
         </>
     )
 }
