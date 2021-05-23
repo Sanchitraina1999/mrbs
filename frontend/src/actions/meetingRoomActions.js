@@ -129,7 +129,7 @@ export const getMyMeetings = (id) => async (dispatch, getState) => {
     }
 }
 
-export const removeMeeting = (id) => async (dispatch, getState) => {
+export const removeMeeting = (bookedTimeId) => async (dispatch, getState) => {
     try {
         dispatch({ type: DELETE_MEETING_REQUEST })
         const { userLogin: { userInfo } } = getState()
@@ -139,7 +139,7 @@ export const removeMeeting = (id) => async (dispatch, getState) => {
                 Authorization: `Bearer ${userInfo.token}`
             }
         }
-        const { data } = await axios.get(
+        const { data } = await axios.delete(
             `/api/meetingRooms/myMeetings/${id}`,
             config
         )

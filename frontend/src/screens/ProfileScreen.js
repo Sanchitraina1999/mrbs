@@ -73,9 +73,9 @@ const ProfileScreen = ({ location, history }) => {
         dispatch(getMyMeetings(userInfo._id))
     }
 
-    const deleteCurrent = (e) => {
-        console.log(e)
-        dispatch(removeMeeting(e))
+    const deleteCurrent = (bookedTimeId) => {
+        console.log(bookedTimeId)
+        dispatch(removeMeeting(bookedTimeId))
         dispatch(getMyMeetings(userInfo._id))
     }
 
