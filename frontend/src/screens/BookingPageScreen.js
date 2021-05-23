@@ -13,10 +13,22 @@ const BookingPageScreen = ({ history, match }) => {
     const { loading, error, meetingRoom } = meetingRoomDetails
     const userLogin = useSelector(state => state.userLogin)
     const { userInfo } = userLogin
+
+    const [startDate, setStartDate]= useState()
+    const [startTime, setStartTime]= useState()
+    const [endDate, setEndDate]= useState()
+    const [endTime, setEndTime]= useState()
+    const [message, setMessage] = useState(null)
+
     useEffect(() => {
         if(userInfo || !Object.keys(meetingRoom).length)
             dispatch(listMeetingRoomDetails(match.params.id))
     }, [dispatch, match])
+
+    const submitHandler = (e) => {
+        e.preventDefault();
+        {console.log()}
+    }
 
     return (
         <>
@@ -34,20 +46,21 @@ const BookingPageScreen = ({ history, match }) => {
                                     <Image src={meetingRoom.image} alt={meetingRoom.roomName} fluid />
                                 </Col>
                                 <Col md={6}>
+                                    {message && <Message variant='danger'>{message}</Message>}
                                     <Card className='card bg-dark mb-3'>
                                         <ListGroup variant='flush'>
                                             <ListGroup.Item>
-                                                <Form>
+                                                <Form onSubmit={submitHandler}>
                                                     <Form.Group controlId='bookingForm'>
                                                         <Form.Label>Start Date & Time</Form.Label>
-                                                        <Form.Control type='date'></Form.Control>
-                                                        <Form.Control type='time'></Form.Control>
+                                                        <Form.Control type='date' value={startDate}></Form.Control>
+                                                        <Form.Control type='time' value={startTime}></Form.Control>
                                                         <Form.Text className='text-muted'>
                                                             The Date & Time when your meet starts
                                                             </Form.Text>
                                                         <Form.Label>End Date & Time</Form.Label>
-                                                        <Form.Control type='date'></Form.Control>
-                                                        <Form.Control type='time'></Form.Control>
+                                                        <Form.Control type='date' value={endDate}></Form.Control>
+                                                        <Form.Control type='time' value={endTime}></Form.Control>
                                                         <Form.Text className='text-muted'>
                                                             The Date & Time when your meet ends
                                                             </Form.Text>
