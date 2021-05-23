@@ -8,7 +8,7 @@ import moment from 'moment'
 
 import Loader from '../components/Loader'
 import Message from '../components/Message'
-import { listMeetingRoomDetails, getAvailablityOfMeetingRoom,bookMeetingRoom } from '../actions/meetingRoomActions'
+import { listMeetingRoomDetails, getAvailablityOfMeetingRoom, bookMeetingRoom } from '../actions/meetingRoomActions'
 
 const BookingPageScreen = ({ history, match }) => {
 
@@ -30,9 +30,9 @@ const BookingPageScreen = ({ history, match }) => {
     useEffect(() => {
         if (!Object.keys(meetingRoom).length)
             dispatch(listMeetingRoomDetails(match.params.id))
-        if(!userInfo)
+        if (!userInfo)
             history.push('/login')
-    }, [dispatch, match,userInfo,history,meetingRoom])
+    }, [dispatch, match, userInfo, history, meetingRoom])
 
     const submitHandler = (e) => {
         e.preventDefault()
@@ -47,13 +47,13 @@ const BookingPageScreen = ({ history, match }) => {
         else if (purposeOfBooking.replace(/\s/g, '').length <= 0)
             setMessage('Purpose of Meeting cannot be empty')
         else {
-            if(available){
+            if (available) {
                 dispatch(bookMeetingRoom(match.params.id, startDateTime, endDateTime, userInfo._id, purposeOfBooking))
                 setMessage('Booking successful')
             }
             else {
                 dispatch(getAvailablityOfMeetingRoom(match.params.id, startDateTime, endDateTime))
-                if(available)setMessage('Booking available')
+                if (available) setMessage('Booking available')
                 else setMessage('Booking available')
             }
         }
@@ -116,10 +116,13 @@ const BookingPageScreen = ({ history, match }) => {
                                                         <Form.Label>Purpose of meeting</Form.Label>
                                                         <Form.Control type='text' value={purposeOfBooking} onChange={e => setPurposeOfBooking(e.target.value)}></Form.Control>
                                                     </Form.Group>
-
-                                                    <Button variant='primary' type='submit' className='my -3 py-3'>
-                                                        {!available ? 'GET Availability' : 'BOOK ROOM'}
-                                                    </Button>
+                                                    {available ? (
+                                                        <Button variant='primary' type='submit' className='my -3 py-3'>
+                                                            GET availability
+                                                        </Button>) : (
+                                                        <Button variant='primary' type='submit' className='my -3 py-3'>
+                                                            BOOK ROOM
+                                                        </Button>)}
                                                 </Form>
                                             </ListGroup.Item>
                                         </ListGroup>
