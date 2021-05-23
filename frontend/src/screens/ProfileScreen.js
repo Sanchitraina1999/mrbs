@@ -92,6 +92,7 @@ const ProfileScreen = ({ location, history }) => {
                     <Button type='submit' variant='primary'>Update Details</Button>
                 </Form>
             </Col>
+            <Col md={9}>
             {
                 meetingRooms.map((room) => (
                     room.bookedTimes.map((booking) => (
@@ -108,7 +109,6 @@ const ProfileScreen = ({ location, history }) => {
                 ))
             }
             {console.log(myMeetings)}
-            <Col md={9}>
                 <h2>My Meetings</h2>
                 {myMeetings.length === 0 ? <Message>You have no scheduled meetings!</Message> : (
                     <ListGroup variant='flush'>
@@ -132,7 +132,7 @@ const ProfileScreen = ({ location, history }) => {
                             </Row>
                         </ListGroup.Item>
                     ))}
-                )}
+                )}</ListGroup>
             </Col>
         </Row>
     )
