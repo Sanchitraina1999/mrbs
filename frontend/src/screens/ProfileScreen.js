@@ -126,19 +126,19 @@ const ProfileScreen = ({ location, history }) => {
                                 <Row>
                                     <Col md={2}>
                                         <Link to={`/meetingRooms/${item.room}`}>
-                                            Room Name: {item.roomName}
+                                            Room Name: <br/>{item.roomName}
                                         </Link>
                                     </Col>
                                     <Col md={3}>
-                                        Start Date: <br/>{item.startDateTime.split('T')[0]}{', '}<br/>
+                                        Start Date: <br/>{item.startDateTime.split('T')[0]}<br/>
                                         Start Time: <br/>{item.startDateTime.split('T')[1]}
                                     </Col>
                                     <Col md={3}>
-                                        End Date: <br/>{item.endDateTime.split('T')[0]}{', '}<br/>
+                                        End Date: <br/>{item.endDateTime.split('T')[0]}<br/>
                                         End Time: <br/>{item.endDateTime.split('T')[1]}
                                     </Col>
                                     <Col md={2}>
-                                        Purpose: {item.purposeOfBooking}
+                                        Purpose: <br/>{item.purposeOfBooking}
                                     </Col>
                                     <Col md={1}>
                                         <Button><FaEdit /></Button>
