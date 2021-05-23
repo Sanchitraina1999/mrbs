@@ -122,7 +122,7 @@ const deleteMeeting = asyncHandler(async (req, res) => {
     if (meetingRooms) {
         meetingRooms.map((room) => {
             room.bookedTimes = room.bookedTimes.filter((booking) => {
-                booking._id !== req.params.id
+                booking._id != req.params.id
             })
         })
         {console.log(meetingRooms)}
