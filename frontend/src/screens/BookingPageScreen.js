@@ -41,14 +41,12 @@ const BookingPageScreen = ({ history, match }) => {
                                     {meetingRoom.location.city}
                                 </Col>
                                 <Col md={6}>
-                                    <ListGroup variant='flush'>
-                                        {/* <ListGroup.Item className='text-info'>
-                                            For more details:<br />
-                                            {meetingRoom.pointOfContact.name}{','}<br />
-                                            <a href={`tel: ${meetingRoom.pointOfContact.mobile}`}>{meetingRoom.pointOfContact.mobile}{','}</a><br />
-                                            <a href={`mailto:${meetingRoom.pointOfContact.email}`}>{meetingRoom.pointOfContact.email}</a><br />
-                                        </ListGroup.Item> */}
-                                    </ListGroup>
+                                    <p className='text-info'>
+                                        For more details:<br />
+                                        {meetingRoom.pointOfContact.name}{','}<br />
+                                        <a href={`tel: ${meetingRoom.pointOfContact.mobile}`}>{meetingRoom.pointOfContact.mobile}{','}</a><br />
+                                        <a href={`mailto:${meetingRoom.pointOfContact.email}`}>{meetingRoom.pointOfContact.email}</a><br />
+                                    </p>
                                 </Col>
                                 <Col md={6}>
                                     <Card className='card bg-dark mb-3'>
