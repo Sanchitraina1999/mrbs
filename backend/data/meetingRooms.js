@@ -13,7 +13,7 @@ const meetingrooms = [
         },
         bookedTimes: [
             {
-                startDate: 'Sat, 22 May 2021 08:54:22 GMT',
+                startDate: '2021-5-22T08:54',
                 endDate: 'Sat, 22 May 2021 08:54:22 GMT',
                 bookedBy: '60a87d34068c169b2810942b',
                 purposeOfBooking: 'AI conference'
