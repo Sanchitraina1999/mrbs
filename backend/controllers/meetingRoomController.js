@@ -118,6 +118,7 @@ const getMyMeetings = asyncHandler(async (req, res) => {
 //@route DELETE /api/meetingRooms/deleteMeeting/:id
 //@access Private
 const deleteMeeting = asyncHandler(async (req, res) => {
+    const {roomId} = req.body
     const meetingRooms = await MeetingRoom.find({})
     if (meetingRooms) {
         meetingRooms.map((room) => {
