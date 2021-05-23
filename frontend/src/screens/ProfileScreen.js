@@ -121,15 +121,15 @@ const ProfileScreen = ({ location, history }) => {
                                         </Link>
                                     </Col>
                                     <Col md={2}>
-                                        Start Date:{item.startDateTime}{', '}
-                                        Start Time: {item.startDateTime}
+                                        Start Date:{item.startDateTime.split('T')[0]}{', '}
+                                        Start Time: {item.startDateTime.split('T')[1]}
                                     </Col>
                                     <Col md={2}>
-                                        End Date:{item.endDateTime}{', '}
-                                        End Time: {item.endDateTime}
+                                        End Date:{item.endDateTime.split('T')[0]}{', '}
+                                        End Time: {item.endDateTime.split('T')[1]}
                                     </Col>
                                     <Col md={2}>
-                                        {item.purposeOfBooking}
+                                        Purpose: {item.purposeOfBooking}
                                     </Col>
                                 </Row>
                             </ListGroup.Item>
