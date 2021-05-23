@@ -48,7 +48,7 @@ const BookingPageScreen = ({ history, match }) => {
                                             For more details:<br/>
                                             {meetingRoom.pointOfContact.name}{','}<br/>
                                             {meetingRoom.pointOfContact.mobile}{','}<br/>
-                                            {meetingRoom.pointOfContact.email}{','}<br/>                                        
+                                            <a href={`mailto:${meetingRoom.pointOfContact.email}`}>{meetingRoom.pointOfContact.email}</a>{','}<br/>                                        
                                         </ListGroup.Item>
                                     </ListGroup>
                                     <Card className='card bg-dark mb-3'>
