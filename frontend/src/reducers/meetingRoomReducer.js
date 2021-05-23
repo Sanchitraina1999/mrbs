@@ -39,7 +39,7 @@ export const meetingRoomDetailsReducer = (state = { meetingRoom: { } }, action) 
     }
 }
 
-export const meetingRoomAvailableReducer = (state = { available: false }, action) => {
+export const meetingRoomAvailableReducer = (state = { }, action) => {
     switch (action.type) {
         case MEETING_ROOM_AVAILABILITY_REQUEST:
             return { ...state };
