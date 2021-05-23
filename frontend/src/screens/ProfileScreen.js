@@ -36,8 +36,8 @@ const ProfileScreen = ({ location, history }) => {
     const { loaded, loadingMyMeetings, myMeetings } = myMeetingList
 
     useEffect(() => {
-        if(!myMeetings)
-        dispatch(getMyMeetings(userInfo._id))
+        if (!myMeetings)
+            dispatch(getMyMeetings(userInfo._id))
         if (!userInfo || success) {
             dispatch({ type: USER_UPDATE_PROFILE_RESET })
             history.push('/login')
@@ -71,6 +71,14 @@ const ProfileScreen = ({ location, history }) => {
     const retryHandler = (e) => {
         e.preventDefault()
         dispatch(getMyMeetings(userInfo._id))
+    }
+
+    const editCurrent = (e) => {
+        e.preventDefault()
+    }
+
+    const deleteCurrent = (e) => {
+        e.preventDefault()
     }
 
     return (
