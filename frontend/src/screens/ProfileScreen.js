@@ -32,7 +32,6 @@ const ProfileScreen = ({ location, history }) => {
     const meetingRoomList = useSelector(state => state.meetingRoomList)
     const { meetingRooms } = meetingRoomList
 
-    var c
     var myMeetings = []
 
     useEffect(() => {
@@ -43,6 +42,20 @@ const ProfileScreen = ({ location, history }) => {
         else {
             if (!meetingRooms || meetingRooms.length === 0)
                 dispatch(listMeetingRooms())
+            {
+                meetingRooms.map((room) => (
+                    room.bookedTimes.map((booking) => (
+                        (booking.bookedBy === userInfo._id) ? (
+                                myMeetings.push({
+                                roomName: room.roomName,
+                                startDateTime: booking.startDate,
+                                endDateTime: booking.endDate,
+                                purposeOfBooking: booking.purposeOfBooking
+                            })
+                        ) : null
+                    ))
+                ))
+            }
             if (!user.username) {
                 dispatch(getUserDetails('profile'))
             }
@@ -95,20 +108,6 @@ const ProfileScreen = ({ location, history }) => {
                 </Form>
             </Col>
             <Col md={9}>
-                {
-                    meetingRooms.map((room) => (
-                        room.bookedTimes.map((booking) => (
-                            (booking.bookedBy === userInfo._id) ? (
-                                 c = myMeetings.push({
-                                    roomName: room.roomName,
-                                    startDateTime: booking.startDate,
-                                    endDateTime: booking.endDate,
-                                    purposeOfBooking: booking.purposeOfBooking
-                                })
-                            ) : null
-                        ))
-                    ))
-                }
                 <h2>My Meetings</h2>
                 {myMeetings.length === 0 ? <Message>You have no scheduled meetings!</Message> : (
                     <ListGroup variant='flush'>
