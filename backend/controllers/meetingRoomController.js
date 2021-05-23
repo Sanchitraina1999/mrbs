@@ -101,20 +101,7 @@ const getMyMeetings = asyncHandler(async (req, res) => {
                 }
             })
         })
-        // meetingRooms.map((room) => (
-        //     room.bookedTimes.map((booking) => (
-        //         (booking.bookedBy === req.params.id)?(
-        //             myMeetings.push({
-        //                 room: room._id,
-        //                 roomName: room.roomName,
-        //                 startDateTime: booking.startDate,
-        //                 endDateTime: booking.endDate,
-        //                 purposeOfBooking: booking.purposeOfBooking
-        //             })
-        //         ):(1)
-        //     ))
-        // ))
-        // myMeetings.sort((a, b) => (a.startDateTime > b.startDateTime) ? 1 : ((b.startDateTime > a.startDateTime) ? -1 : 0))
+        myMeetings.sort((a, b) => (a.startDateTime > b.startDateTime) ? 1 : ((b.startDateTime > a.startDateTime) ? -1 : 0))
         { console.log(myMeetings, 'myMeetings') }
         res.json(myMeetings)
     }
