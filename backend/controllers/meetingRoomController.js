@@ -38,7 +38,14 @@ const getMeetingRoomById = asyncHandler(async (req, res) => {
     const {startDateTime, endDateTime} = req.body
     const meetingRoom = await MeetingRoom.findById(req.params.id)
     if (meetingRoom) {
-        res.json(meetingRoom)
+        const bookedTimes = meetingRoom.bookedTimes
+        const isAvailable = bookedTimes.every((time)=>{
+            return ((startDateTime<time.startDate && endDateTime<time.startDate) || (startDateTime>time.endDate && endDateTime>time.endDate))
+        })
+        if(isAvailable)
+            res.json(true)
+        else
+            res.json(false)
     }
     else {
         res.status(404)
