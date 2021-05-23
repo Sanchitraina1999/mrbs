@@ -10,7 +10,8 @@ const MeetingRoom = ({ room }) => {
                     <Card.Img src={room.image} variant='top'></Card.Img>
                     <Card.Body>
                         <Card.Title as='div'><strong>{room.roomName}</strong></Card.Title>
-                        <Card.Subtitle className='mb-2 text-muted'>{`${room.location.address}, ${room.location.city}`}</Card.Subtitle>
+                        <Card.Subtitle className='mb-2 text-muted'>{`${room.location.address}, `}</Card.Subtitle>
+                        <Card.Subtitle className='mb-2 text-muted'>{`${room.location.city} `}</Card.Subtitle>
                         <Card className='py-2 rounded'>
                             <Card.Text className='ml-4 text-muted'>Point of Contact</Card.Text>
                             <Card.Body>
