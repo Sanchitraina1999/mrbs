@@ -18,6 +18,7 @@ const BookingPageScreen = ({ history, match }) => {
     const [startTime, setStartTime] = useState('')
     const [endDate, setEndDate] = useState('')
     const [endTime, setEndTime] = useState('')
+    const [purposeOfBooking, setPurposeOfBooking] = useState('Enter purpose of booking')
     const [message, setMessage] = useState(null)
 
     useEffect(() => {
