@@ -45,10 +45,10 @@ const BookingPageScreen = ({ history, match }) => {
                                            {meetingRoom.location.city}
                                         </ListGroup.Item>
                                         <ListGroup.Item className='text-info'>
-                                            For more details:
-                                            <p>{meetingRoom.pointOfContact.name}{','}</p>
-                                            <p>{meetingRoom.pointOfContact.mobile}{','}</p>
-                                            <p>{meetingRoom.pointOfContact.email}{','}</p>                                        
+                                            For more details:<br/>
+                                            {meetingRoom.pointOfContact.name}{','}<br/>
+                                            {meetingRoom.pointOfContact.mobile}{','}<br/>
+                                            {meetingRoom.pointOfContact.email}{','}<br/>                                        
                                         </ListGroup.Item>
                                     </ListGroup>
                                     <Card className='card bg-dark mb-3'>
