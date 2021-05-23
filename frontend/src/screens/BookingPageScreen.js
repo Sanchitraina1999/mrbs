@@ -47,7 +47,7 @@ const BookingPageScreen = ({ history, match }) => {
         if (startDateTime <= currentDateTime)
             setMessage('Booking can only be made 30 minutes prior to current Time')
         else if (endDateTime < startDateTime)
-            setMessage('End Time can not be before Start Time')
+            setMessage('End Date/Time can not be before Start Date/Time')
         else if (purposeOfBooking.replace(/\s/g, '').length <= 0)
             setMessage('Purpose of Meeting cannot be empty')
         else {
