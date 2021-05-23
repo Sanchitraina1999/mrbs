@@ -31,14 +31,14 @@ const RegisterScreen = ({ location, history }) => {
     const submitHandler = (e) => {
         e.preventDefault()
         var regex = new RegExp(/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/)
-        if(password.length<0)
+        if(!regex.test(email))
+            setMessage('Invalid format for email')
+        else if(password.length<0)
             setMessage('Password length should be atleast 8 characters')
-        else if (password !== confirmPassword) {
+        else if (password !== confirmPassword)
             setMessage('Passwords do not match')
-        }
-        else {
+        else
             dispatch(register(username, email, password))
-        }
     }
 
     const resetHandler = (e) => {
