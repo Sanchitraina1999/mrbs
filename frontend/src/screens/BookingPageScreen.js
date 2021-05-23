@@ -120,8 +120,7 @@ const BookingPageScreen = ({ history, match }) => {
                                                         <Form.Label>Purpose of meeting</Form.Label>
                                                         <Form.Control type='text' value={purposeOfBooking} onChange={e => setPurposeOfBooking(e.target.value)}></Form.Control>
                                                     </Form.Group>
-                                                    {console.log(bookingAvailable)}
-                                                    {bookingAvailable ? (
+                                                    {!bookingAvailable ? (
                                                         <Button variant='primary' type='submit' className='my -3 py-3'>
                                                             GET availability
                                                         </Button>) : (
