@@ -70,7 +70,8 @@ const bookMeetingRoom = asyncHandler(async (req, res) => {
             bookedBy: userid,
             purposeOfBooking
         })
-        await meetingRoom.save()
+        const updatedMeetingRoom = await meetingRoom.save()
+        res.json(updatedMeetingRoom)
     }
     else {
         res.status(404)

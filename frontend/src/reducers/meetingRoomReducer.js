@@ -57,7 +57,7 @@ export const meetingRoomBookingReducer = (state = { }, action) => {
         case MEETING_ROOM_BOOKING_REQUEST:
             return { ...state };
         case MEETING_ROOM_BOOKING_SUCCESS:
-            return { success: true }
+            return { success: true, updatedMeetingRoom: action.payload}
         case MEETING_ROOM_BOOKING_FAIL:
             return { error: action.payload}
         default:
