@@ -75,7 +75,7 @@ const ProfileScreen = ({ location, history }) => {
 
     const editCurrent = (e) => {
         e.preventDefault()
-        console.log('edit current',e)
+        console.log(editCurrent.caller.arguments[0].target.id)
     }
 
     const deleteCurrent = (e) => {
