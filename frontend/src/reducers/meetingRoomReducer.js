@@ -26,7 +26,7 @@ export const meetingRoomReducer = (state = { meetingRooms: [] }, action) => {
     }
 }
 
-export const meetingRoomDetailsReducer = (state = { meetingRoom: { } }, action) => {
+export const meetingRoomDetailsReducer = (state = { meetingRoom: {} }, action) => {
     switch (action.type) {
         case MEETING_ROOM_DETAILS_REQUEST:
             return { loading: true, ...state };
@@ -39,27 +39,40 @@ export const meetingRoomDetailsReducer = (state = { meetingRoom: { } }, action) 
     }
 }
 
-export const meetingRoomAvailableReducer = (state = { }, action) => {
+export const meetingRoomAvailableReducer = (state = {}, action) => {
     switch (action.type) {
         case MEETING_ROOM_AVAILABILITY_REQUEST:
             return { ...state, loadingAvailability: true };
         case MEETING_ROOM_AVAILABILITY_SUCCESS:
             return { loadingAvailability: false, available: action.payload }
         case MEETING_ROOM_AVAILABILITY_FAIL:
-            return { }
+            return {}
         default:
             return state;
     }
 }
 
-export const meetingRoomBookingReducer = (state = { }, action) => {
+export const meetingRoomBookingReducer = (state = {}, action) => {
     switch (action.type) {
         case MEETING_ROOM_BOOKING_REQUEST:
             return { ...state };
         case MEETING_ROOM_BOOKING_SUCCESS:
-            return { success: true, updatedMeetingRoom: action.payload}
+            return { success: true, updatedMeetingRoom: action.payload }
         case MEETING_ROOM_BOOKING_FAIL:
-            return { error: action.payload}
+            return { error: action.payload }
+        default:
+            return state;
+    }
+}
+
+export const meetingRoomBookingReducer = (state = { myMeetings: [] }, action) => {
+    switch (action.type) {
+        case MEETING_ROOM_BOOKING_REQUEST:
+            return { ...state, loadingMyMeetings: true };
+        case MEETING_ROOM_BOOKING_SUCCESS:
+            return { loadingMyMeetings: false, myMeetings: action.payload }
+        case MEETING_ROOM_BOOKING_FAIL:
+            return { error: action.payload }
         default:
             return state;
     }

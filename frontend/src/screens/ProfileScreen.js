@@ -33,7 +33,7 @@ const ProfileScreen = ({ location, history }) => {
     const { meetingRooms } = meetingRoomList
 
     const mymeetingList = useSelector(state => state.mymeetingList)
-    const { myMeetings } = mymeetingList
+    const { loadingMyMeetings, myMeetings } = mymeetingList
 
     // var myMeetings = []
 
