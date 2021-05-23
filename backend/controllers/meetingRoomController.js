@@ -42,6 +42,7 @@ const getAvailabilityById = asyncHandler(async (req, res) => {
         const isAvailable = bookedTimes.every((time)=>{
             return ((startDateTime<time.startDate && endDateTime<time.startDate) || (startDateTime>time.endDate && endDateTime>time.endDate))
         })
+        console.log(isAvailable)
         if(isAvailable)
             res.json(true)
         else
