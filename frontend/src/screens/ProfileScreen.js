@@ -119,7 +119,7 @@ const ProfileScreen = ({ location, history }) => {
                         {myMeetings.map((item, index) => (
                             <ListGroup.Item key={index}>
                                 <Row>
-                                    <Col md={3}>
+                                    <Col md={2}>
                                         <Link to={`/meetingRooms/${item.room}`}>
                                             Room Name: {item.roomName}
                                         </Link>
@@ -132,7 +132,7 @@ const ProfileScreen = ({ location, history }) => {
                                         End Date:{item.endDateTime.split('T')[0]}{', '}
                                         End Time: {item.endDateTime.split('T')[1]}
                                     </Col>
-                                    <Col md={3}>
+                                    <Col md={2}>
                                         Purpose: {item.purposeOfBooking}
                                     </Col>
                                     <Col md={1}>
