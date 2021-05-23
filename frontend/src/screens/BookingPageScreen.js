@@ -3,9 +3,14 @@ import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { Form, Row, Col, Image, ListGroup, Card, Button } from 'react-bootstrap'
 import { FaAngleLeft } from 'react-icons/fa'
+
+import moment from 'moment'
+
 import Loader from '../components/Loader'
 import Message from '../components/Message'
 import { listMeetingRoomDetails } from '../actions/meetingRoomActions'
+
+moment().format()
 
 const BookingPageScreen = ({ history, match }) => {
 
@@ -29,7 +34,7 @@ const BookingPageScreen = ({ history, match }) => {
 
     const submitHandler = (e) => {
         e.preventDefault();
-        const currentDateTime = Date.now()
+        const currentDateTime = new Date
         { console.log(currentDateTime) }
         { console.log(startDate + startTime) }
         { console.log(endDate + endTime) }
