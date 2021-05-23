@@ -34,6 +34,7 @@ const getMeetingRoomById = asyncHandler(async (req, res) => {
 //@route GET /api/meetingRooms/availability/:id
 //@access Private
 const getAvailabilityById = asyncHandler(async (req, res) => {
+    console.log(req.params.id)
     const {startDateTime, endDateTime} = req.body
     const meetingRoom = await MeetingRoom.findById(req.params.id)
     if (meetingRoom) {
