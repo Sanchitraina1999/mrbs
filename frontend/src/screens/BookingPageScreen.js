@@ -47,7 +47,7 @@ const BookingPageScreen = ({ history, match }) => {
                                         <ListGroup.Item className='text-info'>
                                             For more details:<br/>
                                             {meetingRoom.pointOfContact.name}{','}<br/>
-                                            {meetingRoom.pointOfContact.mobile}{','}<br/>
+                                            <a href={`tel: ${meetingRoom.pointOfContact.mobile}`}>{meetingRoom.pointOfContact.mobile}{','}</a><br/>
                                             <a href={`mailto:${meetingRoom.pointOfContact.email}`}>{meetingRoom.pointOfContact.email}</a>{','}<br/>                                        
                                         </ListGroup.Item>
                                     </ListGroup>
