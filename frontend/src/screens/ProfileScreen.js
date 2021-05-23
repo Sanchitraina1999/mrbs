@@ -3,7 +3,7 @@ import { Form, Button, Row, Col, ListGroup } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { ToastContainer, toast } from 'react-toastify'
 import { Link } from 'react-router-dom'
-import { FaTrash, FaEdit } from 'react-icons/fa'
+import { FaTrash } from 'react-icons/fa'
 
 import Message from '../components/Message'
 import Loader from '../components/Loader'
@@ -33,7 +33,7 @@ const ProfileScreen = ({ location, history }) => {
     const { meetingRooms } = meetingRoomList
 
     const myMeetingList = useSelector(state => state.myMeetingList)
-    const { loaded, loadingMyMeetings, myMeetings } = myMeetingList
+    const { loadingMyMeetings, myMeetings } = myMeetingList
 
     useEffect(() => {
         if (!myMeetings)
