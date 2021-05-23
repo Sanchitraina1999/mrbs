@@ -2,6 +2,10 @@ import asyncHandler from 'express-async-handler'
 import MeetingRoom from '../models/meetingRoomModel.js'
 import generateToken from '../utils/generateTokens.js'
 
+import moment from 'moment'
+
+const today = moment(new Date()).format('yyyy-MM-DD[T]HH:mm')
+
 //@desc get all meeting rooms
 //@route GET /api/meetingRooms
 //@access Private
@@ -101,6 +105,7 @@ const getMyMeetings = asyncHandler(async (req, res) => {
             })
         })
         myMeetings.sort((a, b) => (a.startDateTime > b.startDateTime) ? 1 : ((b.startDateTime > a.startDateTime) ? -1 : 0))
+        console.log(today, 'today')
         res.json(myMeetings)
     }
     else {
