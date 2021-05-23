@@ -32,6 +32,7 @@ const ProfileScreen = ({ location, history }) => {
     const meetingRoomList = useSelector(state => state.meetingRoomList)
     const { meetingRooms } = meetingRoomList
 
+    var c
     var myMeetings = []
 
     useEffect(() => {
@@ -98,7 +99,7 @@ const ProfileScreen = ({ location, history }) => {
                     meetingRooms.map((room) => (
                         room.bookedTimes.map((booking) => (
                             (booking.bookedBy === userInfo._id) ? (
-                                myMeetings.push({
+                                 c = myMeetings.push({
                                     roomName: room.roomName,
                                     startDateTime: booking.startDate,
                                     endDateTime: booking.endDate,
