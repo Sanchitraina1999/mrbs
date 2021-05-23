@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Form, Button, Row, Col } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
@@ -20,9 +20,9 @@ const ForgotPasswordScreen = ({ location, history }) => {
     useEffect(() => {
         if (userExists) {
             setMessage(`Hi, ${userExists.username} ! An e-mail has been sent to ${userExists.email}`)
-            setTimeout(() =>{
+            setTimeout(() => {
                 setMessage('')
-            },5000)
+            }, 5000)
         }
     }, [history, userExists]);
 
