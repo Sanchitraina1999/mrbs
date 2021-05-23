@@ -28,6 +28,8 @@ const BookingPageScreen = ({ history, match }) => {
     const [purposeOfBooking, setPurposeOfBooking] = useState('')
     const [message, setMessage] = useState(null)
 
+    const [avaible,setAvavaible] = useState(false)
+
     useEffect(() => {
         if (userInfo || !Object.keys(meetingRoom).length)
             dispatch(listMeetingRoomDetails(match.params.id))
@@ -36,6 +38,7 @@ const BookingPageScreen = ({ history, match }) => {
     const submitHandler = (e) => {
         e.preventDefault()
         setMessage(null)
+        setAvaible(false)
         var currentDateTime = moment(moment(new Date()).add(30,'m')).format('yyyy-MM-DD[T]hh:mm')
         var startDateTime = startDate+"T"+startTime
         var endDateTime = endDate+"T"+endTime
@@ -102,7 +105,7 @@ const BookingPageScreen = ({ history, match }) => {
                                                     </Form.Group>
 
                                                     <Button variant='primary' type='submit' className='my -3 py-3'>
-                                                        Get Availability
+                                                        {avaible?'GET AVAIBILITY':'BOOK ROOM'}
                                                     </Button>
                                                 </Form>
                                             </ListGroup.Item>
