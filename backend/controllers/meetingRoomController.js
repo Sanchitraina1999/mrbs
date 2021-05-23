@@ -120,7 +120,9 @@ const getMyMeetings = asyncHandler(async (req, res) => {
 const deleteMeeting = asyncHandler(async (req, res) => {
     const {roomId} = req.body
     const meetingRooms = await MeetingRoom.findById(roomId)
-    res.json(meetingRooms)
+    const bookedTimes = await meetingRooms.bookedTimes
+    console.log(req.params.id)
+    res.json(bookedTimes)
     if (meetingRooms) {
         // meetingRooms.map((room) => {
         //     room.bookedTimes = room.bookedTimes.filter((booking) => {
