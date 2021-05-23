@@ -34,17 +34,18 @@ const getMeetingRoomById = asyncHandler(async (req, res) => {
 //@route GET /api/meetingRooms/availability/id
 //@access Public
 const getAvailabilityById = asyncHandler(async (req, res) => {
-    const {startDateTime, endDateTime} = req.body
+    const { startDateTime, endDateTime } = req.body
     const meetingRoom = await MeetingRoom.findById(req.params.id)
     if (meetingRoom) {
         const bookedTimes = meetingRoom.bookedTimes
-        console.log(bookedTimes,'bookedTimes')
-        console.log(startDateTime, endDateTime)
-        const isAvailable = bookedTimes.every((time)=>{
-            return ( ((startDateTime<time.startDate) && (endDateTime<time.startDate)) || ((startDateTime>time.endDate) && (endDateTime>time.endDate)) )
+        console.log(bookedTimes, 'bookedTimes')
+        console.log(startDateTime, 'startDateTime')
+        console.log(endDateTime, 'endDateTime')
+        const isAvailable = bookedTimes.every((time) => {
+            return (((startDateTime < time.startDate) && (endDateTime < time.startDate)) || ((startDateTime > time.endDate) && (endDateTime > time.endDate)))
         })
-        console.log(isAvailable,'isAvailable')
-        if(isAvailable)
+        console.log(isAvailable, 'isAvailable')
+        if (isAvailable)
             res.json(true)
         else
             res.json(false)
@@ -55,4 +56,4 @@ const getAvailabilityById = asyncHandler(async (req, res) => {
     }
 })
 
-export { getMeetingRooms, getMeetingRoomById,getAvailabilityById }
+export { getMeetingRooms, getMeetingRoomById, getAvailabilityById }
