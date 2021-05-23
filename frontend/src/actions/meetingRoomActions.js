@@ -83,11 +83,16 @@ export const bookMeetingRoom = (id, startDateTime, endDateTime, userid, purposeO
         }
         const { data } = await axios.put(
             `/api/meetingRooms/book/${id}`,
-            {startDateTime, endDateTime},
+            {startDateTime, endDateTime, userid, purposeOfBooking},
              config)
         dispatch({ type: MEETING_ROOM_BOOKING_SUCCESS, payload: data })
     }
     catch (error) {
-        dispatch({ type: MEETING_ROOM_BOOKING_FAIL, payload: error.response && error.response.data.message ? error.response.data.message : error.message })
+        dispatch({ 
+            type: MEETING_ROOM_BOOKING_FAIL, 
+            payload: 
+                error.response && error.response.data.message ? 
+                error.response.data.message : error.message 
+        })
     }
 }
