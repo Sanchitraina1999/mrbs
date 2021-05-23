@@ -17,8 +17,8 @@ const meetingRoomSchema = mongoose.Schema({
     },
     bookedTimes: [
         {
-            startDate: { type: Date, required: true },
-            endDate: { type: Date, required: true },
+            startDate: { type: moment(Date).format('yyyy-MM-DD[T]hh:mm'), required: true },
+            endDate: { type: moment(Date).format('yyyy-MM-DD[T]hh:mm'), required: true },
             bookedBy: { type: mongoose.Schema.Types.ObjectId, required: true, ref: 'User' },
             purposeOfBooking: {type: String, required: true}
         }
