@@ -51,7 +51,6 @@ export const getAvailablityOfMeetingRoom = (id, startDateTime, endDateTime) => a
     try {
         dispatch({ type: MEETING_ROOM_AVAILABILITY_REQUEST })
         const { userLogin: { userInfo } } = getState()
-        {console.log(`Bearer ${userInfo.token}`,"userInfo")}
         const config = {
             headers: {
                 'Content-Type': 'application/json',
