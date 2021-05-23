@@ -39,7 +39,7 @@ const BookingPageScreen = ({ history, match }) => {
         <>
             {!userInfo && history.push('/login')}
             <Link className='btn btn-dark my-3' to='/'>
-                Go Back
+                <WiDirectionLeft/>
             </Link>
             {
                 loading ? <Loader />
