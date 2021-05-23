@@ -69,6 +69,10 @@ const ProfileScreen = ({ location, history }) => {
         myMeetings.push(obj)
     }
 
+    const SORT = () => {
+        myMeetings.sort((a, b) => (a.startDateTime > b.startDateTime) ? 1 : ((b.startDateTime > a.startDateTime) ? -1 : 0))
+    }
+
     return (
         <Row>
             <Col md={3}>
@@ -113,7 +117,7 @@ const ProfileScreen = ({ location, history }) => {
                         ))
                     ))
                 }
-                {myMeetings.sort((a, b) => (a.startDateTime > b.startDateTime) ? 1 : ((b.startDateTime > a.startDateTime) ? -1 : 0))}
+                {SORT()}
                 <h2>My Meetings</h2>
                 {myMeetings.length === 0 ? <Message>You have no scheduled meetings!</Message> : (
                     <ListGroup variant='flush'>
@@ -144,7 +148,8 @@ const ProfileScreen = ({ location, history }) => {
                                     </Col>
                                 </Row>
                             </ListGroup.Item>
-                        ))}</ListGroup>
+                        ))}
+                    </ListGroup>
                 )}
             </Col>
         </Row>
