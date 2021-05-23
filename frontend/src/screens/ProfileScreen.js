@@ -3,7 +3,13 @@ import { Form, Button, Row, Col, ListGroup } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { ToastContainer, toast } from 'react-toastify'
 import { Link } from 'react-router-dom'
-import moment from 'moment'
+import { FcDeleteDatabase, AiOutlineEdit } from 'react-icons/fa'
+
+class Question extends React.Component {
+    render() {
+        return <h3> Lets go for a <FaBeer />? </h3>
+    }
+} '
 
 import Message from '../components/Message'
 import Loader from '../components/Loader'
