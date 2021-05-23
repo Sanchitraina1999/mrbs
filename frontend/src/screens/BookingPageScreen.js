@@ -18,7 +18,7 @@ const BookingPageScreen = ({ history, match }) => {
     const meetingRoomDetails = useSelector(state => state.meetingRoomDetails)
     const { loading, error, meetingRoom } = meetingRoomDetails
     const meetingRoomAvailable = useSelector(state => state.meetingRoomAvailable)
-    const { available } = meetingRoomAvailable
+    const { loadingAvailability, available } = meetingRoomAvailable
 
     const [startDate, setStartDate] = useState(moment(moment(new Date()).add(40, 'm')).format('yyyy-MM-DD'))
     const [startTime, setStartTime] = useState(moment(moment(new Date()).add(40, 'm')).format('HH:mm'))
