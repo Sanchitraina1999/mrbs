@@ -83,3 +83,16 @@ export const myMeetingListReducer = (state = { loaded:false, myMeetings: [] }, a
             return state;
     }
 }
+
+export const deleteMeetingReducer = (state = { }, action) => {
+    switch (action.type) {
+        case DELETE_MEETING_REQUEST:
+            return { };
+        case DELETE_MEETING_SUCCESS:
+            return { deleteMeeting: false }
+        case DELETE_MEETING_FAIL:
+            return { error: action.payload }
+        default:
+            return state;
+    }
+}
