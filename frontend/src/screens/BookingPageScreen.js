@@ -14,10 +14,10 @@ const BookingPageScreen = ({ history, match }) => {
     const userLogin = useSelector(state => state.userLogin)
     const { userInfo } = userLogin
 
-    const [startDate, setStartDate] = useState(Date.now())
-    const [startTime, setStartTime] = useState()
-    const [endDate, setEndDate] = useState(Date.now())
-    const [endTime, setEndTime] = useState()
+    const [startDate, setStartDate] = useState('')
+    const [startTime, setStartTime] = useState('')
+    const [endDate, setEndDate] = useState('')
+    const [endTime, setEndTime] = useState('')
     const [message, setMessage] = useState(null)
 
     useEffect(() => {
@@ -27,7 +27,7 @@ const BookingPageScreen = ({ history, match }) => {
 
     const submitHandler = (e) => {
         e.preventDefault();
-        { console.log() }
+        { console.log(startDate) }
     }
 
     return (
