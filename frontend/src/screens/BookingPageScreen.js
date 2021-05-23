@@ -58,9 +58,17 @@ const BookingPageScreen = ({ history, match }) => {
                                                     <Form.Group controlId='bookingForm'>
                                                         <Form.Label>Start Date & Time</Form.Label>
                                                         <Form.Control type='date'></Form.Control>
-                                                        <Form.Text className="text-muted">
-                                                            We'll never share your email with anyone else.
+                                                        <Form.Text className='text-muted'>
+                                                            The Date & Time when your meet starts
                                                         </Form.Text>
+                                                        <Form.Label>End Date & Time</Form.Label>
+                                                        <Form.Control type='date'></Form.Control>
+                                                        <Form.Text className='text-muted'>
+                                                            The Date & Time when your meet ends
+                                                        </Form.Text>
+                                                        <Button variant='primary' type='submit'>
+                                                            Book Room
+                                                        </Button>
                                                     </Form.Group>
                                                 </Form>
                                             </ListGroup.Item>
