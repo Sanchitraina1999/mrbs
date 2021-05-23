@@ -9,9 +9,6 @@ import moment from 'moment'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
 import { listMeetingRoomDetails } from '../actions/meetingRoomActions'
-import { set } from 'mongoose'
-
-moment().format()
 
 const BookingPageScreen = ({ history, match }) => {
 
