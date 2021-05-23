@@ -22,7 +22,7 @@ const BookingPageScreen = ({ history, match }) => {
 
     return (
         <>
-            { console.log(meetingRoom.) }
+            { console.log(meetingRoom) }
             {!userInfo && history.push('/login')}
             <Link className='btn btn-dark my-3' to='/'>
                 Go Back
@@ -33,7 +33,7 @@ const BookingPageScreen = ({ history, match }) => {
                         : (
                             < Row >
                                 <Col md={6}>
-                                    <Image src={meetingRoom.image} alt={meetingRoom.name} fluid />
+                                    <Image src={meetingRoom.image} alt={meetingRoom.roomName} fluid />
                                 </Col>
                                 <Col md={6}>
                                     <ListGroup variant='flush'>
