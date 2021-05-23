@@ -98,7 +98,7 @@ const getMyMeetings = asyncHandler(async (req, res) => {
                         endDateTime: booking.endDate,
                         purposeOfBooking: booking.purposeOfBooking
                     })
-                ):({...})
+                ):{...}
             ))
         ))
         myMeetings.sort((a, b) => (a.startDateTime > b.startDateTime) ? 1 : ((b.startDateTime > a.startDateTime) ? -1 : 0))
