@@ -68,6 +68,11 @@ const ProfileScreen = ({ location, history }) => {
         }
     }
 
+    const retryHandler = (e) => {
+        e.preventDefault()
+        dispatch(getMyMeetings(userInfo._id))
+    }
+
     return (
         <>
             {(loading || loadingMyMeetings) ? <Loader /> : (
@@ -99,7 +104,7 @@ const ProfileScreen = ({ location, history }) => {
                     </Col>
                     <Col md={9}>
                         <h2>My Meetings</h2>
-                        {myMeetings.length === 0 ? <Message>You have no scheduled meetings!</Message> : (
+                        {myMeetings.length === 0 ? <Message>You have no scheduled meetings!<a onClick={retryHandler}>retry?</a></Message> : (
                             <ListGroup variant='flush'>
                                 {myMeetings.map((item, index) => (
                                     <ListGroup.Item key={index}>
