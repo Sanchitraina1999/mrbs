@@ -14,20 +14,20 @@ const BookingPageScreen = ({ history, match }) => {
     const userLogin = useSelector(state => state.userLogin)
     const { userInfo } = userLogin
 
-    const [startDate, setStartDate]= useState(Date.now())
-    const [startTime, setStartTime]= useState()
-    const [endDate, setEndDate]= useState(Date.now())
-    const [endTime, setEndTime]= useState()
+    const [startDate, setStartDate] = useState(Date.now())
+    const [startTime, setStartTime] = useState()
+    const [endDate, setEndDate] = useState(Date.now())
+    const [endTime, setEndTime] = useState()
     const [message, setMessage] = useState(null)
 
     useEffect(() => {
-        if(userInfo || !Object.keys(meetingRoom).length)
+        if (userInfo || !Object.keys(meetingRoom).length)
             dispatch(listMeetingRoomDetails(match.params.id))
     }, [dispatch, match])
 
     const submitHandler = (e) => {
         e.preventDefault();
-        {console.log()}
+        { console.log() }
     }
 
     return (
@@ -53,18 +53,19 @@ const BookingPageScreen = ({ history, match }) => {
                                                 <Form onSubmit={submitHandler}>
                                                     <Form.Group controlId='bookingForm'>
                                                         <Form.Label>Start Date & Time</Form.Label>
-                                                        <Form.Control type='date' value={startDate} onChange={e => setStartDate(e.target.value)}></Form.Control>
-                                                        <Form.Control type='time' value={startTime} onChange={e => setStartTime(e.target.value)}></Form.Control>
                                                         <Form.Text className='text-muted'>
                                                             The Date & Time when your meet starts
-                                                            </Form.Text>
-                                                        <Form.Label>End Date & Time</Form.Label>
+                                                        </Form.Text>
+                                                        <Form.Control type='date' value={startDate} onChange={e => setStartDate(e.target.value)}></Form.Control>
+                                                        <Form.Control type='time' value={startTime} onChange={e => setStartTime(e.target.value)}></Form.Control>
+
+                                                        <Form.Label>End Date & Time</Form.Label><Form.Text className='text-muted'>
+                                                            The Date & Time when your meet ends
+                                                        </Form.Text>
                                                         <Form.Control type='date' value={endDate} onChange={e => setEndDate(e.target.value)}></Form.Control>
                                                         <Form.Control type='time' value={endTime} onChange={e => setEndTime(e.target.value)}></Form.Control>
-                                                        <Form.Text className='text-muted'>
-                                                            The Date & Time when your meet ends
-                                                            </Form.Text>
-                                                        <Button variant='primary' type='submit'>
+
+                                                        <Button variant='primary' type='submit' className='my -3 py-3'>
                                                             Book Room
                                                             </Button>
                                                     </Form.Group>
