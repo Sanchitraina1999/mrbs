@@ -94,7 +94,7 @@ const ProfileScreen = ({ location, history }) => {
             <Col md={9}>
                 <ListGroup variant='flush'>
                     <h2>My Meetings</h2>
-                    {
+                    {meetingRooms && (
                         meetingRooms.map((room)=>(
                             room.bookedTimes.map((booking)=>(
                                 (booking.bookedBy === userInfo._id)&&(
@@ -106,7 +106,7 @@ const ProfileScreen = ({ location, history }) => {
                                     })
                                 )
                             ))
-                        ))
+                        )))
                     }
                     {console.log(myMeetings)}
                 </ListGroup>
