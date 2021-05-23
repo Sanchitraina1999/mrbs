@@ -81,10 +81,10 @@ const BookingPageScreen = ({ history, match }) => {
                                             <ListGroup.Item>
                                                 <Form onSubmit={submitHandler}>
                                                     <Form.Group controlId='startDateTime'>
-                                                            <Form.Label>Start Date & Time</Form.Label>
-                                                            <Form.Text className='text-muted'>
-                                                                The Date & Time when your meet starts
-                                                            </Form.Text>
+                                                        <Form.Label>Start Date & Time</Form.Label>
+                                                        <Form.Text className='text-muted'>
+                                                            The Date & Time when your meet starts
+                                                        </Form.Text>
                                                         <Form.Group controlId='startDate'>
                                                             <Form.Control type='date' value={startDate} onChange={e => setStartDate(e.target.value)}></Form.Control>
                                                         </Form.Group>
@@ -98,9 +98,13 @@ const BookingPageScreen = ({ history, match }) => {
                                                         <Form.Label>End Date & Time</Form.Label>
                                                         <Form.Text className='text-muted'>
                                                             The Date & Time when your meet ends
-                                                            </Form.Text>
-                                                        <Form.Control type='date' value={endDate} onChange={e => setEndDate(e.target.value)}></Form.Control>
-                                                        <Form.Control type='time' value={endTime} onChange={e => setEndTime(e.target.value)}></Form.Control>
+                                                        </Form.Text>
+                                                        <Form.Group controlId='startDate'>
+                                                            <Form.Control type='date' value={endDate} onChange={e => setEndDate(e.target.value)}></Form.Control>
+                                                        </Form.Group>
+                                                        <Form.Group controlId='startTime'>
+                                                            <Form.Control type='time' value={endTime} onChange={e => setEndTime(e.target.value)}></Form.Control>
+                                                        </Form.Group>
                                                     </Form.Group>
 
                                                     <Form.Group controlId='purposeOfBooking'>
