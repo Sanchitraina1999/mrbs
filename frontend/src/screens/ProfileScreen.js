@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Form, Button, Row, Col, ListGroup } from 'react-bootstrap'
+import { Form, Button, Row, Col, ListGroup, ListGroupItem } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { ToastContainer, toast } from 'react-toastify'
 
@@ -38,7 +38,7 @@ const ProfileScreen = ({ location, history }) => {
             history.push('/login')
         }
         else {
-            if(!meetingRooms||meetingRooms.length===0)
+            if (!meetingRooms || meetingRooms.length === 0)
                 dispatch(listMeetingRooms())
             if (!user.username) {
                 dispatch(getUserDetails('profile'))
@@ -91,25 +91,48 @@ const ProfileScreen = ({ location, history }) => {
                     <Button type='submit' variant='primary'>Update Details</Button>
                 </Form>
             </Col>
+            {
+                meetingRooms.map((room) => (
+                    room.bookedTimes.map((booking) => (
+                        (booking.bookedBy === userInfo._id) ? (
+                            myMeetings.push({
+                                room: room._id,
+                                roomName: room.roomName,
+                                startDateTime: booking.startDate,
+                                endDateTime: booking.endDate,
+                                purposeOfBooking: booking.purposeOfBooking
+                            })
+                        ) : null
+                    ))
+                ))
+            }
+            {console.log(myMeetings)}
             <Col md={9}>
-                <ListGroup variant='flush'>
-                    <h2>My Meetings</h2>
-                    {
-                        meetingRooms.map((room)=>(
-                            room.bookedTimes.map((booking)=>(
-                                (booking.bookedBy === userInfo._id)?(
-                                    myMeetings.push({
-                                        roomName: room.roomName,
-                                        startDateTime: booking.startDate,
-                                        endDateTime: booking.endDate,
-                                        purposeOfBooking: booking.purposeOfBooking
-                                    })
-                                ):null
-                            ))
-                        ))
-                    }
-                    {console.log(myMeetings)}
+                <h2>My Meetings</h2>
+                {myMeetings.length === 0 ? <Message>You have no scheduled meetings!</Message> : (
+                    <ListGroup variant='flush'>
+                    {myMeetings.map((item, index) => (
+                        <ListGroup.Item key={index}>
+                            <Row>
+                                <Col md={1}>
+                                    <Link to={`/meetingRooms/${item.room}`}>
+                                        {item.roomName}
+                                    </Link>
+                                </Col>
+                                <Col md={1}>
+                                    {item.startDateTime}
+                                </Col>
+                                <Col md={1}>
+                                    {item.endDateTime}
+                                </Col>
+                                <Col md={1}>
+                                    {item.purposeOfBooking}
+                                </Col>
+                            </Row>
+                        </ListGroup.Item>
+                    ))}
                 </ListGroup>
+                )}
             </Col>
         </Row>
     )
