@@ -122,12 +122,12 @@ const deleteMeeting = asyncHandler(async (req, res) => {
     console.log(roomId)
     const meetingRooms = await MeetingRoom.find({})
     if (meetingRooms) {
-        meetingRooms.map((room) => {
-            room.bookedTimes = room.bookedTimes.filter((booking) => {
-                booking._id != req.params.id
-            })
-        })
-        {console.log(meetingRooms)}
+        // meetingRooms.map((room) => {
+        //     room.bookedTimes = room.bookedTimes.filter((booking) => {
+        //         booking._id != req.params.id
+        //     })
+        // })
+        // {console.log(meetingRooms)}
         // const updatedMeetingRooms = await meetingRooms.save()
         // {console.log(updatedMeetingRooms)}
         // res.json(updatedMeetingRooms)
