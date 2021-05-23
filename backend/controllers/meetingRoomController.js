@@ -32,6 +32,33 @@ const getMeetingRoomById = asyncHandler(async (req, res) => {
 
 //@desc  Get meeting room availability by Id
 //@route POST /api/meetingRooms/availability/id
+//@access Private
+const getAvailabilityById = asyncHandler(async (req, res) => {
+    const { startDateTime, endDateTime } = req.body
+    
+    const meetingRoom = await MeetingRoom.findById(req.params.id)
+    if (meetingRoom) {
+        const bookedTimes = meetingRoom.bookedTimes
+        console.log(bookedTimes, 'bookedTimes')
+        console.log(startDateTime, 'startDateTime')
+        console.log(endDateTime, 'endDateTime')
+        const isAvailable = bookedTimes.every((time) => {
+            return (((startDateTime < time.startDate) && (endDateTime < time.startDate)) || ((startDateTime > time.endDate) && (endDateTime > time.endDate)))
+        })
+        console.log(isAvailable, 'isAvailable')
+        if (isAvailable)
+            res.json(true)
+        else
+            res.json(false)
+    }
+    else {
+        res.status(404)
+        throw new Error('Cannot get meeting room')
+    }
+})
+
+//@desc  Get meeting room availability by Id
+//@route POST /api/meetingRooms/availability/id
 //@access Public
 const getAvailabilityById = asyncHandler(async (req, res) => {
     const { startDateTime, endDateTime } = req.body
