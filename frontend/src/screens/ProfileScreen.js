@@ -102,7 +102,7 @@ const ProfileScreen = ({ location, history }) => {
                                         roomName: room.roomName,
                                         startDateTime: booking.startDate,
                                         endDateTime: booking.endDate,
-                                        purposeOfBooking: room.purposeOfBooking
+                                        purposeOfBooking: booking.purposeOfBooking
                                     })
                                 ):null
                             ))
