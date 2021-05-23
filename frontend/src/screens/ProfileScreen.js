@@ -30,6 +30,8 @@ const ProfileScreen = ({ location, history }) => {
     const meetingRoomList = useSelector(state => state.meetingRoomList)
     const { meetingRooms } = meetingRoomList
 
+    var myMeetings = []
+
     useEffect(() => {
         if (!userInfo || success) {
             dispatch({ type: USER_UPDATE_PROFILE_RESET })
@@ -92,6 +94,21 @@ const ProfileScreen = ({ location, history }) => {
             <Col md={9}>
                 <ListGroup variant='flush'>
                     <h2>My Meetings</h2>
+                    {
+                        meetingRooms.map((room)=>(
+                            room.bookedTimes.map((booking)=>(
+                                (booking.bookedBy === userInfo._id)&&(
+                                    myMeetings.push({
+                                        roomName: room.roomName,
+                                        startDateTime: booking.startDate,
+                                        endDateTime: booking.endDate,
+                                        purposeOfBooking: room.purposeOfBooking
+                                    })
+                                )
+                            ))
+                        ))
+                        {console.log(myMeetings)}
+                    }
                 </ListGroup>
             </Col>
         </Row>
