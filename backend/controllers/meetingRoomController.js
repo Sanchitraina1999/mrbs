@@ -121,17 +121,12 @@ const getMyMeetings = asyncHandler(async (req, res) => {
 const deleteMeeting = asyncHandler(async (req, res) => {
     const meetingRooms = await MeetingRoom.find({})
     if (meetingRooms) {
-        var myMeetings = []
         meetingRooms.map((room) => {
-            room.bookedTimes.map((booking) => {
-                if (booking.bookedBy == req.params.id) {
-                    
-                }
+            room.bookedTimes.filter((booking) => {
+                booking._id == req.params.id
             })
         })
-        myMeetings.sort((a, b) => (a.startDateTime > b.startDateTime) ? 1 : ((b.startDateTime > a.startDateTime) ? -1 : 0))
-        myMeetings=myMeetings.filter((meets)=> meets.endDateTime > today)
-        res.json(myMeetings)
+        res.json(meetingRooms)
     }
     else {
         res.status(404)
