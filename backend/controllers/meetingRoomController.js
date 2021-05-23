@@ -105,7 +105,7 @@ const getMyMeetings = asyncHandler(async (req, res) => {
             })
         })
         myMeetings.sort((a, b) => (a.startDateTime > b.startDateTime) ? 1 : ((b.startDateTime > a.startDateTime) ? -1 : 0))
-        myMeetings=myMeetings.filter((meets)=> meets.endDateTime > today)
+        myMeetings = myMeetings.filter((meets) => meets.endDateTime > today)
         res.json(myMeetings)
     }
     else {
@@ -118,7 +118,7 @@ const getMyMeetings = asyncHandler(async (req, res) => {
 //@route DELETE /api/meetingRooms/deleteMeeting/:id
 //@access Private
 const deleteMeeting = asyncHandler(async (req, res) => {
-    const {roomId} = req.body
+    const { roomId } = req.body
     const meetingRooms = await MeetingRoom.findById(roomId)
     const bookedTimes = await meetingRooms.bookedTimes
     console.log(req.params.id)
