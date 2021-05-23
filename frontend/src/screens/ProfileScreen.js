@@ -26,12 +26,16 @@ const ProfileScreen = ({ location, history }) => {
     const userUpdateProfile = useSelector(state => state.userUpdateProfile)
     const { success } = userUpdateProfile
 
+    const meetingRoomList = useSelector(state => state.meetingRoomList)
+    const { meetingRooms } = meetingRoomList
+
     useEffect(() => {
         if (!userInfo || success) {
             dispatch({ type: USER_UPDATE_PROFILE_RESET })
             history.push('/login')
         }
         else {
+            if(!meetingRooms.length)
             if (!user.username) {
                 dispatch(getUserDetails('profile'))
             }
