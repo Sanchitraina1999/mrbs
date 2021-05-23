@@ -13,7 +13,10 @@ import {
     MEETING_ROOM_BOOKING_FAIL,
     MY_MEETINGS_REQUEST,
     MY_MEETINGS_SUCCESS,
-    MY_MEETINGS_FAIL
+    MY_MEETINGS_FAIL,
+    DELETE_MEETING_REQUEST,
+    DELETE_MEETING_SUCCESS,
+    DELETE_MEETING_FAIL
 } from '../constants/meetingRoomConstants'
 
 export const meetingRoomReducer = (state = { meetingRooms: [] }, action) => {
