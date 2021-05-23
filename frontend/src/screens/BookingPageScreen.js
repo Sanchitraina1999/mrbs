@@ -48,7 +48,6 @@ const BookingPageScreen = ({ history, match }) => {
             // { console.log(currentDateTime) }
             // { console.log(startDateTime) }
             // { console.log(endDateTime) }
-            {console.log(match.params.id)}
             dispatch(getAvailablityOfMeetingRoom(match.params.id, startDateTime, endDateTime))
         }
     }
