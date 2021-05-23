@@ -45,7 +45,7 @@ const BookingPageScreen = ({ history, match }) => {
         else if (purposeOfBooking.replace(/\s/g, '').length <= 0)
             setMessage('Purpose of Meeting cannot be empty')
         else {
-            dispatch(getAvailablityOfMeetingRoom(meetingRoom._id, startDateTime, endDateTime))
+            dispatch(getAvailablityOfMeetingRoom(match.params.id, startDateTime, endDateTime))
         }
         // { console.log(currentDateTime) }
         // { console.log(startDateTime) }
