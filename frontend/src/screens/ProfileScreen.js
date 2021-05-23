@@ -113,6 +113,7 @@ const ProfileScreen = ({ location, history }) => {
                         ))
                     ))
                 }
+                {myMeetings.sort((a, b) => (a.startDateTime > b.startDateTime) ? 1 : ((b.startDateTime > a.startDateTime) ? -1 : 0))}
                 <h2>My Meetings</h2>
                 {myMeetings.length === 0 ? <Message>You have no scheduled meetings!</Message> : (
                     <ListGroup variant='flush'>
@@ -136,10 +137,10 @@ const ProfileScreen = ({ location, history }) => {
                                         Purpose: {item.purposeOfBooking}
                                     </Col>
                                     <Col md={1}>
-                                        <Button><FaEdit/></Button>
+                                        <Button><FaEdit /></Button>
                                     </Col>
                                     <Col md={1}>
-                                        <Button><FaTrash/></Button>
+                                        <Button><FaTrash /></Button>
                                     </Col>
                                 </Row>
                             </ListGroup.Item>
