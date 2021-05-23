@@ -57,8 +57,8 @@ const BookingPageScreen = ({ history, match }) => {
             }
             else {
                 dispatch(getAvailablityOfMeetingRoom(match.params.id, startDateTime, endDateTime))
-                if (available) setMessage('Booking available')
-                else setMessage('Booking available')
+                if (available) setBookingAvailable(true)
+                else setBookingAvailable(false)
             }
         }
     }
@@ -120,7 +120,7 @@ const BookingPageScreen = ({ history, match }) => {
                                                         <Form.Label>Purpose of meeting</Form.Label>
                                                         <Form.Control type='text' value={purposeOfBooking} onChange={e => setPurposeOfBooking(e.target.value)}></Form.Control>
                                                     </Form.Group>
-                                                    {available ? (
+                                                    {bookingAvailable ? (
                                                         <Button variant='primary' type='submit' className='my -3 py-3'>
                                                             GET availability
                                                         </Button>) : (
