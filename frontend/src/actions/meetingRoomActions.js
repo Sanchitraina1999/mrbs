@@ -35,7 +35,7 @@ export const listMeetingRooms = () => async (dispatch, getState) => {
     }
 }
 
-export const listMeetingRoomDetails = (id) => async (dispatch,getState) => {
+export const listMeetingRoomDetails = (id) => async (dispatch, getState) => {
     try {
         dispatch({ type: MEETING_ROOM_DETAILS_REQUEST })
         const { userLogin: { userInfo } } = getState()
@@ -53,7 +53,7 @@ export const listMeetingRoomDetails = (id) => async (dispatch,getState) => {
     }
 }
 
-export const getAvailablityOfMeetingRoom = (id, startDateTime, endDateTime) => async (dispatch,getState) => {
+export const getAvailablityOfMeetingRoom = (id, startDateTime, endDateTime) => async (dispatch, getState) => {
     try {
         dispatch({ type: MEETING_ROOM_AVAILABILITY_REQUEST })
         const { userLogin: { userInfo } } = getState()
@@ -65,8 +65,8 @@ export const getAvailablityOfMeetingRoom = (id, startDateTime, endDateTime) => a
         }
         const { data } = await axios.post(
             `/api/meetingRooms/availability/${id}`,
-            {startDateTime, endDateTime},
-             config)
+            { startDateTime, endDateTime },
+            config)
         dispatch({ type: MEETING_ROOM_AVAILABILITY_SUCCESS, payload: data })
     }
     catch (error) {
@@ -74,7 +74,7 @@ export const getAvailablityOfMeetingRoom = (id, startDateTime, endDateTime) => a
     }
 }
 
-export const bookMeetingRoom = (id, startDateTime, endDateTime, userid, purposeOfBooking) => async (dispatch,getState) => {
+export const bookMeetingRoom = (id, startDateTime, endDateTime, userid, purposeOfBooking) => async (dispatch, getState) => {
     try {
         dispatch({ type: MEETING_ROOM_BOOKING_REQUEST })
         const { userLogin: { userInfo } } = getState()
@@ -86,21 +86,21 @@ export const bookMeetingRoom = (id, startDateTime, endDateTime, userid, purposeO
         }
         const { data } = await axios.put(
             `/api/meetingRooms/book/${id}`,
-            {startDateTime, endDateTime, userid, purposeOfBooking},
-             config)
+            { startDateTime, endDateTime, userid, purposeOfBooking },
+            config)
         dispatch({ type: MEETING_ROOM_BOOKING_SUCCESS, payload: data })
     }
     catch (error) {
-        dispatch({ 
-            type: MEETING_ROOM_BOOKING_FAIL, 
-            payload: 
-                error.response && error.response.data.message ? 
-                error.response.data.message : error.message 
+        dispatch({
+            type: MEETING_ROOM_BOOKING_FAIL,
+            payload:
+                error.response && error.response.data.message ?
+                    error.response.data.message : error.message
         })
     }
 }
 
-export const getMyMeetings = (id) => async (dispatch,getState) => {
+export const getMyMeetings = (id) => async (dispatch, getState) => {
     try {
         dispatch({ type: MY_MEETINGS_REQUEST })
         const { userLogin: { userInfo } } = getState()
@@ -112,15 +112,16 @@ export const getMyMeetings = (id) => async (dispatch,getState) => {
         }
         const { data } = await axios.get(
             `/api/meetingRooms/myMeetings/${id}`,
-             config)
+            config
+        )
         dispatch({ type: MY_MEETINGS_SUCCESS, payload: data })
     }
     catch (error) {
-        dispatch({ 
-            type: MY_MEETINGS_FAIL, 
-            payload: 
-                error.response && error.response.data.message ? 
-                error.response.data.message : error.message 
+        dispatch({
+            type: MY_MEETINGS_FAIL,
+            payload:
+                error.response && error.response.data.message ?
+                    error.response.data.message : error.message
         })
     }
 }
