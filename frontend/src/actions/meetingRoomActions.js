@@ -57,7 +57,7 @@ export const getAvailablityOfMeetingRoom = () => async (dispatch,getState) => {
                 Authorization: `Bearer ${userInfo.token}`
             }
         }
-        const { data } = await axios.get(`/api/meetingRooms/`, config)
+        const { data } = await axios.get(`/api/meetingRooms/${id}`, config)
         dispatch({ type: MEETING_ROOM_AVAILABILITY_SUCCESS, payload: data })
     }
     catch (error) {

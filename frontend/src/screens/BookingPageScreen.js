@@ -8,7 +8,7 @@ import moment from 'moment'
 
 import Loader from '../components/Loader'
 import Message from '../components/Message'
-import { listMeetingRoomDetails,getAvailablityOfMeetingRoom } from '../actions/meetingRoomActions'
+import { listMeetingRoomDetails, getAvailablityOfMeetingRoom } from '../actions/meetingRoomActions'
 
 const BookingPageScreen = ({ history, match }) => {
 
@@ -16,7 +16,7 @@ const BookingPageScreen = ({ history, match }) => {
     const userLogin = useSelector(state => state.userLogin)
     const { userInfo } = userLogin
     const meetingRoomDetails = useSelector(state => state.meetingRoomDetails)
-    const { loading, error, meetingRoom } = meetingRoomDetails  
+    const { loading, error, meetingRoom } = meetingRoomDetails
     const meetingRoomAvailable = useSelector(state => state.meetingRoomAvailable)
     const { available } = meetingRoomAvailable
 
@@ -44,9 +44,9 @@ const BookingPageScreen = ({ history, match }) => {
             setMessage('End Time can not be before Start Time')
         else if (purposeOfBooking.replace(/\s/g, '').length <= 0)
             setMessage('Purpose of Meeting cannot be empty')
-        else{
+        else {
             dispatch(listMeetingRoomDetails(match.params.id))
-            dispatch(getAvailablityOfMeetingRoom(meetingRoom._id))
+            dispatch(getAvailablityOfMeetingRoom(meetingRoom._id, startDateTime, endDateTime))
         }
         { console.log(currentDateTime) }
         { console.log(startDateTime) }
