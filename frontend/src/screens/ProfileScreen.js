@@ -36,7 +36,7 @@ const ProfileScreen = ({ location, history }) => {
     const { loaded,loadingMyMeetings, myMeetings } = myMeetingList
 
     useEffect(() => {
-        if(!myMeetings||!loaded)
+        if(!myMeetings)
             dispatch(getMyMeetings(userInfo._id))
         if (!userInfo || success) {
             dispatch({ type: USER_UPDATE_PROFILE_RESET })
@@ -53,7 +53,7 @@ const ProfileScreen = ({ location, history }) => {
                 setEmail(user.email)
             }
         }
-    }, [user, dispatch, history, userInfo, success, myMeetings,loaded])
+    }, [user, dispatch, history, userInfo, success, myMeetings])
 
     const submitHandler = (e) => {
         e.preventDefault()
