@@ -68,7 +68,7 @@ export const meetingRoomBookingReducer = (state = {}, action) => {
     }
 }
 
-export const myMeetingListReducer = (state = { myMeetings: [] }, action) => {
+export const myMeetingListReducer = (state = { loadingMyMeetings:false, myMeetings: [] }, action) => {
     switch (action.type) {
         case MY_MEETINGS_REQUEST:
             return { ...state, loadingMyMeetings: true };
