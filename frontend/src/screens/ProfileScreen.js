@@ -75,7 +75,6 @@ const ProfileScreen = ({ location, history }) => {
 
     const editCurrent = (e) => {
         e.preventDefault()
-        console.log(editCurrent.caller.arguments[0].target.id)
     }
 
     const deleteCurrent = (e) => {
@@ -136,10 +135,10 @@ const ProfileScreen = ({ location, history }) => {
                                                 Purpose: <br />{item.purposeOfBooking}
                                             </Col>
                                             <Col md={1}>
-                                                <Button onClick={editCurrent} id={item.id}><FaEdit /></Button>
+                                                <Button onClick={editCurrent(item.id)}><FaEdit /></Button>
                                             </Col>
                                             <Col md={1}>
-                                                <Button onClick={deleteCurrent} id={item.id}><FaTrash /></Button>
+                                                <Button onClick={deleteCurrent(item.id)}><FaTrash /></Button>
                                             </Col>
                                         </Row>
                                     </ListGroup.Item>
