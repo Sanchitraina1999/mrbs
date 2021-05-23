@@ -74,11 +74,10 @@ const ProfileScreen = ({ location, history }) => {
     }
 
     const editCurrent = (e) => {
-        e.preventDefault()
+        console.log(e)
     }
 
     const deleteCurrent = (e) => {
-        e.preventDefault()
         console.log('delete current',e)
     }
 
