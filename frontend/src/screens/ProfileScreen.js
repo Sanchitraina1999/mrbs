@@ -98,7 +98,7 @@ const ProfileScreen = ({ location, history }) => {
                 </Form>
             </Col>
             <Col md={9}>
-                <>{
+                {
                     meetingRooms.map((room) => (
                         room.bookedTimes.map((booking) => (
                             (booking.bookedBy === userInfo._id) ? (
@@ -111,7 +111,7 @@ const ProfileScreen = ({ location, history }) => {
                             ) : null
                         ))
                     ))
-                }</>
+                }
                 <h2>My Meetings</h2>
                 {myMeetings.length === 0 ? <Message>You have no scheduled meetings!</Message> : (
                     <ListGroup variant='flush'>
