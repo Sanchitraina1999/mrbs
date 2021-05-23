@@ -119,8 +119,8 @@ const getMyMeetings = asyncHandler(async (req, res) => {
 //@access Private
 const deleteMeeting = asyncHandler(async (req, res) => {
     const {roomId} = req.body
-    console.log(roomId)
-    const meetingRooms = await MeetingRoom.find({})
+    const meetingRooms = await MeetingRoom.findById(roomId)
+    res.json(meetingRooms)
     if (meetingRooms) {
         // meetingRooms.map((room) => {
         //     room.bookedTimes = room.bookedTimes.filter((booking) => {
