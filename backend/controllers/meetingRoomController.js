@@ -122,18 +122,10 @@ const deleteMeeting = asyncHandler(async (req, res) => {
     const meetingRooms = await MeetingRoom.find({})
     if (meetingRooms) {
         var myMeetings = []
-        { console.log(meetingRooms, 'meetingRooms') }
         meetingRooms.map((room) => {
             room.bookedTimes.map((booking) => {
                 if (booking.bookedBy == req.params.id) {
-                    myMeetings.push({
-                        id: booking._id,
-                        room: room._id,
-                        roomName: room.roomName,
-                        startDateTime: booking.startDate,
-                        endDateTime: booking.endDate,
-                        purposeOfBooking: booking.purposeOfBooking
-                    })
+                    
                 }
             })
         })
