@@ -134,10 +134,10 @@ const ProfileScreen = ({ location, history }) => {
                                                 Purpose: <br />{item.purposeOfBooking}
                                             </Col>
                                             <Col md={1}>
-                                                <Button onClick={editCurrent(item.id)}><FaEdit /></Button>
+                                                <Button onClick={()=>editCurrent(item.id)}><FaEdit /></Button>
                                             </Col>
                                             <Col md={1}>
-                                                <Button onClick={deleteCurrent(item.id)}><FaTrash /></Button>
+                                                <Button onClick={()=>deleteCurrent(item.id)}><FaTrash /></Button>
                                             </Col>
                                         </Row>
                                     </ListGroup.Item>
