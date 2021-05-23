@@ -97,18 +97,17 @@ const ProfileScreen = ({ location, history }) => {
                     {
                         meetingRooms.map((room)=>(
                             room.bookedTimes.map((booking)=>(
-                                (booking.bookedBy === userInfo._id)&&(
+                                (booking.bookedBy === userInfo._id)?(
                                     myMeetings.push({
                                         roomName: room.roomName,
                                         startDateTime: booking.startDate,
                                         endDateTime: booking.endDate,
                                         purposeOfBooking: room.purposeOfBooking
                                     })
-                                )
+                                ):null
                             ))
                         ))
                     }
-                    {console.log(myMeetings.length)}
                     {console.log(myMeetings)}
                 </ListGroup>
             </Col>
