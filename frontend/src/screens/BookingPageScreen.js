@@ -30,7 +30,7 @@ const BookingPageScreen = ({ history, match }) => {
     useEffect(() => {
         if (userInfo || !Object.keys(meetingRoom).length)
             dispatch(listMeetingRoomDetails(match.params.id))
-    }, [dispatch, match])
+    }, [dispatch, match,userInfo])
 
     const submitHandler = (e) => {
         e.preventDefault()
