@@ -32,3 +32,16 @@ export const meetingRoomDetailsReducer = (state = { meetingRoom: { } }, action) 
             return state;
     }
 }
+
+export const meetingRoomAvailableReducer = (state = { available: false }, action) => {
+    switch (action.type) {
+        case MEETING_ROOM_DETAILS_REQUEST:
+            return { loading: true, ...state };
+        case MEETING_ROOM_DETAILS_SUCCESS:
+            return { loading: false, meetingRoom: action.payload }
+        case MEETING_ROOM_DETAILS_FAIL:
+            return { loading: false, error: action.payload }
+        default:
+            return state;
+    }
+}
