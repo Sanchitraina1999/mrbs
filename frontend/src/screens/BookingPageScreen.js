@@ -20,7 +20,7 @@ const BookingPageScreen = ({ history, match }) => {
     const userLogin = useSelector(state => state.userLogin)
     const { userInfo } = userLogin
 
-    const [startDate, setStartDate] = useState(moment(new Date()).format())
+    const [startDate, setStartDate] = useState(moment(new Date()).format('yyyy-MM-DD'))
     const [startTime, setStartTime] = useState('')
     const [endDate, setEndDate] = useState('')
     const [endTime, setEndTime] = useState('')
@@ -34,11 +34,13 @@ const BookingPageScreen = ({ history, match }) => {
 
     const submitHandler = (e) => {
         e.preventDefault();
-        var currentDateTime = new Date()
+        var currentDateTime = moment(new Date()).format()
+        var startDateTime = moment(new Date()).format()
+        var endDateTime = moment(new Date()).format()
         currentDateTime = moment(currentDateTime).format()
         { console.log(currentDateTime) }
-        { console.log(startDate+startTime) }
-        { console.log(endDate + endTime) }
+        { console.log(startDateTime) }
+        { console.log(startDateTime) }
     }
 
     return (
