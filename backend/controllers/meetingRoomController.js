@@ -53,4 +53,4 @@ const getAvailabilityById = asyncHandler(async (req, res) => {
     }
 })
 
-export { getMeetingRooms, getMeetingRoomById }
+export { getMeetingRooms, getMeetingRoomById,getAvailabilityById }
