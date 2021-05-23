@@ -65,6 +65,10 @@ const ProfileScreen = ({ location, history }) => {
         }
     }
 
+    const PUSH = (obj) => {
+        myMeetings.push(obj)
+    }
+
     return (
         <Row>
             <Col md={3}>
