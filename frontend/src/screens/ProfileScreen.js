@@ -32,7 +32,10 @@ const ProfileScreen = ({ location, history }) => {
     const meetingRoomList = useSelector(state => state.meetingRoomList)
     const { meetingRooms } = meetingRoomList
 
-    var myMeetings = []
+    const mymeetingList = useSelector(state => state.mymeetingList)
+    const { myMeetings } = mymeetingList
+
+    // var myMeetings = []
 
     useEffect(() => {
         if (!userInfo || success) {
