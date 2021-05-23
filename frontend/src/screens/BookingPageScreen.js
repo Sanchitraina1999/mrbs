@@ -21,14 +21,14 @@ const BookingPageScreen = ({ history, match }) => {
     const userLogin = useSelector(state => state.userLogin)
     const { userInfo } = userLogin
 
-    const [startDate, setStartDate] = useState(moment(moment(new Date()).add(40,'m')).format('yyyy-MM-DD'))
-    const [startTime, setStartTime] = useState(moment(moment(new Date()).add(40,'m')).format('HH:mm'))
-    const [endDate, setEndDate] = useState(moment(moment(new Date()).add(70,'m')).format('yyyy-MM-DD'))
-    const [endTime, setEndTime] = useState(moment(moment(new Date()).add(70,'m')).format('HH:mm'))
+    const [startDate, setStartDate] = useState(moment(moment(new Date()).add(40, 'm')).format('yyyy-MM-DD'))
+    const [startTime, setStartTime] = useState(moment(moment(new Date()).add(40, 'm')).format('HH:mm'))
+    const [endDate, setEndDate] = useState(moment(moment(new Date()).add(70, 'm')).format('yyyy-MM-DD'))
+    const [endTime, setEndTime] = useState(moment(moment(new Date()).add(70, 'm')).format('HH:mm'))
     const [purposeOfBooking, setPurposeOfBooking] = useState('')
     const [message, setMessage] = useState(null)
 
-    const [avaible,setAvavaible] = useState(false)
+    const [available, setAvailable] = useState(false)
 
     useEffect(() => {
         if (userInfo || !Object.keys(meetingRoom).length)
@@ -38,21 +38,21 @@ const BookingPageScreen = ({ history, match }) => {
     const submitHandler = (e) => {
         e.preventDefault()
         setMessage(null)
-        setAvaible(false)
-        var currentDateTime = moment(moment(new Date()).add(30,'m')).format('yyyy-MM-DD[T]hh:mm')
-        var startDateTime = startDate+"T"+startTime
-        var endDateTime = endDate+"T"+endTime
-        if(startDateTime<=currentDateTime)
+        setAvailable(false)
+        var currentDateTime = moment(moment(new Date()).add(30, 'm')).format('yyyy-MM-DD[T]hh:mm')
+        var startDateTime = startDate + "T" + startTime
+        var endDateTime = endDate + "T" + endTime
+        if (startDateTime <= currentDateTime)
             setMessage('Booking can only be made 30 minutes prior to current Time')
-        else if(endDateTime<startDateTime)
+        else if (endDateTime < startDateTime)
             setMessage('End Time can not be before Start Time')
-        else if(purposeOfBooking.replace(/\s/g,'').length<=0)
+        else if (purposeOfBooking.replace(/\s/g, '').length <= 0)
             setMessage('Purpose of Meeting cannot be empty')
-        {console.log(currentDateTime)}
-        {console.log(startDateTime)}
-        {console.log(endDateTime)}
         // else
-            // dispatch()
+        // dispatch()
+        { console.log(currentDateTime) }
+        { console.log(startDateTime) }
+        { console.log(endDateTime) }
     }
 
     return (
@@ -105,7 +105,7 @@ const BookingPageScreen = ({ history, match }) => {
                                                     </Form.Group>
 
                                                     <Button variant='primary' type='submit' className='my -3 py-3'>
-                                                        {avaible?'GET AVAIBILITY':'BOOK ROOM'}
+                                                        {!available ? 'GET AVAIBILITY' : 'BOOK ROOM'}
                                                     </Button>
                                                 </Form>
                                             </ListGroup.Item>
