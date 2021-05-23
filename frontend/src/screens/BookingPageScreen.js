@@ -41,7 +41,7 @@ const BookingPageScreen = ({ history, match }) => {
         var endDateTime = endDate+"T"+endTime
         if(startDateTime<=currentDateTime)
             setMessage('Booking can only be made 30 minutes prior to current Time')
-        if(endDateTime<=currentDateTime)
+        if(endDateTime<currentDateTime)
             setMessage('End Time can not be before Start Time')
         { console.log(currentDateTime) }
         { console.log(startDateTime) }
