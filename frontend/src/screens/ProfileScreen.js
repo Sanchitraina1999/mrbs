@@ -103,6 +103,7 @@ const ProfileScreen = ({ location, history }) => {
                         room.bookedTimes.map((booking) => (
                             (booking.bookedBy === userInfo._id) ? (
                                 PUSH({
+                                    room: room._id,
                                     roomName: room.roomName,
                                     startDateTime: booking.startDate,
                                     endDateTime: booking.endDate,
@@ -135,10 +136,10 @@ const ProfileScreen = ({ location, history }) => {
                                         Purpose: {item.purposeOfBooking}
                                     </Col>
                                     <Col md={1}>
-                                        <Button><FaEdit/></Button>
+                                        <><FaEdit/></>
                                     </Col>
                                     <Col md={1}>
-                                        <Button><FaTrash/></Button>
+                                        <><FaTrash/></>
                                     </Col>
                                 </Row>
                             </ListGroup.Item>
