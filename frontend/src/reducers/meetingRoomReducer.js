@@ -10,7 +10,10 @@ import {
     MEETING_ROOM_AVAILABILITY_FAIL,
     MEETING_ROOM_BOOKING_REQUEST,
     MEETING_ROOM_BOOKING_SUCCESS,
-    MEETING_ROOM_BOOKING_FAIL
+    MEETING_ROOM_BOOKING_FAIL,
+    MY_MEETINGS_REQUEST,
+    MY_MEETINGS_SUCCESS,
+    MY_MEETINGS_FAIL
 } from '../constants/meetingRoomConstants'
 
 export const meetingRoomReducer = (state = { meetingRooms: [] }, action) => {
@@ -67,11 +70,11 @@ export const meetingRoomBookingReducer = (state = {}, action) => {
 
 export const meetingRoomBookingReducer = (state = { myMeetings: [] }, action) => {
     switch (action.type) {
-        case MEETING_ROOM_BOOKING_REQUEST:
+        case MY_MEETINGS_REQUEST:
             return { ...state, loadingMyMeetings: true };
-        case MEETING_ROOM_BOOKING_SUCCESS:
+        case MY_MEETINGS_SUCCESS:
             return { loadingMyMeetings: false, myMeetings: action.payload }
-        case MEETING_ROOM_BOOKING_FAIL:
+        case MY_MEETINGS_FAIL:
             return { error: action.payload }
         default:
             return state;
