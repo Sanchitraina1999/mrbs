@@ -99,7 +99,7 @@ export const bookMeetingRoom = (id, startDateTime, endDateTime, userid, purposeO
 
 export const getMyMeetings = () => async (dispatch,getState) => {
     try {
-        dispatch({ type: MEETING_ROOM_BOOKING_REQUEST })
+        dispatch({ type: MY_MEETINGS_REQUEST })
         const { userLogin: { userInfo } } = getState()
         const config = {
             headers: {
@@ -107,15 +107,14 @@ export const getMyMeetings = () => async (dispatch,getState) => {
                 Authorization: `Bearer ${userInfo.token}`
             }
         }
-        const { data } = await axios.put(
-            `/api/meetingRooms/book/${id}`,
-            {startDateTime, endDateTime, userid, purposeOfBooking},
+        const { data } = await axios.get(
+            `/api/meetingRooms/${userInfo._id}/${id}`,
              config)
-        dispatch({ type: MEETING_ROOM_BOOKING_SUCCESS, payload: data })
+        dispatch({ type: MY_MEETINGS_SUCCESS, payload: data })
     }
     catch (error) {
         dispatch({ 
-            type: MEETING_ROOM_BOOKING_FAIL, 
+            type: MY_MEETINGS_FAIL, 
             payload: 
                 error.response && error.response.data.message ? 
                 error.response.data.message : error.message 
