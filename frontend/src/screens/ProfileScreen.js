@@ -93,45 +93,44 @@ const ProfileScreen = ({ location, history }) => {
                 </Form>
             </Col>
             <Col md={9}>
-            {
-                meetingRooms.map((room) => (
-                    room.bookedTimes.map((booking) => (
-                        (booking.bookedBy === userInfo._id) ? (
-                            myMeetings.push({
-                                room: room._id,
-                                roomName: room.roomName,
-                                startDateTime: booking.startDate,
-                                endDateTime: booking.endDate,
-                                purposeOfBooking: booking.purposeOfBooking
-                            })
-                        ) : null
+                {
+                    meetingRooms.map((room) => (
+                        room.bookedTimes.map((booking) => (
+                            (booking.bookedBy === userInfo._id) ? (
+                                myMeetings.push({
+                                    room: room._id,
+                                    roomName: room.roomName,
+                                    startDateTime: booking.startDate,
+                                    endDateTime: booking.endDate,
+                                    purposeOfBooking: booking.purposeOfBooking
+                                })
+                            ) : null
+                        ))
                     ))
-                ))
-            }
-            {console.log(myMeetings)}
+                }
                 <h2>My Meetings</h2>
                 {myMeetings.length === 0 ? <Message>You have no scheduled meetings!</Message> : (
                     <ListGroup variant='flush'>
-                    {myMeetings.map((item, index) => (
-                        <ListGroup.Item key={index}>
-                            <Row>
-                                <Col md={1}>
-                                    <Link to={`/meetingRooms/${item.room}`}>
-                                        {item.roomName}
-                                    </Link>
-                                </Col>
-                                <Col md={2}>
-                                    {item.startDateTime}
-                                </Col>
-                                <Col md={2}>
-                                    {item.endDateTime}
-                                </Col>
-                                <Col md={2}>
-                                    {item.purposeOfBooking}
-                                </Col>
-                            </Row>
-                        </ListGroup.Item>
-                    ))}</ListGroup>
+                        {myMeetings.map((item, index) => (
+                            <ListGroup.Item key={index}>
+                                <Row>
+                                    <Col md={2}>
+                                        <Link to={`/meetingRooms/${item.room}`}>
+                                            {item.roomName}
+                                        </Link>
+                                    </Col>
+                                    <Col md={2}>
+                                        {item.startDateTime}
+                                    </Col>
+                                    <Col md={2}>
+                                        {item.endDateTime}
+                                    </Col>
+                                    <Col md={2}>
+                                        {item.purposeOfBooking}
+                                    </Col>
+                                </Row>
+                            </ListGroup.Item>
+                        ))}</ListGroup>
                 )}
             </Col>
         </Row>
