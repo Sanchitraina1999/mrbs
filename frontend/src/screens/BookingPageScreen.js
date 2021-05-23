@@ -38,7 +38,7 @@ const BookingPageScreen = ({ history, match }) => {
             setBookingAvailable(true)
             setMessage('Meeting room available')
         }
-        else{
+        else if(available===false){
             setBookingAvailable(false)
             setMessage('Meeting room unavailable') 
         }
