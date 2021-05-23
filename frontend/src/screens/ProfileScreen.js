@@ -74,7 +74,6 @@ const ProfileScreen = ({ location, history }) => {
     }
 
     const deleteCurrent = (roomId, bookedTimeId) => {
-        console.log(roomId, bookedTimeId)
         dispatch(removeMeeting(roomId, bookedTimeId))
         setTimeout(dispatch(getMyMeetings(userInfo._id)), 2000)
     }
