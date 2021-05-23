@@ -34,19 +34,6 @@ const BookingPageScreen = ({ history, match }) => {
                                     <Image src={meetingRoom.image} alt={meetingRoom.roomName} fluid />
                                 </Col>
                                 <Col md={6}>
-                                    {meetingRoom.roomName}<br />
-                                    {meetingRoom.location.address}{', '}
-                                    {meetingRoom.location.city}
-                                </Col>
-                                <Col md={6}>
-                                    <p className='text-info'>
-                                        For more details:<br />
-                                        {meetingRoom.pointOfContact.name}{','}<br />
-                                        <a href={`tel: ${meetingRoom.pointOfContact.mobile}`}>{meetingRoom.pointOfContact.mobile}{','}</a><br />
-                                        <a href={`mailto:${meetingRoom.pointOfContact.email}`}>{meetingRoom.pointOfContact.email}</a><br />
-                                    </p>
-                                </Col>
-                                <Col md={6}>
                                     <Card className='card bg-dark mb-3'>
                                         <ListGroup variant='flush'>
                                             <ListGroup.Item>
