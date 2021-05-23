@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { Form, Row, Col, Image, ListGroup, Card, Button } from 'react-bootstrap'
-import {WiDirectionLeft} from 'react-icons/fa'
+import {FaAngleLeft} from 'react-icons/fa'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
 import { listMeetingRoomDetails } from '../actions/meetingRoomActions'
@@ -19,7 +19,7 @@ const BookingPageScreen = ({ history, match }) => {
     const [startTime, setStartTime] = useState('')
     const [endDate, setEndDate] = useState('')
     const [endTime, setEndTime] = useState('')
-    const [purposeOfBooking, setPurposeOfBooking] = useState('Enter purpose of booking')
+    const [purposeOfBooking, setPurposeOfBooking] = useState('')
     const [message, setMessage] = useState(null)
 
     useEffect(() => {
@@ -39,7 +39,7 @@ const BookingPageScreen = ({ history, match }) => {
         <>
             {!userInfo && history.push('/login')}
             <Link className='btn btn-dark my-3' to='/'>
-                <WiDirectionLeft/>
+                <FaAngleLeft/>
             </Link>
             {
                 loading ? <Loader />
