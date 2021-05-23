@@ -85,6 +85,21 @@ const bookMeetingRoom = asyncHandler(async (req, res) => {
 const getMyMeetings = asyncHandler(async (req, res) => {
     const meetingRoom = await MeetingRoom.findById(req.params.id)
     if (meetingRoom) {
+        var myMeetings = []
+            meetingRooms.map((room) => (
+                room.bookedTimes.map((booking) => (
+                    (booking.bookedBy === userInfo._id) ? (
+                        myMeetings.push({
+                            room: room._id,
+                            roomName: room.roomName,
+                            startDateTime: booking.startDate,
+                            endDateTime: booking.endDate,
+                            purposeOfBooking: booking.purposeOfBooking
+                        })
+                    ) : null
+                ))
+            ))
+
         meetingRoom.bookedTimes.push({
             startDate: startDateTime,
             endDate: endDateTime,
