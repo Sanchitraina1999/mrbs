@@ -84,7 +84,7 @@ const bookMeetingRoom = asyncHandler(async (req, res) => {
 //@access Private
 const getMyMeetings = asyncHandler(async (req, res) => {
     {console.log(req.params.id)}
-    const meetingRoom = await MeetingRoom.findById(req.params.id)
+    const meetingRoom = await MeetingRoom.find({})
     {console.log(meetingRoom)}
     if (meetingRoom) {
         var myMeetings = []
