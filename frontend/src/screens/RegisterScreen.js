@@ -31,9 +31,9 @@ const RegisterScreen = ({ location, history }) => {
     const submitHandler = (e) => {
         e.preventDefault()
         var regex = new RegExp(/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/)
-        if(!regex.test(email))
+        if (!regex.test(email))
             setMessage('Invalid format for email')
-        else if(password.length<0)
+        else if (password.length < 0)
             setMessage('Password length should be atleast 8 characters')
         else if (password !== confirmPassword)
             setMessage('Passwords do not match')
@@ -58,19 +58,19 @@ const RegisterScreen = ({ location, history }) => {
             <Form onSubmit={submitHandler} onReset={resetHandler}>
                 <Form.Group controlId='name'>
                     <Form.Label>Name</Form.Label>
-                    <Form.Control type='text' placeholder='Enter name' value={username} onChange={e => setName(e.target.value)}></Form.Control>
+                    <Form.Control type='text' placeholder='Enter name' value={username} onChange={e => { setMessage(''); setName(e.target.value) }}></Form.Control>
                 </Form.Group>
                 <Form.Group controlId='email'>
                     <Form.Label>Email Address</Form.Label>
-                    <Form.Control type='email' placeholder='Enter email' value={email} onChange={e => setEmail(e.target.value)}></Form.Control>
+                    <Form.Control type='email' placeholder='Enter email' value={email} onChange={e => { setMessage(''); setEmail(e.target.value) }}></Form.Control>
                 </Form.Group>
                 <Form.Group controlId='password'>
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type='password' placeholder='Enter password' value={password} onChange={e => setPassword(e.target.value)}></Form.Control>
+                    <Form.Control type='password' placeholder='Enter password' value={password} onChange={e => { setMessage(''); setPassword(e.target.value) }}></Form.Control>
                 </Form.Group>
                 <Form.Group controlId='confirmPassword'>
                     <Form.Label>Confirm Password</Form.Label>
-                    <Form.Control type='password' placeholder='Confirm password' value={confirmPassword} onChange={e => setConfirmPassword(e.target.value)}></Form.Control>
+                    <Form.Control type='password' placeholder='Confirm password' value={confirmPassword} onChange={e => { setMessage(''); setConfirmPassword(e.target.value) }}></Form.Control>
                 </Form.Group>
                 <Row>
                     <Col>
