@@ -120,13 +120,13 @@ const ProfileScreen = ({ location, history }) => {
                                         {item.roomName}
                                     </Link>
                                 </Col>
-                                <Col md={1}>
+                                <Col md={2}>
                                     {item.startDateTime}
                                 </Col>
-                                <Col md={1}>
+                                <Col md={2}>
                                     {item.endDateTime}
                                 </Col>
-                                <Col md={1}>
+                                <Col md={2}>
                                     {item.purposeOfBooking}
                                 </Col>
                             </Row>
