@@ -14,7 +14,7 @@ const meetingrooms = [
         bookedTimes: [
             {
                 startDate: '2021-5-22T08:54',
-                endDate: 'Sat, 22 May 2021 08:54:22 GMT',
+                endDate: '2021-5-22T08:54',
                 bookedBy: '60a87d34068c169b2810942b',
                 purposeOfBooking: 'AI conference'
             }
@@ -34,8 +34,8 @@ const meetingrooms = [
         },
         bookedTimes: [
             {
-                startDate: 'Sat, 22 May 2021 08:54:22 GMT',
-                endDate: 'Sat, 22 May 2021 08:54:22 GMT',
+                startDate: '2021-5-22T08:54',
+                endDate: '2021-5-22T08:54',
                 bookedBy: '60a87d34068c169b2810942b',
                 purposeOfBooking: 'Company Meeting'
             }
@@ -55,8 +55,8 @@ const meetingrooms = [
         },
         bookedTimes: [
             {
-                startDate: 'Sat, 22 May 2021 08:54:22 GMT',
-                endDate: 'Sat, 22 May 2021 08:54:22 GMT',
+                startDate: '2021-5-22T08:54',
+                endDate: '2021-5-22T08:54',
                 bookedBy: '60a87d34068c169b2810942b',
                 purposeOfBooking: 'Coding Conclave'
             }
@@ -76,8 +76,8 @@ const meetingrooms = [
         },
         bookedTimes: [
             {
-                startDate: 'Sat, 22 May 2021 08:54:22 GMT',
-                endDate: 'Sat, 22 May 2021 08:54:22 GMT',
+                startDate: '2021-5-22T08:54',
+                endDate: '2021-5-22T08:54',
                 bookedBy: '60a87d34068c169b2810942b',
                 purposeOfBooking: 'Student Branch Meeting'
             }
