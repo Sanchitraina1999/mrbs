@@ -79,6 +79,8 @@ export const myMeetingListReducer = (state = { loaded: false, myMeetings: [] }, 
             return { loadingMyMeetings: false, myMeetings: action.payload }
         case MY_MEETINGS_FAIL:
             return { error: action.payload }
+        case MY_MEETINGS_RESET:
+            return { }
         default:
             return state;
     }
