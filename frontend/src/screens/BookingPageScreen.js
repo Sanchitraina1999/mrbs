@@ -37,10 +37,9 @@ const BookingPageScreen = ({ history, match }) => {
         var currentDateTime = moment(new Date()).format()
         var startDateTime = moment(new Date()).format()
         var endDateTime = moment(new Date()).format()
-        currentDateTime = moment(currentDateTime).format()
         { console.log(currentDateTime) }
         { console.log(startDateTime) }
-        { console.log(startDateTime) }
+        { console.log(endDateTime) }
     }
 
     return (
