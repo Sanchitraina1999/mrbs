@@ -10,6 +10,7 @@ import {
     USER_DETAILS_REQUEST,
     USER_DETAILS_SUCCESS,
     USER_DETAILS_FAILURE,
+    USER_DETAILS_RESET,
     USER_UPDATE_PROFILE_REQUEST,
     USER_UPDATE_PROFILE_SUCCESS,
     USER_UPDATE_PROFILE_FAILURE,
@@ -49,6 +50,7 @@ export const login = (email, password, keepLoggedIn) => async (dispatch) => {
 export const logout = () => async (dispatch) => {
     localStorage.removeItem('userInfo')
     dispatch({ type: USER_LOGOUT })
+    dispatch({ type: USER_DETAILS_RESET })    
     dispatch({ type: MY_MEETINGS_RESET })
 }
 
