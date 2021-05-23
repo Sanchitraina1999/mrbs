@@ -30,8 +30,6 @@ const BookingPageScreen = ({ history, match }) => {
 
     useEffect(() => {
         setMessage(null)
-        setBookingAvailable(false)
-        setMessage('Meeting room unavailable') 
         if (!Object.keys(meetingRoom).length)
             dispatch(listMeetingRoomDetails(match.params.id))
         if (!userInfo)
@@ -39,6 +37,10 @@ const BookingPageScreen = ({ history, match }) => {
         if(available){
             setBookingAvailable(true)
             setMessage('Meeting room available')
+        }
+        else{
+            setBookingAvailable(false)
+            setMessage('Meeting room unavailable') 
         }
     }, [dispatch, match, userInfo, history, meetingRoom,available])
 
