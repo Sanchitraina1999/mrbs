@@ -78,7 +78,7 @@ const BookingPageScreen = ({ history, match }) => {
                 <FaAngleLeft />
             </Link>
             {
-                loading ? <Loader />
+                (loading || loadingAvailability) ? <Loader />
                     : error ? (<Message variant='danger'>{error}</Message>)
                         : (
                             < Row >

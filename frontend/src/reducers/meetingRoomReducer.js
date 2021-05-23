@@ -42,9 +42,9 @@ export const meetingRoomDetailsReducer = (state = { meetingRoom: { } }, action) 
 export const meetingRoomAvailableReducer = (state = { }, action) => {
     switch (action.type) {
         case MEETING_ROOM_AVAILABILITY_REQUEST:
-            return { ...state };
+            return { ...state, loadingAvailability: false };
         case MEETING_ROOM_AVAILABILITY_SUCCESS:
-            return { available: action.payload }
+            return { loadingAvailability: true, available: action.payload }
         case MEETING_ROOM_AVAILABILITY_FAIL:
             return { }
         default:
