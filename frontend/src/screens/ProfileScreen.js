@@ -35,10 +35,8 @@ const ProfileScreen = ({ location, history }) => {
     const myMeetingList = useSelector(state => state.myMeetingList)
     const { loadingMyMeetings, myMeetings } = myMeetingList
 
-    // var myMeetings = []
-
     useEffect(() => {
-        if(!myMeetings)
+        if (!myMeetings)
             dispatch(getMyMeetings())
         if (!userInfo || success) {
             dispatch({ type: USER_UPDATE_PROFILE_RESET })
@@ -55,7 +53,7 @@ const ProfileScreen = ({ location, history }) => {
                 setEmail(user.email)
             }
         }
-    }, [user, dispatch, history, userInfo, success])
+    }, [user, dispatch, history, userInfo, success, myMeetings])
 
     const submitHandler = (e) => {
         e.preventDefault()
@@ -85,7 +83,7 @@ const ProfileScreen = ({ location, history }) => {
                 <h1>User Profile</h1>
                 {message && <Message variant='danger'>{message}</Message>}
                 {error && <Message variant='danger'>{error}</Message>}
-                {(loading || loadingMyMeetings)&& <Loader />}
+                {(loading || loadingMyMeetings) && <Loader />}
                 <Form onSubmit={submitHandler}>
                     <Form.Group controlId='username'>
                         <Form.Label>Name</Form.Label>
@@ -107,21 +105,6 @@ const ProfileScreen = ({ location, history }) => {
                 </Form>
             </Col>
             <Col md={9}>
-                {
-                    meetingRooms.map((room) => (
-                        room.bookedTimes.map((booking) => (
-                            (booking.bookedBy === userInfo._id) ? (
-                                PUSH({
-                                    room: room._id,
-                                    roomName: room.roomName,
-                                    startDateTime: booking.startDate,
-                                    endDateTime: booking.endDate,
-                                    purposeOfBooking: booking.purposeOfBooking
-                                })
-                            ) : null
-                        ))
-                    ))
-                }
                 {SORT()}
                 <h2>My Meetings</h2>
                 {myMeetings.length === 0 ? <Message>You have no scheduled meetings!</Message> : (
@@ -131,19 +114,19 @@ const ProfileScreen = ({ location, history }) => {
                                 <Row>
                                     <Col md={2}>
                                         <Link to={`/meetingRooms/${item.room}`}>
-                                            Room Name: <br/>{item.roomName}
+                                            Room Name: <br />{item.roomName}
                                         </Link>
                                     </Col>
                                     <Col md={3}>
-                                        Start Date: <br/>{item.startDateTime.split('T')[0]}<br/>
-                                        Start Time: <br/>{item.startDateTime.split('T')[1]}
+                                        Start Date: <br />{item.startDateTime.split('T')[0]}<br />
+                                        Start Time: <br />{item.startDateTime.split('T')[1]}
                                     </Col>
                                     <Col md={3}>
-                                        End Date: <br/>{item.endDateTime.split('T')[0]}<br/>
-                                        End Time: <br/>{item.endDateTime.split('T')[1]}
+                                        End Date: <br />{item.endDateTime.split('T')[0]}<br />
+                                        End Time: <br />{item.endDateTime.split('T')[1]}
                                     </Col>
                                     <Col md={2}>
-                                        Purpose: <br/>{item.purposeOfBooking}
+                                        Purpose: <br />{item.purposeOfBooking}
                                     </Col>
                                     <Col md={1}>
                                         <Button><FaEdit /></Button>
