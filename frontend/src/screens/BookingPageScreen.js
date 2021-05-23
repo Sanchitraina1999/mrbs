@@ -9,6 +9,7 @@ import moment from 'moment'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
 import { listMeetingRoomDetails } from '../actions/meetingRoomActions'
+import { set } from 'mongoose'
 
 moment().format()
 
@@ -36,10 +37,11 @@ const BookingPageScreen = ({ history, match }) => {
         e.preventDefault();
         var currentDateTime = moment(new Date()).format('yyyy-MM-DD[T]hh:mm')
         var startDateTime = startDate+"T"+startTime
-        var endDateTime = endDate+"T"+endTime
-        {console.log(startDateTime<=currentDateTime)}
+        var endDateTime = endDate+"T"+endDateTime
         if(startDateTime<=currentDateTime)
             setMessage('Booking can only be made 30 minutes prior to current Time')
+        if(endDateTime<=currentDateTime)
+            setMessage('End Time can not be before Start Time')
         // { console.log(currentDateTime) }
         // { console.log(startDateTime) }
         // { console.log(endDateTime) }
