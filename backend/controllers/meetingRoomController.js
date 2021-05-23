@@ -83,8 +83,8 @@ const bookMeetingRoom = asyncHandler(async (req, res) => {
 //@route PUT /api/meetingRooms/myMeetings/:id
 //@access Private
 const getMyMeetings = asyncHandler(async (req, res) => {
-    {console.log(req.params.id)}
     const meetingRoom = await MeetingRoom.findById(req.params.id)
+    {console.log(meetingRoom)}
     if (meetingRoom) {
         var myMeetings = []
         meetingRooms.map((room) => (
