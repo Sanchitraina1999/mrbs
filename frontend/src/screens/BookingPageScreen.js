@@ -37,11 +37,12 @@ const BookingPageScreen = ({ history, match }) => {
         var currentDateTime = moment(new Date()).format('yyyy-MM-DD[T]hh:mm')
         var startDateTime = startDate+"T"+startTime
         var endDateTime = endDate+"T"+endTime
+        {console.log(startDateTime<=currentDateTime)}
         if(startDateTime<=currentDateTime)
             setMessage('Booking can only be made 30 minutes prior to current Time')
-        { console.log(currentDateTime) }
-        { console.log(startDateTime) }
-        { console.log(endDateTime) }
+        // { console.log(currentDateTime) }
+        // { console.log(startDateTime) }
+        // { console.log(endDateTime) }
     }
 
     return (
