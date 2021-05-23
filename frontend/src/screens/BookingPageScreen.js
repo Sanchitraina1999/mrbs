@@ -30,7 +30,7 @@ const BookingPageScreen = ({ history, match }) => {
     useEffect(() => {
         if (userInfo || !Object.keys(meetingRoom).length)
             dispatch(listMeetingRoomDetails(match.params.id))
-    }, [dispatch, match,userInfo])
+    }, [dispatch, match])
 
     const submitHandler = (e) => {
         e.preventDefault()
@@ -77,7 +77,7 @@ const BookingPageScreen = ({ history, match }) => {
                                         <ListGroup variant='flush'>
                                             <ListGroup.Item>
                                                 <Form onSubmit={submitHandler}>
-                                                    
+
                                                     <Form.Group controlId='startDateTime'>
                                                         <Form.Label>Start Date & Time</Form.Label>
                                                         <Form.Text className='text-muted'>
