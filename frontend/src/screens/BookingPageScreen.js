@@ -36,7 +36,7 @@ const BookingPageScreen = ({ history, match }) => {
     const submitHandler = (e) => {
         e.preventDefault()
         setMessage(null)
-        var regex = new RegExp('^(?!\s*$).+')
+        var regex = new RegExp('^\s*$')
         {console.log(regex.test(purposeOfBooking))}
         var currentDateTime = moment(moment(new Date()).add(30,'m')).format('yyyy-MM-DD[T]hh:mm')
         var startDateTime = startDate+"T"+startTime
@@ -45,7 +45,7 @@ const BookingPageScreen = ({ history, match }) => {
             setMessage('Booking can only be made 30 minutes prior to current Time')
         else if(endDateTime<startDateTime)
             setMessage('End Time can not be before Start Time')
-        else if(!regex.test(purposeOfBooking))
+        else if(regex.test(purposeOfBooking))
             setMessage('Purpose of Meeting cannot be empty')
     }
 
