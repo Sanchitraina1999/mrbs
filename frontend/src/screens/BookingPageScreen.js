@@ -14,9 +14,9 @@ const BookingPageScreen = ({ history, match }) => {
     const userLogin = useSelector(state => state.userLogin)
     const { userInfo } = userLogin
 
-    const [startDate, setStartDate]= useState()
+    const [startDate, setStartDate]= useState(Date.now())
     const [startTime, setStartTime]= useState()
-    const [endDate, setEndDate]= useState()
+    const [endDate, setEndDate]= useState(Date.now())
     const [endTime, setEndTime]= useState()
     const [message, setMessage] = useState(null)
 
