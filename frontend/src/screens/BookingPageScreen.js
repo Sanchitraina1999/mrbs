@@ -8,7 +8,7 @@ import moment from 'moment'
 
 import Loader from '../components/Loader'
 import Message from '../components/Message'
-import { listMeetingRoomDetails } from '../actions/meetingRoomActions'
+import { listMeetingRoomDetails,getAvailablityOfMeetingRoom } from '../actions/meetingRoomActions'
 
 const BookingPageScreen = ({ history, match }) => {
 
