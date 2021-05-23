@@ -47,7 +47,7 @@ export const listMeetingRoomDetails = (id) => async (dispatch,getState) => {
     }
 }
 
-export const getAvailablityOfMeetingRoom = () => async (dispatch,getState) => {
+export const getAvailablityOfMeetingRoom = (id, startDateTime, endDateTime) => async (dispatch,getState) => {
     try {
         dispatch({ type: MEETING_ROOM_AVAILABILITY_REQUEST })
         const { userLogin: { userInfo } } = getState()
@@ -57,7 +57,7 @@ export const getAvailablityOfMeetingRoom = () => async (dispatch,getState) => {
                 Authorization: `Bearer ${userInfo.token}`
             }
         }
-        const { data } = await axios.get(`/api/meetingRooms/${id}`, config)
+        const { data } = await axios.get(`/api/meetingRooms/${id}`,{id, startDateTime, endDateTime}, config)
         dispatch({ type: MEETING_ROOM_AVAILABILITY_SUCCESS, payload: data })
     }
     catch (error) {
