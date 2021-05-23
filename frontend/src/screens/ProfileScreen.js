@@ -33,7 +33,7 @@ const ProfileScreen = ({ location, history }) => {
     const { meetingRooms } = meetingRoomList
 
     const myMeetingList = useSelector(state => state.myMeetingList)
-    const { loaded,loadingMyMeetings, myMeetings } = myMeetingList
+    const { loaded, loadingMyMeetings, myMeetings } = myMeetingList
 
     useEffect(() => {
         dispatch(getMyMeetings(userInfo._id))
@@ -69,12 +69,12 @@ const ProfileScreen = ({ location, history }) => {
 
     return (
         <Row>
+            {(loading || loadingMyMeetings) ? <Loader /> : (
             <Col md={3}>
                 <ToastContainer />
                 <h1>User Profile</h1>
                 {message && <Message variant='danger'>{message}</Message>}
                 {error && <Message variant='danger'>{error}</Message>}
-                {(loading || loadingMyMeetings) && <Loader />}
                 <Form onSubmit={submitHandler}>
                     <Form.Group controlId='username'>
                         <Form.Label>Name</Form.Label>
@@ -104,19 +104,19 @@ const ProfileScreen = ({ location, history }) => {
                                 <Row>
                                     <Col md={2}>
                                         <Link to={`/meetingRooms/${item.room}`}>
-                                            Room Name: <br />{item.roomName}
+                                Room Name: <br />{item.roomName}
                                         </Link>
                                     </Col>
                                     <Col md={3}>
-                                        Start Date: <br />{item.startDateTime.split('T')[0]}<br />
+                            Start Date: <br />{item.startDateTime.split('T')[0]}<br />
                                         Start Time: <br />{item.startDateTime.split('T')[1]}
                                     </Col>
                                     <Col md={3}>
-                                        End Date: <br />{item.endDateTime.split('T')[0]}<br />
+                            End Date: <br />{item.endDateTime.split('T')[0]}<br />
                                         End Time: <br />{item.endDateTime.split('T')[1]}
                                     </Col>
                                     <Col md={2}>
-                                        Purpose: <br />{item.purposeOfBooking}
+                            Purpose: <br />{item.purposeOfBooking}
                                     </Col>
                                     <Col md={1}>
                                         <Button><FaEdit /></Button>
@@ -130,6 +130,7 @@ const ProfileScreen = ({ location, history }) => {
                     </ListGroup>
                 )}
             </Col>
+            )}
         </Row>
     )
 }
