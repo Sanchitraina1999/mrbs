@@ -5,7 +5,10 @@ import {
     MEETING_ROOM_LIST_FAIL,
     MEETING_ROOM_DETAILS_REQUEST,
     MEETING_ROOM_DETAILS_SUCCESS,
-    MEETING_ROOM_DETAILS_FAIL
+    MEETING_ROOM_DETAILS_FAIL,
+    MEETING_ROOM_AVAILABILITY_REQUEST,
+    MEETING_ROOM_AVAILABILITY_SUCCESS,
+    MEETING_ROOM_AVAILABILITY_FAIL
 } from '../constants/meetingRoomConstants'
 
 export const listMeetingRooms = () => async (dispatch, getState) => {
@@ -46,7 +49,7 @@ export const listMeetingRoomDetails = (id) => async (dispatch,getState) => {
 
 export const getAvailablityOfMeetingRoom = () => async (dispatch,getState) => {
     try {
-        dispatch({ type: MEETING_ROOM_DETAILS_REQUEST })
+        dispatch({ type: MEETING_ROOM_AVAILABILITY_REQUEST })
         const { userLogin: { userInfo } } = getState()
         const config = {
             headers: {
@@ -55,9 +58,9 @@ export const getAvailablityOfMeetingRoom = () => async (dispatch,getState) => {
             }
         }
         const { data } = await axios.get(`/api/meetingRooms/${id}`, config)
-        dispatch({ type: MEETING_ROOM_DETAILS_SUCCESS, payload: data })
+        dispatch({ type: MEETING_ROOM_AVAILABILITY_SUCCESS, payload: data })
     }
     catch (error) {
-        dispatch({ type: MEETING_ROOM_DETAILS_FAIL, payload: error.response && error.response.data.message ? error.response.data.message : error.message })
+        dispatch({ type: MEETING_ROOM_AVAILABILITY_FAIL, payload: error.response && error.response.data.message ? error.response.data.message : error.message })
     }
 }
