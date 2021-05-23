@@ -23,6 +23,7 @@ const RegisterScreen = ({ location, history }) => {
 
 
     useEffect(() => {
+        setTimeout(() => { error = null }, 2000)
         if (userInfo) {
             history.push(redirect)
         }
