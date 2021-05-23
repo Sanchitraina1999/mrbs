@@ -90,7 +90,7 @@ const getMyMeetings = asyncHandler(async (req, res) => {
         var myMeetings = []
         meetingRooms.map((room) => (
             room.bookedTimes.map((booking) => (
-                (booking.bookedBy === userInfo._id) ? (
+                if(booking.bookedBy === userInfo._id){
                     myMeetings.push({
                         room: room._id,
                         roomName: room.roomName,
@@ -98,7 +98,7 @@ const getMyMeetings = asyncHandler(async (req, res) => {
                         endDateTime: booking.endDate,
                         purposeOfBooking: booking.purposeOfBooking
                     })
-                ) : null
+                }
             ))
         ))
         myMeetings.sort((a, b) => (a.startDateTime > b.startDateTime) ? 1 : ((b.startDateTime > a.startDateTime) ? -1 : 0))
