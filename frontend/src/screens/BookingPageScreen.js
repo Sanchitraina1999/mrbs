@@ -13,10 +13,12 @@ import { listMeetingRoomDetails } from '../actions/meetingRoomActions'
 const BookingPageScreen = ({ history, match }) => {
 
     const dispatch = useDispatch()
-    const meetingRoomDetails = useSelector(state => state.meetingRoomDetails)
-    const { loading, error, meetingRoom } = meetingRoomDetails
     const userLogin = useSelector(state => state.userLogin)
     const { userInfo } = userLogin
+    const meetingRoomDetails = useSelector(state => state.meetingRoomDetails)
+    const { loading, error, meetingRoom } = meetingRoomDetails  
+    const meetingRoomAvailable = useSelector(state => state.meetingRoomAvailable)
+    const { available } = meetingRoomDetails
 
     const [startDate, setStartDate] = useState(moment(moment(new Date()).add(40, 'm')).format('yyyy-MM-DD'))
     const [startTime, setStartTime] = useState(moment(moment(new Date()).add(40, 'm')).format('HH:mm'))
@@ -24,8 +26,6 @@ const BookingPageScreen = ({ history, match }) => {
     const [endTime, setEndTime] = useState(moment(moment(new Date()).add(70, 'm')).format('HH:mm'))
     const [purposeOfBooking, setPurposeOfBooking] = useState('')
     const [message, setMessage] = useState(null)
-
-    const [available, setAvailable] = useState(false)
 
     useEffect(() => {
         if (userInfo || !Object.keys(meetingRoom).length)
@@ -35,7 +35,6 @@ const BookingPageScreen = ({ history, match }) => {
     const submitHandler = (e) => {
         e.preventDefault()
         setMessage(null)
-        setAvailable(false)
         var currentDateTime = moment(moment(new Date()).add(30, 'm')).format('yyyy-MM-DD[T]hh:mm')
         var startDateTime = startDate + "T" + startTime
         var endDateTime = endDate + "T" + endTime
@@ -47,7 +46,7 @@ const BookingPageScreen = ({ history, match }) => {
             setMessage('Purpose of Meeting cannot be empty')
         else{
             dispatch(listMeetingRoomDetails(match.params.id))
-            
+
         }
         { console.log(currentDateTime) }
         { console.log(startDateTime) }
