@@ -20,10 +20,10 @@ const BookingPageScreen = ({ history, match }) => {
     const userLogin = useSelector(state => state.userLogin)
     const { userInfo } = userLogin
 
-    const [startDate, setStartDate] = useState(moment(new Date()).format('yyyy-MM-DD'))
-    const [startTime, setStartTime] = useState(moment(new Date()).format('HH:mm'))
-    const [endDate, setEndDate] = useState(moment(moment(new Date()).add(30,'m')).format('yyyy-MM-DD'))
-    const [endTime, setEndTime] = useState(moment(moment(new Date()).add(30,'m')).format('HH:mm'))
+    const [startDate, setStartDate] = useState(moment(moment(new Date()).add(30,'m')).format('yyyy-MM-DD'))
+    const [startTime, setStartTime] = useState(moment(moment(new Date()).add(30,'m')).format('HH:mm'))
+    const [endDate, setEndDate] = useState(moment(moment(new Date()).add(60,'m')).format('yyyy-MM-DD'))
+    const [endTime, setEndTime] = useState(moment(moment(new Date()).add(60,'m')).format('HH:mm'))
     const [purposeOfBooking, setPurposeOfBooking] = useState('')
     const [message, setMessage] = useState(null)
 
