@@ -32,8 +32,8 @@ const ProfileScreen = ({ location, history }) => {
     const meetingRoomList = useSelector(state => state.meetingRoomList)
     const { meetingRooms } = meetingRoomList
 
-    const mymeetingList = useSelector(state => state.mymeetingList)
-    const { loadingMyMeetings, myMeetings } = mymeetingList
+    const myMeetingList = useSelector(state => state.myMeetingList)
+    const { loadingMyMeetings, myMeetings } = myMeetingList
 
     // var myMeetings = []
 
@@ -85,7 +85,7 @@ const ProfileScreen = ({ location, history }) => {
                 <h1>User Profile</h1>
                 {message && <Message variant='danger'>{message}</Message>}
                 {error && <Message variant='danger'>{error}</Message>}
-                {loading && <Loader />}
+                {(loading || loadingMyMeetings)&& <Loader />}
                 <Form onSubmit={submitHandler}>
                     <Form.Group controlId='username'>
                         <Form.Label>Name</Form.Label>
