@@ -99,7 +99,6 @@ const ProfileScreen = ({ location, history }) => {
                         room.bookedTimes.map((booking) => (
                             (booking.bookedBy === userInfo._id) ? (
                                 myMeetings[myMeetings.length]={
-                                    room: room._id,
                                     roomName: room.roomName,
                                     startDateTime: booking.startDate,
                                     endDateTime: booking.endDate,
