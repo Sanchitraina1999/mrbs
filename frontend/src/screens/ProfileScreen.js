@@ -68,70 +68,72 @@ const ProfileScreen = ({ location, history }) => {
     }
 
     return (
-        <Row>
+        <>
             {(loading || loadingMyMeetings) ? <Loader /> : (
-            <Col md={3}>
-                <ToastContainer />
-                <h1>User Profile</h1>
-                {message && <Message variant='danger'>{message}</Message>}
-                {error && <Message variant='danger'>{error}</Message>}
-                <Form onSubmit={submitHandler}>
-                    <Form.Group controlId='username'>
-                        <Form.Label>Name</Form.Label>
-                        <Form.Control type='text' placeholder='Enter name' value={username} onChange={e => setName(e.target.value)}></Form.Control>
-                    </Form.Group>
-                    <Form.Group controlId='email'>
-                        <Form.Label>Email Address</Form.Label>
-                        <Form.Control type='email' placeholder='Enter email' value={email} onChange={e => setEmail(e.target.value)}></Form.Control>
-                    </Form.Group>
-                    <Form.Group controlId='password'>
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control type='password' placeholder='Enter password' value={password} onChange={e => setPassword(e.target.value)}></Form.Control>
-                    </Form.Group>
-                    <Form.Group controlId='confirmPassword'>
-                        <Form.Label>Confirm Password</Form.Label>
-                        <Form.Control type='password' placeholder='Confirm password' value={confirmPassword} onChange={e => setConfirmPassword(e.target.value)}></Form.Control>
-                    </Form.Group>
-                    <Button type='submit' variant='primary'>Update Details</Button>
-                </Form>
-            </Col>
-            <Col md={9}>
-                <h2>My Meetings</h2>
-                {myMeetings.length === 0 ? <Message>You have no scheduled meetings!</Message> : (
-                    <ListGroup variant='flush'>
-                        {myMeetings.map((item, index) => (
-                            <ListGroup.Item key={index}>
-                                <Row>
-                                    <Col md={2}>
-                                        <Link to={`/meetingRooms/${item.room}`}>
-                                Room Name: <br />{item.roomName}
-                                        </Link>
-                                    </Col>
-                                    <Col md={3}>
-                            Start Date: <br />{item.startDateTime.split('T')[0]}<br />
+                <Row>
+                    <Col md={3}>
+                        <ToastContainer />
+                        <h1>User Profile</h1>
+                        {message && <Message variant='danger'>{message}</Message>}
+                        {error && <Message variant='danger'>{error}</Message>}
+                        <Form onSubmit={submitHandler}>
+                            <Form.Group controlId='username'>
+                                <Form.Label>Name</Form.Label>
+                                <Form.Control type='text' placeholder='Enter name' value={username} onChange={e => setName(e.target.value)}></Form.Control>
+                            </Form.Group>
+                            <Form.Group controlId='email'>
+                                <Form.Label>Email Address</Form.Label>
+                                <Form.Control type='email' placeholder='Enter email' value={email} onChange={e => setEmail(e.target.value)}></Form.Control>
+                            </Form.Group>
+                            <Form.Group controlId='password'>
+                                <Form.Label>Password</Form.Label>
+                                <Form.Control type='password' placeholder='Enter password' value={password} onChange={e => setPassword(e.target.value)}></Form.Control>
+                            </Form.Group>
+                            <Form.Group controlId='confirmPassword'>
+                                <Form.Label>Confirm Password</Form.Label>
+                                <Form.Control type='password' placeholder='Confirm password' value={confirmPassword} onChange={e => setConfirmPassword(e.target.value)}></Form.Control>
+                            </Form.Group>
+                            <Button type='submit' variant='primary'>Update Details</Button>
+                        </Form>
+                    </Col>
+                    <Col md={9}>
+                        <h2>My Meetings</h2>
+                        {myMeetings.length === 0 ? <Message>You have no scheduled meetings!</Message> : (
+                            <ListGroup variant='flush'>
+                                {myMeetings.map((item, index) => (
+                                    <ListGroup.Item key={index}>
+                                        <Row>
+                                            <Col md={2}>
+                                                <Link to={`/meetingRooms/${item.room}`}>
+                                                    Room Name: <br />{item.roomName}
+                                                </Link>
+                                            </Col>
+                                            <Col md={3}>
+                                                Start Date: <br />{item.startDateTime.split('T')[0]}<br />
                                         Start Time: <br />{item.startDateTime.split('T')[1]}
-                                    </Col>
-                                    <Col md={3}>
-                            End Date: <br />{item.endDateTime.split('T')[0]}<br />
+                                            </Col>
+                                            <Col md={3}>
+                                                End Date: <br />{item.endDateTime.split('T')[0]}<br />
                                         End Time: <br />{item.endDateTime.split('T')[1]}
-                                    </Col>
-                                    <Col md={2}>
-                            Purpose: <br />{item.purposeOfBooking}
-                                    </Col>
-                                    <Col md={1}>
-                                        <Button><FaEdit /></Button>
-                                    </Col>
-                                    <Col md={1}>
-                                        <Button><FaTrash /></Button>
-                                    </Col>
-                                </Row>
-                            </ListGroup.Item>
-                        ))}
-                    </ListGroup>
-                )}
-            </Col>
+                                            </Col>
+                                            <Col md={2}>
+                                                Purpose: <br />{item.purposeOfBooking}
+                                            </Col>
+                                            <Col md={1}>
+                                                <Button><FaEdit /></Button>
+                                            </Col>
+                                            <Col md={1}>
+                                                <Button><FaTrash /></Button>
+                                            </Col>
+                                        </Row>
+                                    </ListGroup.Item>
+                                ))}
+                            </ListGroup>
+                        )}
+                    </Col>
             )}
-        </Row>
+                </Row>
+        </>
     )
 }
 
