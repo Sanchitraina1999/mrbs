@@ -55,7 +55,7 @@ const BookingPageScreen = ({ history, match }) => {
                                 </Col>
                                 <Col md={6}>
                                     {message && <Message variant='danger'>{message}</Message>}
-                                    <Card className='card bg-dark mb-3 rounded'>
+                                    <Card className='card bg-danger mb-3 rounded'>
                                         <ListGroup variant='flush'>
                                             <ListGroup.Item>
                                                 <Form onSubmit={submitHandler}>
@@ -77,7 +77,7 @@ const BookingPageScreen = ({ history, match }) => {
                                                             <Form.Control type='time' value={endTime} onChange={e => setEndTime(e.target.value)}></Form.Control>
                                                         </Form.Group>
                                                         <Button variant='primary' type='submit' className='my -3 py-3'>
-                                                            Book Room
+                                                            Get Availability
                                                         </Button>
                                                 </Form>
                                             </ListGroup.Item>
