@@ -140,7 +140,7 @@ export const removeMeeting = (bookedTimeId) => async (dispatch, getState) => {
             }
         }
         const { data } = await axios.delete(
-            `/api/meetingRooms/myMeetings/${bookedTimeId}`,
+            `/api/meetingRooms/deleteMeeting/${bookedTimeId}`,
             config
         )
         dispatch({ type: DELETE_MEETING_SUCCESS, payload: data })
