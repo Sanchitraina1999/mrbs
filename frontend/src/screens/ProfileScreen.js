@@ -3,7 +3,7 @@ import { Form, Button, Row, Col, ListGroup } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { ToastContainer, toast } from 'react-toastify'
 import { Link } from 'react-router-dom'
-import { FcDeleteDatabase, AiOutlineEdit } from 'react-icons/fa'
+import { FaTrash, FaEdit } from 'react-icons/fa'
 
 import Message from '../components/Message'
 import Loader from '../components/Loader'
@@ -135,10 +135,10 @@ const ProfileScreen = ({ location, history }) => {
                                         Purpose: {item.purposeOfBooking}
                                     </Col>
                                     <Col md={1}>
-                                        <Button><AiOutlineEdit/></Button>
+                                        <Button><FaEdit/></Button>
                                     </Col>
                                     <Col md={1}>
-                                        <Button><FcDeleteDatabase/></Button>
+                                        <Button><FaTrash/></Button>
                                     </Col>
                                 </Row>
                             </ListGroup.Item>
