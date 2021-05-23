@@ -34,7 +34,7 @@ const RegisterScreen = ({ location, history }) => {
         var regex = new RegExp(/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/)
         if (!regex.test(email))
             setMessage('Invalid format for email')
-        else if (password.length < 0)
+        else if (password.length < 8)
             setMessage('Password length should be atleast 8 characters')
         else if (password !== confirmPassword)
             setMessage('Passwords do not match')
