@@ -27,7 +27,10 @@ const BookingPageScreen = ({ history, match }) => {
 
     const submitHandler = (e) => {
         e.preventDefault();
-        { console.log(startDate) }
+        { console.log(startDate, "startDate") }
+        { console.log(startTime, "startTime") }
+        { console.log(endDate, "endDate") }
+        { console.log(endTime, "endTime") }
     }
 
     return (
