@@ -18,7 +18,7 @@ const BookingPageScreen = ({ history, match }) => {
 
     useEffect(() => {
         dispatch(listMeetingRoomDetails(match.params.id))
-    }, [dispatch, match, meetingRoom])
+    }, [dispatch, match])
 
     return (
         <>
@@ -32,7 +32,7 @@ const BookingPageScreen = ({ history, match }) => {
                     : error ? (<Message variant='danger'>{error}</Message>)
                         : (
                             < Row >
-                                {/* <Col md={6}>
+                                <Col md={6}>
                                     <Image src={meetingRoom.image} alt={meetingRoom.roomName} fluid />
                                 </Col>
                                 <Col md={6}>
@@ -58,7 +58,7 @@ const BookingPageScreen = ({ history, match }) => {
                                             </ListGroup.Item>
                                         </ListGroup>
                                     </Card>
-                                </Col> */}
+                                </Col>
                             </Row>
     )
 }
