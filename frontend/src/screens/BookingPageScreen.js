@@ -34,7 +34,8 @@ const BookingPageScreen = ({ history, match }) => {
 
     const submitHandler = (e) => {
         e.preventDefault();
-        const currentDateTime = new Date
+        var currentDateTime = new Date()
+        currentDateTime = moment(currentDateTime).format()
         { console.log(currentDateTime) }
         { console.log(startDate + startTime) }
         { console.log(endDate + endTime) }
