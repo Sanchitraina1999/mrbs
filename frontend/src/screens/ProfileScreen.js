@@ -131,8 +131,8 @@ const ProfileScreen = ({ location, history }) => {
                                 </Col>
                             </Row>
                         </ListGroup.Item>
-                    ))}
-                )}</ListGroup>
+                    ))}</ListGroup>
+                )}
             </Col>
         </Row>
     )
