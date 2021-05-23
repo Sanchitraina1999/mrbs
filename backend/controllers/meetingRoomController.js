@@ -115,4 +115,36 @@ const getMyMeetings = asyncHandler(async (req, res) => {
     }
 })
 
-export { getMeetingRooms, getMeetingRoomById, getAvailabilityById, bookMeetingRoom, getMyMeetings }
+//@desc  Delete meetings
+//@route DELETE /api/meetingRooms/deleteMeeting/:id
+//@access Private
+const deleteMeeting = asyncHandler(async (req, res) => {
+    const meetingRooms = await MeetingRoom.find({})
+    if (meetingRooms) {
+        var myMeetings = []
+        { console.log(meetingRooms, 'meetingRooms') }
+        meetingRooms.map((room) => {
+            room.bookedTimes.map((booking) => {
+                if (booking.bookedBy == req.params.id) {
+                    myMeetings.push({
+                        id: booking._id,
+                        room: room._id,
+                        roomName: room.roomName,
+                        startDateTime: booking.startDate,
+                        endDateTime: booking.endDate,
+                        purposeOfBooking: booking.purposeOfBooking
+                    })
+                }
+            })
+        })
+        myMeetings.sort((a, b) => (a.startDateTime > b.startDateTime) ? 1 : ((b.startDateTime > a.startDateTime) ? -1 : 0))
+        myMeetings=myMeetings.filter((meets)=> meets.endDateTime > today)
+        res.json(myMeetings)
+    }
+    else {
+        res.status(404)
+        throw new Error('Cannot get meeting room')
+    }
+})
+
+export { getMeetingRooms, getMeetingRoomById, getAvailabilityById, bookMeetingRoom, getMyMeetings, deleteMeeting }
