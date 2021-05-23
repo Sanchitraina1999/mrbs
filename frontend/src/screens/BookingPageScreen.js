@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { Form, Row, Col, Image, ListGroup, Card, Button } from 'react-bootstrap'
-import {FaAngleLeft} from 'react-icons/fa'
+import { FaAngleLeft } from 'react-icons/fa'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
 import { listMeetingRoomDetails } from '../actions/meetingRoomActions'
@@ -29,17 +29,15 @@ const BookingPageScreen = ({ history, match }) => {
 
     const submitHandler = (e) => {
         e.preventDefault();
-        { console.log(startDate, "startDate") }
-        { console.log(startTime, "startTime") }
-        { console.log(endDate, "endDate") }
-        { console.log(endTime, "endTime") }
+        { console.log(startDate + startTime) }
+        { console.log(endDate + endTime) }
     }
 
     return (
         <>
             {!userInfo && history.push('/login')}
             <Link className='btn btn-dark my-3' to='/'>
-                <FaAngleLeft/>
+                <FaAngleLeft />
             </Link>
             {
                 loading ? <Loader />
@@ -60,32 +58,32 @@ const BookingPageScreen = ({ history, match }) => {
                                         <ListGroup variant='flush'>
                                             <ListGroup.Item>
                                                 <Form onSubmit={submitHandler}>
-                                                        <Form.Group controlId='startDateTime'>
-                                                            <Form.Label>Start Date & Time</Form.Label>
-                                                            <Form.Text className='text-muted'>
-                                                                The Date & Time when your meet starts
+                                                    <Form.Group controlId='startDateTime'>
+                                                        <Form.Label>Start Date & Time</Form.Label>
+                                                        <Form.Text className='text-muted'>
+                                                            The Date & Time when your meet starts
                                                             </Form.Text>
-                                                            <Form.Control type='date' value={startDate} onChange={e => setStartDate(e.target.value)}></Form.Control>
-                                                            <Form.Control type='time' value={startTime} onChange={e => setStartTime(e.target.value)}></Form.Control>
-                                                        </Form.Group>
+                                                        <Form.Control type='date' value={startDate} onChange={e => setStartDate(e.target.value)}></Form.Control>
+                                                        <Form.Control type='time' value={startTime} onChange={e => setStartTime(e.target.value)}></Form.Control>
+                                                    </Form.Group>
 
 
-                                                        <Form.Group controlId='endDateTime'>
-                                                            <Form.Label>End Date & Time</Form.Label>
-                                                            <Form.Text className='text-muted'>
-                                                                The Date & Time when your meet ends
+                                                    <Form.Group controlId='endDateTime'>
+                                                        <Form.Label>End Date & Time</Form.Label>
+                                                        <Form.Text className='text-muted'>
+                                                            The Date & Time when your meet ends
                                                             </Form.Text>
-                                                            <Form.Control type='date' value={endDate} onChange={e => setEndDate(e.target.value)}></Form.Control>
-                                                            <Form.Control type='time' value={endTime} onChange={e => setEndTime(e.target.value)}></Form.Control>
-                                                        </Form.Group>
+                                                        <Form.Control type='date' value={endDate} onChange={e => setEndDate(e.target.value)}></Form.Control>
+                                                        <Form.Control type='time' value={endTime} onChange={e => setEndTime(e.target.value)}></Form.Control>
+                                                    </Form.Group>
 
-                                                        <Form.Group controlId='purposeOfBooking'>
-                                                            <Form.Label>Purpose of meeting</Form.Label>
-                                                            <Form.Control type='text' value={purposeOfBooking} onChange={e => setPurposeOfBooking(e.target.value)}></Form.Control>
-                                                        </Form.Group>
+                                                    <Form.Group controlId='purposeOfBooking'>
+                                                        <Form.Label>Purpose of meeting</Form.Label>
+                                                        <Form.Control type='text' value={purposeOfBooking} onChange={e => setPurposeOfBooking(e.target.value)}></Form.Control>
+                                                    </Form.Group>
 
-                                                        <Button variant='primary' type='submit' className='my -3 py-3'>
-                                                            Get Availability
+                                                    <Button variant='primary' type='submit' className='my -3 py-3'>
+                                                        Get Availability
                                                         </Button>
                                                 </Form>
                                             </ListGroup.Item>
