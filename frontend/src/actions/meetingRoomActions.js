@@ -133,10 +133,10 @@ export const removeMeeting = (roomId, id) => async (dispatch, getState) => {
     try {
         dispatch({ type: DELETE_MEETING_REQUEST })
         const { userLogin: { userInfo } } = getState()
-        console.log(userInfo,'userInfo')
         const config = {
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${userInfo.token}`
             }
         }
         const { data } = await axios.delete(
