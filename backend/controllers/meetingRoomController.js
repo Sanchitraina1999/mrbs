@@ -35,23 +35,24 @@ const getMeetingRoomById = asyncHandler(async (req, res) => {
 //@access Private
 const getAvailabilityById = asyncHandler(async (req, res) => {
     console.log(req.params.id)
-    const {startDateTime, endDateTime} = req.body
-    const meetingRoom = await MeetingRoom.findById(req.params.id)
-    if (meetingRoom) {
-        const bookedTimes = meetingRoom.bookedTimes
-        const isAvailable = bookedTimes.every((time)=>{
-            return (((startDateTime<time.startDate) && (endDateTime<time.startDate)) || ((startDateTime>time.endDate) && (endDateTime>time.endDate)))
-        })
-        console.log(isAvailable)
-        if(isAvailable)
-            res.json(true)
-        else
-            res.json(false)
-    }
-    else {
-        res.status(404)
-        throw new Error('Cannot get meeting room')
-    }
+    res.json(true)
+    // const {startDateTime, endDateTime} = req.body
+    // const meetingRoom = await MeetingRoom.findById(req.params.id)
+    // if (meetingRoom) {
+    //     const bookedTimes = meetingRoom.bookedTimes
+    //     const isAvailable = bookedTimes.every((time)=>{
+    //         return (((startDateTime<time.startDate) && (endDateTime<time.startDate)) || ((startDateTime>time.endDate) && (endDateTime>time.endDate)))
+    //     })
+    //     console.log(isAvailable)
+    //     if(isAvailable)
+    //         res.json(true)
+    //     else
+    //         res.json(false)
+    // }
+    // else {
+    //     res.status(404)
+    //     throw new Error('Cannot get meeting room')
+    // }
 })
 
 export { getMeetingRooms, getMeetingRoomById,getAvailabilityById }
