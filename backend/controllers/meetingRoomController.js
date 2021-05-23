@@ -79,4 +79,26 @@ const bookMeetingRoom = asyncHandler(async (req, res) => {
     }
 })
 
+//@desc  Get user's meetings
+//@route PUT /api/meetingRooms/myMeetings/:id
+//@access Private
+const getMyMeetings = asyncHandler(async (req, res) => {
+    const { startDateTime, endDateTime, userid, purposeOfBooking } = req.body
+    const meetingRoom = await MeetingRoom.findById(req.params.id)
+    if (meetingRoom) {
+        meetingRoom.bookedTimes.push({
+            startDate: startDateTime,
+            endDate: endDateTime,
+            bookedBy: userid,
+            purposeOfBooking
+        })
+        const updatedMeetingRoom = await meetingRoom.save()
+        res.json(updatedMeetingRoom)
+    }
+    else {
+        res.status(404)
+        throw new Error('Cannot get meeting room')
+    }
+})
+
 export { getMeetingRooms, getMeetingRoomById, getAvailabilityById,bookMeetingRoom}
