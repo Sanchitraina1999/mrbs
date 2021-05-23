@@ -59,7 +59,7 @@ const BookingPageScreen = ({ history, match }) => {
                                         <ListGroup variant='flush'>
                                             <ListGroup.Item>
                                                 <Form onSubmit={submitHandler}>
-                                                        <Form.Group controlId='startDate'>
+                                                        <Form.Group controlId='startDateTime'>
                                                             <Form.Label>Start Date & Time</Form.Label>
                                                             <Form.Text className='text-muted'>
                                                                 The Date & Time when your meet starts
@@ -69,13 +69,20 @@ const BookingPageScreen = ({ history, match }) => {
                                                         </Form.Group>
 
 
-                                                        <Form.Group controlId='startDate'>
-                                                            <Form.Label>End Date & Time</Form.Label><Form.Text className='text-muted'>
+                                                        <Form.Group controlId='endDateTime'>
+                                                            <Form.Label>End Date & Time</Form.Label>
+                                                            <Form.Text className='text-muted'>
                                                                 The Date & Time when your meet ends
                                                             </Form.Text>
                                                             <Form.Control type='date' value={endDate} onChange={e => setEndDate(e.target.value)}></Form.Control>
                                                             <Form.Control type='time' value={endTime} onChange={e => setEndTime(e.target.value)}></Form.Control>
                                                         </Form.Group>
+
+                                                        <Form.Group controlId='purposeOfBooking'>
+                                                            <Form.Label>Purpose of meeting</Form.Label>
+                                                            <Form.Control type='text' value={purposeOfBooking} onChange={e => setPurposeOfBooking(e.target.value)}></Form.Control>
+                                                        </Form.Group>
+
                                                         <Button variant='primary' type='submit' className='my -3 py-3'>
                                                             Get Availability
                                                         </Button>
