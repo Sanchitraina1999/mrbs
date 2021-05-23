@@ -32,7 +32,7 @@ const BookingPageScreen = ({ history, match }) => {
             dispatch(listMeetingRoomDetails(match.params.id))
         if(!userInfo)
             history.push('/login')
-    }, [dispatch, match,userInfo,])
+    }, [dispatch, match,userInfo,history,meetingRoom])
 
     const submitHandler = (e) => {
         e.preventDefault()
