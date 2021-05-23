@@ -36,7 +36,7 @@ const BookingPageScreen = ({ history, match }) => {
     const submitHandler = (e) => {
         e.preventDefault()
         setMessage(null)
-        var regex = new RegExp('^\s*$')
+        var regex = new RegExp('^(?!\s*$).+/')
         {console.log(regex.test(purposeOfBooking))}
         var currentDateTime = moment(moment(new Date()).add(30,'m')).format('yyyy-MM-DD[T]hh:mm')
         var startDateTime = startDate+"T"+startTime
