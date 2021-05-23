@@ -104,7 +104,7 @@ const ProfileScreen = ({ location, history }) => {
                     </Col>
                     <Col md={9}>
                         <h2>My Meetings</h2>
-                        {myMeetings.length === 0 ? <Message>You have no scheduled meetings!<a onClick={retryHandler} className='underlined'> retry ? </a></Message> : (
+                        {myMeetings.length === 0 ? <Message>You have no scheduled meetings!<a onClick={retryHandler} className='underlined  '> retry ? </a></Message> : (
                             <ListGroup variant='flush'>
                                 {myMeetings.map((item, index) => (
                                     <ListGroup.Item key={index}>
