@@ -53,14 +53,14 @@ const BookingPageScreen = ({ history, match }) => {
                                                 <Form onSubmit={submitHandler}>
                                                     <Form.Group controlId='bookingForm'>
                                                         <Form.Label>Start Date & Time</Form.Label>
-                                                        <Form.Control type='date' value={startDate}></Form.Control>
-                                                        <Form.Control type='time' value={startTime}></Form.Control>
+                                                        <Form.Control type='date' value={startDate} onChange={e => setStartDate(e.target.value)}></Form.Control>
+                                                        <Form.Control type='time' value={startTime} onChange={e => setStartTime(e.target.value)}></Form.Control>
                                                         <Form.Text className='text-muted'>
                                                             The Date & Time when your meet starts
                                                             </Form.Text>
                                                         <Form.Label>End Date & Time</Form.Label>
-                                                        <Form.Control type='date' value={endDate}></Form.Control>
-                                                        <Form.Control type='time' value={endTime}></Form.Control>
+                                                        <Form.Control type='date' value={endDate} onChange={e => setEndDate(e.target.value)}></Form.Control>
+                                                        <Form.Control type='time' value={endTime} onChange={e => setEndTime(e.target.value)}></Form.Control>
                                                         <Form.Text className='text-muted'>
                                                             The Date & Time when your meet ends
                                                             </Form.Text>
