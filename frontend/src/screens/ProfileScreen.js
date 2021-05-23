@@ -103,7 +103,7 @@ const ProfileScreen = ({ location, history }) => {
                                     startDateTime: booking.startDate,
                                     endDateTime: booking.endDate,
                                     purposeOfBooking: booking.purposeOfBooking
-                                }})
+                                })
                             ) : null
                         ))
                     ))
