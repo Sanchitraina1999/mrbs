@@ -136,8 +136,7 @@ export const removeMeeting = (roomId, bookedTimeId) => async (dispatch, getState
         console.log(userInfo,'userInfo')
         const config = {
             headers: {
-                'Content-Type': 'application/json',
-                Authorization: `Bearer ${userInfo.token}`
+                'Content-Type': 'application/json'
             }
         }
         const { data } = await axios.delete(
