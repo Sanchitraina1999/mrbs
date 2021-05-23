@@ -8,7 +8,7 @@ import { FaTrash, FaEdit } from 'react-icons/fa'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
 import { getUserDetails, updateUserProfileDetails } from '../actions/userActions'
-import { listMeetingRooms } from '../actions/meetingRoomActions'
+import { listMeetingRooms, getMyMeetings } from '../actions/meetingRoomActions'
 import { USER_UPDATE_PROFILE_RESET } from '../constants/userConstants'
 
 const ProfileScreen = ({ location, history }) => {
@@ -38,6 +38,8 @@ const ProfileScreen = ({ location, history }) => {
     // var myMeetings = []
 
     useEffect(() => {
+        if(!myMeetings)
+            dispatch(getMyMeetings())
         if (!userInfo || success) {
             dispatch({ type: USER_UPDATE_PROFILE_RESET })
             history.push('/login')
