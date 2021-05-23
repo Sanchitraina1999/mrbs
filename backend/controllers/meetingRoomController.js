@@ -126,6 +126,7 @@ const deleteMeeting = asyncHandler(async (req, res) => {
                 booking._id == req.params.id
             })
         })
+        {console.log(meetingRooms)}
         const updatedMeetingRooms = await meetingRooms.save()
         {console.log(updatedMeetingRooms)}
         res.json(updatedMeetingRooms)
