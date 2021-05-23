@@ -79,4 +79,4 @@ const bookMeetingRoom = asyncHandler(async (req, res) => {
     }
 })
 
-export { getMeetingRooms, getMeetingRoomById, getAvailabilityById }
+export { getMeetingRooms, getMeetingRoomById, getAvailabilityById,bookMeetingRoom}
