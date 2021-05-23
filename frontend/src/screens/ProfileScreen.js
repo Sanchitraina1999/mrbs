@@ -5,12 +5,6 @@ import { ToastContainer, toast } from 'react-toastify'
 import { Link } from 'react-router-dom'
 import { FcDeleteDatabase, AiOutlineEdit } from 'react-icons/fa'
 
-class Question extends React.Component {
-    render() {
-        return <h3> Lets go for a <FaBeer />? </h3>
-    }
-} '
-
 import Message from '../components/Message'
 import Loader from '../components/Loader'
 import { getUserDetails, updateUserProfileDetails } from '../actions/userActions'
@@ -139,6 +133,12 @@ const ProfileScreen = ({ location, history }) => {
                                     </Col>
                                     <Col md={3}>
                                         Purpose: {item.purposeOfBooking}
+                                    </Col>
+                                    <Col md={1}>
+                                        <Button><AiOutlineEdit/></Button>
+                                    </Col>
+                                    <Col md={1}>
+                                        <Button><FcDeleteDatabase/></Button>
                                     </Col>
                                 </Row>
                             </ListGroup.Item>
