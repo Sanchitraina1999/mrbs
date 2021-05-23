@@ -18,6 +18,8 @@ import {
     USER_EMAIL_FAILURE
 } from '../constants/userConstants'
 
+import {MY_MEETINGS_RESET} from '../constants/meetingRoomConstants'
+
 export const login = (email, password, keepLoggedIn) => async (dispatch) => {
     try {
         dispatch({ type: USER_LOGIN_REQUEST })
@@ -47,6 +49,7 @@ export const login = (email, password, keepLoggedIn) => async (dispatch) => {
 export const logout = () => async (dispatch) => {
     localStorage.removeItem('userInfo')
     dispatch({ type: USER_LOGOUT })
+    dispatch({ type: MY_MEETINGS_RESET })
 }
 
 export const register = (username, email, password) => async (dispatch) => {
