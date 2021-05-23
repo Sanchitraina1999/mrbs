@@ -6,5 +6,5 @@ import { protect } from '../middleware/authMiddleware.js'
 router.route('/').get(protect, getMeetingRooms)
 router.route('/:id').get(protect,getMeetingRoomById)
 router.route('/availability/:id').post(protect,getAvailabilityById)
-
+router.route('/book/:id').patch(protect,bookMeetingRoom)
 export default router
