@@ -8,7 +8,10 @@ import {
     MEETING_ROOM_DETAILS_FAIL,
     MEETING_ROOM_AVAILABILITY_REQUEST,
     MEETING_ROOM_AVAILABILITY_SUCCESS,
-    MEETING_ROOM_AVAILABILITY_FAIL
+    MEETING_ROOM_AVAILABILITY_FAIL,
+    MEETING_ROOM_BOOKING_REQUEST,
+    MEETING_ROOM_BOOKING_SUCCESS,
+    MEETING_ROOM_BOOKING_FAIL
 } from '../constants/meetingRoomConstants'
 
 export const listMeetingRooms = () => async (dispatch, getState) => {
@@ -65,5 +68,26 @@ export const getAvailablityOfMeetingRoom = (id, startDateTime, endDateTime) => a
     }
     catch (error) {
         dispatch({ type: MEETING_ROOM_AVAILABILITY_FAIL, payload: error.response && error.response.data.message ? error.response.data.message : error.message })
+    }
+}
+
+export const bookMeetingRoom = (id, startDateTime, endDateTime, userid, purposeOfBooking) => async (dispatch,getState) => {
+    try {
+        dispatch({ type: MEETING_ROOM_BOOKING_REQUEST })
+        const { userLogin: { userInfo } } = getState()
+        const config = {
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${userInfo.token}`
+            }
+        }
+        const { data } = await axios.put(
+            `/api/meetingRooms/book/${id}`,
+            {startDateTime, endDateTime},
+             config)
+        dispatch({ type: MEETING_ROOM_BOOKING_SUCCESS, payload: data })
+    }
+    catch (error) {
+        dispatch({ type: MEETING_ROOM_BOOKING_FAIL, payload: error.response && error.response.data.message ? error.response.data.message : error.message })
     }
 }

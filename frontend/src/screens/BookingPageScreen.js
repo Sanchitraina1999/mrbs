@@ -8,7 +8,7 @@ import moment from 'moment'
 
 import Loader from '../components/Loader'
 import Message from '../components/Message'
-import { listMeetingRoomDetails, getAvailablityOfMeetingRoom } from '../actions/meetingRoomActions'
+import { listMeetingRoomDetails, getAvailablityOfMeetingRoom,bookMeetingRoom } from '../actions/meetingRoomActions'
 
 const BookingPageScreen = ({ history, match }) => {
 
@@ -47,7 +47,11 @@ const BookingPageScreen = ({ history, match }) => {
         else if (purposeOfBooking.replace(/\s/g, '').length <= 0)
             setMessage('Purpose of Meeting cannot be empty')
         else {
-            dispatch(getAvailablityOfMeetingRoom(match.params.id, startDateTime, endDateTime))
+            if(available){
+                dispatch(bookMeetingRoom(match.params.id, startDateTime, endDateTime, userInfo._id, purposeOfBooking))
+                setMessage('Booking successful')
+            }
+            else dispatch(getAvailablityOfMeetingRoom(match.params.id, startDateTime, endDateTime))
         }
     }
 
