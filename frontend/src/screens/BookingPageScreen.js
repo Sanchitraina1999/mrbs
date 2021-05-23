@@ -46,6 +46,7 @@ const BookingPageScreen = ({ history, match }) => {
                             < Row >
                                 <Col md={5}>
                                     <Image src={meetingRoom.image} alt={meetingRoom.roomName} fluid />
+                                    <p>{meetingRoom.roomName}</p>
                                 </Col>
                                 <Col md={6}>
                                     {message && <Message variant='danger'>{message}</Message>}
