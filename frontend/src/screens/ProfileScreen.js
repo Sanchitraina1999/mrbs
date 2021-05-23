@@ -36,7 +36,7 @@ const ProfileScreen = ({ location, history }) => {
             history.push('/login')
         }
         else {
-            if(!meetingRooms.length)
+            if(!meetingRooms)
                 dispatch(listMeetingRooms())
             if (!user.username) {
                 dispatch(getUserDetails('profile'))
