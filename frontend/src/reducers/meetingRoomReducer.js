@@ -71,10 +71,10 @@ export const meetingRoomBookingReducer = (state = {}, action) => {
     }
 }
 
-export const myMeetingListReducer = (state = { loaded:false, myMeetings: [] }, action) => {
+export const myMeetingListReducer = (state = { loaded: false, myMeetings: [] }, action) => {
     switch (action.type) {
         case MY_MEETINGS_REQUEST:
-            return { loaded:true,loadingMyMeetings: true };
+            return { loaded: true, loadingMyMeetings: true };
         case MY_MEETINGS_SUCCESS:
             return { loadingMyMeetings: false, myMeetings: action.payload }
         case MY_MEETINGS_FAIL:
@@ -84,12 +84,12 @@ export const myMeetingListReducer = (state = { loaded:false, myMeetings: [] }, a
     }
 }
 
-export const deleteMeetingReducer = (state = { }, action) => {
+export const deleteMeetingReducer = (state = {}, action) => {
     switch (action.type) {
         case DELETE_MEETING_REQUEST:
-            return { };
+            return { ...state };
         case DELETE_MEETING_SUCCESS:
-            return { deleteMeeting: false }
+            return { deleteMeeting: true }
         case DELETE_MEETING_FAIL:
             return { error: action.payload }
         default:
