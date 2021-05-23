@@ -83,13 +83,12 @@ const bookMeetingRoom = asyncHandler(async (req, res) => {
 //@route PUT /api/meetingRooms/myMeetings/:id
 //@access Private
 const getMyMeetings = asyncHandler(async (req, res) => {
-    const meetingRoom = await MeetingRoom.find({})
-    {console.log(meetingRoom)}
-    if (meetingRoom) {
+    const meetingRooms = await MeetingRoom.find({})
+    if (meetingRooms) {
         var myMeetings = []
         meetingRooms.map((room) => (
             room.bookedTimes.map((booking) => (
-                (booking.bookedBy === req.params.id)&&(
+                (booking.bookedBy === req.params.id) && (
                     myMeetings.push({
                         room: room._id,
                         roomName: room.roomName,
@@ -101,6 +100,7 @@ const getMyMeetings = asyncHandler(async (req, res) => {
             ))
         ))
         myMeetings.sort((a, b) => (a.startDateTime > b.startDateTime) ? 1 : ((b.startDateTime > a.startDateTime) ? -1 : 0))
+        { console.log(myMeetings) }
         res.json(myMeetings)
     }
     else {
