@@ -97,7 +97,7 @@ export const bookMeetingRoom = (id, startDateTime, endDateTime, userid, purposeO
     }
 }
 
-export const getMyMeetings = () => async (dispatch,getState) => {
+export const getMyMeetings = (id) => async (dispatch,getState) => {
     try {
         dispatch({ type: MY_MEETINGS_REQUEST })
         const { userLogin: { userInfo } } = getState()
@@ -108,7 +108,7 @@ export const getMyMeetings = () => async (dispatch,getState) => {
             }
         }
         const { data } = await axios.get(
-            `/api/meetingRooms/myMeetings/${userInfo._id}`,
+            `/api/meetingRooms/myMeetings/${id}`,
              config)
         dispatch({ type: MY_MEETINGS_SUCCESS, payload: data })
     }

@@ -83,7 +83,6 @@ const bookMeetingRoom = asyncHandler(async (req, res) => {
 //@route PUT /api/meetingRooms/myMeetings/:id
 //@access Private
 const getMyMeetings = asyncHandler(async (req, res) => {
-    const { startDateTime, endDateTime, userid, purposeOfBooking } = req.body
     const meetingRoom = await MeetingRoom.findById(req.params.id)
     if (meetingRoom) {
         meetingRoom.bookedTimes.push({
@@ -101,4 +100,4 @@ const getMyMeetings = asyncHandler(async (req, res) => {
     }
 })
 
-export { getMeetingRooms, getMeetingRoomById, getAvailabilityById,bookMeetingRoom}
+export { getMeetingRooms, getMeetingRoomById, getAvailabilityById, bookMeetingRoom, getMyMeetings }
