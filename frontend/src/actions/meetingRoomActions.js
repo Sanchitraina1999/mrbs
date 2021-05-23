@@ -108,7 +108,7 @@ export const getMyMeetings = () => async (dispatch,getState) => {
             }
         }
         const { data } = await axios.get(
-            `/api/meetingRooms/${userInfo._id}/${id}`,
+            `/api/meetingRooms/myMeetings/${userInfo._id}`,
              config)
         dispatch({ type: MY_MEETINGS_SUCCESS, payload: data })
     }
