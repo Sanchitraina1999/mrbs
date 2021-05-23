@@ -108,6 +108,7 @@ const ProfileScreen = ({ location, history }) => {
                             ))
                         ))
                     }
+                    {console.log(myMeetings.length)}
                     {console.log(myMeetings)}
                 </ListGroup>
             </Col>
