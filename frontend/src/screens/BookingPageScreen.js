@@ -81,12 +81,16 @@ const BookingPageScreen = ({ history, match }) => {
                                             <ListGroup.Item>
                                                 <Form onSubmit={submitHandler}>
                                                     <Form.Group controlId='startDateTime'>
-                                                        <Form.Label>Start Date & Time</Form.Label>
-                                                        <Form.Text className='text-muted'>
-                                                            The Date & Time when your meet starts
+                                                            <Form.Label>Start Date & Time</Form.Label>
+                                                            <Form.Text className='text-muted'>
+                                                                The Date & Time when your meet starts
                                                             </Form.Text>
-                                                        <Form.Control type='date' value={startDate} onChange={e => setStartDate(e.target.value)}></Form.Control>
-                                                        <Form.Control type='time' value={startTime} onChange={e => setStartTime(e.target.value)}></Form.Control>
+                                                        <Form.Group controlId='startDate'>
+                                                            <Form.Control type='date' value={startDate} onChange={e => setStartDate(e.target.value)}></Form.Control>
+                                                        </Form.Group>
+                                                        <Form.Group controlId='startTime'>
+                                                            <Form.Control type='time' value={startTime} onChange={e => setStartTime(e.target.value)}></Form.Control>
+                                                        </Form.Group>
                                                     </Form.Group>
 
 
