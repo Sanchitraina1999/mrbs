@@ -136,10 +136,10 @@ const ProfileScreen = ({ location, history }) => {
                                         Purpose: {item.purposeOfBooking}
                                     </Col>
                                     <Col md={1}>
-                                        <><FaEdit/></>
+                                        <Button><FaEdit/></Button>
                                     </Col>
                                     <Col md={1}>
-                                        <><FaTrash/></>
+                                        <Button><FaTrash/></Button>
                                     </Col>
                                 </Row>
                             </ListGroup.Item>
