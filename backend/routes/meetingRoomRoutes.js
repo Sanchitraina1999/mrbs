@@ -8,6 +8,6 @@ router.route('/:id').get(protect, getMeetingRoomById)
 router.route('/availability/:id').post(protect, getAvailabilityById)
 router.route('/book/:id').put(protect, bookMeetingRoom)
 router.route('/myMeetings/:id').get(protect, getMyMeetings)
-router.route('/deleteMeeting/:id').delete(protect, deleteMeeting)
+router.route('/deleteMeeting/:id').delete(deleteMeeting)
 
 export default router
