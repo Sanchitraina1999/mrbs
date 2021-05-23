@@ -35,13 +35,13 @@ const getMeetingRoomById = asyncHandler(async (req, res) => {
 //@access Public
 const getAvailabilityById = asyncHandler(async (req, res) => {
     const { startDateTime, endDateTime } = req.body
-    console.log(startDateTime, 'startDateTime')
-    console.log(endDateTime, 'endDateTime')
+    
     const meetingRoom = await MeetingRoom.findById(req.params.id)
     if (meetingRoom) {
         const bookedTimes = meetingRoom.bookedTimes
-        // console.log(bookedTimes, 'bookedTimes')
-       
+        console.log(bookedTimes, 'bookedTimes')
+        console.log(startDateTime, 'startDateTime')
+        console.log(endDateTime, 'endDateTime')
         const isAvailable = bookedTimes.every((time) => {
             return (((startDateTime < time.startDate) && (endDateTime < time.startDate)) || ((startDateTime > time.endDate) && (endDateTime > time.endDate)))
         })
