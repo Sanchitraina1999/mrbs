@@ -7,7 +7,10 @@ import {
     MEETING_ROOM_DETAILS_FAIL,
     MEETING_ROOM_AVAILABILITY_REQUEST,
     MEETING_ROOM_AVAILABILITY_SUCCESS,
-    MEETING_ROOM_AVAILABILITY_FAIL
+    MEETING_ROOM_AVAILABILITY_FAIL,
+    MEETING_ROOM_BOOKING_REQUEST,
+    MEETING_ROOM_BOOKING_SUCCESS,
+    MEETING_ROOM_BOOKING_FAIL
 } from '../constants/meetingRoomConstants'
 
 export const meetingRoomReducer = (state = { meetingRooms: [] }, action) => {
@@ -43,6 +46,19 @@ export const meetingRoomAvailableReducer = (state = { available: false }, action
         case MEETING_ROOM_AVAILABILITY_SUCCESS:
             return { available: action.payload }
         case MEETING_ROOM_AVAILABILITY_FAIL:
+            return { }
+        default:
+            return state;
+    }
+}
+
+export const meetingRoomBookingReducer = (state = { available: false }, action) => {
+    switch (action.type) {
+        case MEETING_ROOM_BOOKING_REQUEST:
+            return { ...state };
+        case MEETING_ROOM_BOOKING_SUCCESS:
+            return { available: action.payload }
+        case MEETING_ROOM_BOOKING_FAIL:
             return { }
         default:
             return state;
