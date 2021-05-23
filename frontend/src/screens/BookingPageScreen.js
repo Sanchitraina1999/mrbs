@@ -26,18 +26,26 @@ const BookingPageScreen = ({ history, match }) => {
     const [endTime, setEndTime] = useState(moment(moment(new Date()).add(70, 'm')).format('HH:mm'))
     const [purposeOfBooking, setPurposeOfBooking] = useState('')
     const [message, setMessage] = useState(null)
+    const [bookingAvailable, setBookingAvailable] = useState(false)
 
     useEffect(() => {
         setMessage(null)
+        setBookingAvailable(false)
+        setMessage('Meeting room unavailable') 
         if (!Object.keys(meetingRoom).length)
             dispatch(listMeetingRoomDetails(match.params.id))
         if (!userInfo)
             history.push('/login')
-    }, [dispatch, match, userInfo, history, meetingRoom])
+        if(available){
+            setBookingAvailable(true)
+            setMessage('Meeting room available')
+        }
+    }, [dispatch, match, userInfo, history, meetingRoom,available])
 
     const submitHandler = (e) => {
         e.preventDefault()
         setMessage(null)
+        setBookingAvailable(false)
         var currentDateTime = moment(moment(new Date()).add(30, 'm')).format('yyyy-MM-DD[T]HH:mm')
         var startDateTime = startDate + "T" + startTime
         var endDateTime = endDate + "T" + endTime
@@ -54,12 +62,6 @@ const BookingPageScreen = ({ history, match }) => {
             }
             else {
                 dispatch(getAvailablityOfMeetingRoom(match.params.id, startDateTime, endDateTime))
-                if (available) {
-                    setMessage('Meeting room available')
-                }
-                else {
-                    setMessage('Meeting room unavailable')
-                }
             }
         }
     }
@@ -121,7 +123,7 @@ const BookingPageScreen = ({ history, match }) => {
                                                         <Form.Label>Purpose of meeting</Form.Label>
                                                         <Form.Control type='text' value={purposeOfBooking} onChange={e => setPurposeOfBooking(e.target.value)}></Form.Control>
                                                     </Form.Group>
-                                                    {!available ? (
+                                                    {!bookingAvailable ? (
                                                         <Button variant='primary' type='submit' className='my -3 py-3'>
                                                             GET availability
                                                         </Button>) : (
