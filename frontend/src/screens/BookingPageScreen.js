@@ -53,7 +53,7 @@ const BookingPageScreen = ({ history, match }) => {
             }
             else {
                 dispatch(getAvailablityOfMeetingRoom(match.params.id, startDateTime, endDateTime))
-                if(available)setMessage('Booking unavailable')
+                if(available)setMessage('Booking available')
                 else setMessage('Booking available')
             }
         }
