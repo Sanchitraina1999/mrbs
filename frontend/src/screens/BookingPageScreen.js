@@ -40,16 +40,14 @@ const BookingPageScreen = ({ history, match }) => {
                                         <ListGroup.Item>
                                             {meetingRoom.roomName}
                                         </ListGroup.Item>
-                                        {/* <ListGroup.Item>
+                                        <ListGroup.Item>
                                            {meetingRoom.location.address}{','}
                                            {meetingRoom.location.city}
                                         </ListGroup.Item>
                                         <ListGroup.Item>
-                                        <Card className='card bg-danger mb-3'>
                                             For more details:
                                             {`${meetingRoom.pointOfContact.name} ${meetingRoom.pointOfContact.mobile} ${meetingRoom.pointOfContact.email}`}
-                                            </Card>
-                                        </ListGroup.Item> */}
+                                        </ListGroup.Item>
                                     </ListGroup>
                                     <Card className='card bg-dark mb-3'>
                                         <ListGroup variant='flush'>
