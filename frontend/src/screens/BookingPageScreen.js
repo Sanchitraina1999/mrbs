@@ -40,7 +40,7 @@ const BookingPageScreen = ({ history, match }) => {
                                         <ListGroup.Item>
                                             {meetingRoom.roomName}
                                         </ListGroup.Item>
-                                        <ListGroup.Item>
+                                        {/* <ListGroup.Item>
                                            {meetingRoom.location.address}{','}
                                            {meetingRoom.location.city}
                                         </ListGroup.Item>
@@ -49,7 +49,7 @@ const BookingPageScreen = ({ history, match }) => {
                                             {meetingRoom.pointOfContact.name}{','}<br/>
                                             {meetingRoom.pointOfContact.mobile}{','}<br/>
                                             <a href={`mailto:${meetingRoom.pointOfContact.email}`}>{meetingRoom.pointOfContact.email}</a>{','}<br/>                                        
-                                        </ListGroup.Item>
+                                        </ListGroup.Item> */}
                                     </ListGroup>
                                     <Card className='card bg-dark mb-3'>
                                         <ListGroup variant='flush'>
