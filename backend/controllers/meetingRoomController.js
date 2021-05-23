@@ -90,7 +90,7 @@ const getMyMeetings = asyncHandler(async (req, res) => {
         {console.log(meetingRooms,'meetingRooms')}
         meetingRooms.map((room)=>{
             room.bookedTimes.map((booking)=>{
-                if(booking.bookedBy === req.params.id){
+                if(booking.bookedBy == req.params.id){
                     myMeetings.push({
                         room: room._id,
                         roomName: room.roomName,
