@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Form, Button, Row, Col, ListGroup, ListGroupItem } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { ToastContainer, toast } from 'react-toastify'
+import { Link } from 'react-router-dom'
 
 import Message from '../components/Message'
 import Loader from '../components/Loader'
@@ -131,7 +132,6 @@ const ProfileScreen = ({ location, history }) => {
                             </Row>
                         </ListGroup.Item>
                     ))}
-                </ListGroup>
                 )}
             </Col>
         </Row>
