@@ -37,9 +37,9 @@ export const listMeetingRoomDetails = (id) => async (dispatch,getState) => {
             }
         }
         const { data } = await axios.get(`/api/meetingRooms/${id}`, config)
-        dispatch({ type: MEETING_ROOM_DETAILS_SUCCESS, payload: data });
+        dispatch({ type: MEETING_ROOM_DETAILS_SUCCESS, payload: data })
     }
     catch (error) {
-        dispatch({ type: MEETING_ROOM_DETAILS_FAIL, payload: error.response && error.response.data.message ? error.response.data.message : error.message });
+        dispatch({ type: MEETING_ROOM_DETAILS_FAIL, payload: error.response && error.response.data.message ? error.response.data.message : error.message })
     }
-};
+}
