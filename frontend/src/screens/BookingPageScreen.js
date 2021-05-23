@@ -22,7 +22,7 @@ const BookingPageScreen = ({ history, match }) => {
 
     return (
         <>
-            { console.log(meetingRoom) }
+            { console.log(meetingRoom)}
             {!userInfo && history.push('/login')}
             <Link className='btn btn-dark my-3' to='/'>
                 Go Back
@@ -41,29 +41,35 @@ const BookingPageScreen = ({ history, match }) => {
                                             {meetingRoom.roomName}
                                         </ListGroup.Item>
                                         <ListGroup.Item>
-                                           {meetingRoom.location.address}{','}
-                                           {meetingRoom.location.city}
+                                            {meetingRoom.location.address}{','}
+                                            {meetingRoom.location.city}
                                         </ListGroup.Item>
                                         <ListGroup.Item className='text-info'>
-                                            For more details:<br/>
-                                            {meetingRoom.pointOfContact.name}{','}<br/>
-                                            <a href={`tel: ${meetingRoom.pointOfContact.mobile}`}>{meetingRoom.pointOfContact.mobile}{','}</a><br/>
-                                            <a href={`mailto:${meetingRoom.pointOfContact.email}`}>{meetingRoom.pointOfContact.email}</a>{','}<br/>                                        
+                                            For more details:<br />
+                                            {meetingRoom.pointOfContact.name}{','}<br />
+                                            <a href={`tel: ${meetingRoom.pointOfContact.mobile}`}>{meetingRoom.pointOfContact.mobile}{','}</a><br />
+                                            <a href={`mailto:${meetingRoom.pointOfContact.email}`}>{meetingRoom.pointOfContact.email}</a>{','}<br />
                                         </ListGroup.Item>
                                     </ListGroup>
                                     <Card className='card bg-dark mb-3'>
                                         <ListGroup variant='flush'>
                                             <ListGroup.Item>
-                                                <Form.Control>
-
-                                                </Form.Control>
+                                                <Form>
+                                                    <Form.Group controlId='bookingForm'>
+                                                        <Form.Label>Start Date & Time</Form.Label>
+                                                        <Form.Control type='date'></Form.Control>
+                                                        <Form.Text className="text-muted">
+                                                            We'll never share your email with anyone else.
+                                                        </Form.Text>
+                                                    </Form.Group>
+                                                </Form>
                                             </ListGroup.Item>
                                         </ListGroup>
                                     </Card>
                                 </Col>
                             </Row>
-    )
-}
+                        )
+            }
         </>
     )
 }
