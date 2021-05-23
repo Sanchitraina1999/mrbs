@@ -52,14 +52,14 @@ export const meetingRoomAvailableReducer = (state = { available: false }, action
     }
 }
 
-export const meetingRoomBookingReducer = (state = { available: false }, action) => {
+export const meetingRoomBookingReducer = (state = { }, action) => {
     switch (action.type) {
         case MEETING_ROOM_BOOKING_REQUEST:
             return { ...state };
         case MEETING_ROOM_BOOKING_SUCCESS:
-            return { available: action.payload }
+            return { success: true }
         case MEETING_ROOM_BOOKING_FAIL:
-            return { }
+            return { error: action.payload}
         default:
             return state;
     }

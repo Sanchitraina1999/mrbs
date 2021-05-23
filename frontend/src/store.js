@@ -4,7 +4,7 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 
 import { featureReducer } from '../src/reducers/featureReducer'
 import { userLoginReducer, userRegisterReducer, userDetailsReducer, userUpdateProfileReducer, getUserReducer } from '../src/reducers/userReducer'
-import { meetingRoomDetailsReducer, meetingRoomReducer, meetingRoomAvailableReducer } from '../src/reducers/meetingRoomReducer'
+import { meetingRoomDetailsReducer, meetingRoomReducer, meetingRoomAvailableReducer, meetingRoomBookingReducer } from '../src/reducers/meetingRoomReducer'
 
 const reducer = combineReducers({
     featureList: featureReducer,
@@ -15,7 +15,8 @@ const reducer = combineReducers({
     userReducer: getUserReducer,
     meetingRoomList: meetingRoomReducer,
     meetingRoomDetails: meetingRoomDetailsReducer,
-    meetingRoomAvailable: meetingRoomAvailableReducer
+    meetingRoomAvailable: meetingRoomAvailableReducer,
+    meetingRoomBooking: meetingRoomBookingReducer
 })
 
 const userInfoFromStorage = localStorage.getItem('userInfo') ?
