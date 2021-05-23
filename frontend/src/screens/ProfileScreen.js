@@ -98,7 +98,7 @@ const ProfileScreen = ({ location, history }) => {
                     meetingRooms.map((room) => (
                         room.bookedTimes.map((booking) => (
                             (booking.bookedBy === userInfo._id) ? (
-                                myMeetings.concat({
+                                myMeetings.push({
                                     roomName: room.roomName,
                                     startDateTime: booking.startDate,
                                     endDateTime: booking.endDate,
