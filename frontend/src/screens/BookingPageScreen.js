@@ -27,19 +27,23 @@ const BookingPageScreen = ({ history, match }) => {
     const [purposeOfBooking, setPurposeOfBooking] = useState('')
     const [message, setMessage] = useState(null)
     const [bookingAvailable, setBookingAvailable] = useState(false)
+    const [variant, setVariant] = useState('error')
 
     useEffect(() => {
         setMessage(null)
+        setVariant('error')
         if (!Object.keys(meetingRoom).length)
             dispatch(listMeetingRoomDetails(match.params.id))
         if (!userInfo)
             history.push('/login')
         if(available){
             setBookingAvailable(true)
+            setVariant('info')
             setMessage('Meeting room available')
         }
         else if(available===false){
             setBookingAvailable(false)
+            setVariant('danger')
             setMessage('Meeting room unavailable') 
         }
     }, [dispatch, match, userInfo, history, meetingRoom,available])
@@ -51,22 +55,31 @@ const BookingPageScreen = ({ history, match }) => {
         var currentDateTime = moment(moment(new Date()).add(30, 'm')).format('yyyy-MM-DD[T]HH:mm')
         var startDateTime = startDate + "T" + startTime
         var endDateTime = endDate + "T" + endTime
-        if (startDateTime <= currentDateTime)
+        if (startDateTime <= currentDateTime){
             setMessage('Booking can only be made 30 minutes prior to current Time')
-        else if (endDateTime < startDateTime)
+            setVariant('danger')
+        }
+        else if (endDateTime < startDateTime){
             setMessage('End Date/Time can not be before Start Date/Time')
-        else if (purposeOfBooking.replace(/\s/g, '').length <= 0)
+            setVariant('danger')
+        }
+        else if (purposeOfBooking.replace(/\s/g, '').length <= 0){
             setMessage('Purpose of Meeting cannot be empty')
+            setVariant('danger')
+        }
         else {
             if (available) {
                 dispatch(bookMeetingRoom(match.params.id, startDateTime, endDateTime, userInfo._id, purposeOfBooking))
                 setMessage('Booking successful')
+                setVariant('info')
                 setPurposeOfBooking('')
             }
             else {
                 dispatch(getAvailablityOfMeetingRoom(match.params.id, startDateTime, endDateTime))
-                if(available===false)
-                setMessage('Meeting room unavailable') 
+                if(available===false){
+                    setMessage('Meeting room unavailable') 
+                    setVariant('danger')
+                }
             }
         }
     }
@@ -91,7 +104,7 @@ const BookingPageScreen = ({ history, match }) => {
                                     </ListGroup>
                                 </Col>
                                 <Col md={6}>
-                                    {message && <Message variant='danger'>{message}</Message>}
+                                    {message && <Message variant={variant}>{message}</Message>}
                                     <Card className='card bg-danger mb-3 rounded'>
                                         <ListGroup variant='flush'>
                                             <ListGroup.Item>
