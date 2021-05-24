@@ -30,6 +30,7 @@ const LoginScreen = ({ location, history }) => {
         dispatch(login(email, password, keepLoggedIn))
     }
     const resetHandler = (e) => {
+        e.preventDefault()
         setEmail('')
         setPassword('')
         setKeepLoggedIn(false)
