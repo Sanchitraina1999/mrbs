@@ -4,7 +4,7 @@ import generateToken from '../utils/generateTokens.js'
 
 import nodemailer from 'nodemailer'
 
-//@desc Auth a User & get a taken
+//@desc Auth a User & get a token
 //@route POST /api/users/login
 //@access Public
 const authUser = asyncHandler(async (req, res) => {
