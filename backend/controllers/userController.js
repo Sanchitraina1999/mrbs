@@ -3,6 +3,7 @@ import User from '../models/userModel.js'
 import generateToken from '../utils/generateTokens.js'
 
 import nodemailer from 'nodemailer'
+import randomstring from 'randomstring'
 
 //@desc Auth a User & get a token
 //@route POST /api/users/login
@@ -119,14 +120,15 @@ const getUserExists = asyncHandler(async (req, res) => {
             email: user.email
         })
 
-        user.password = '123456'
+        var passw = randomstring.generate(7)
+        user.password = passw
         const updatedUser = await user.save()
 
         var mailOptions = {
             from: 'mrbsadmiun@gmail.com',
             to: email.toString(),
             subject: 'PASSWORD RECOVERY',
-            text: `Your password has been reset to 123456. Regards, MRBS Admin.`
+            text: `Your password has been reset to ${passw}. Regards, MRBS Admin.`
         }
 
         transporter.sendMail(mailOptions, function (error, info) {
