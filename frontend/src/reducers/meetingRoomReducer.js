@@ -8,6 +8,7 @@ import {
     MEETING_ROOM_AVAILABILITY_REQUEST,
     MEETING_ROOM_AVAILABILITY_SUCCESS,
     MEETING_ROOM_AVAILABILITY_FAIL,
+    MEETING_ROOM_AVAILABILITY_RESET,
     MEETING_ROOM_BOOKING_REQUEST,
     MEETING_ROOM_BOOKING_SUCCESS,
     MEETING_ROOM_BOOKING_FAIL,
@@ -53,6 +54,8 @@ export const meetingRoomAvailableReducer = (state = {}, action) => {
         case MEETING_ROOM_AVAILABILITY_SUCCESS:
             return { loadingAvailability: false, available: action.payload }
         case MEETING_ROOM_AVAILABILITY_FAIL:
+            return {}
+        case MEETING_ROOM_AVAILABILITY_RESET:
             return {}
         default:
             return state;

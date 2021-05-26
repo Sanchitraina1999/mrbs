@@ -3,12 +3,13 @@ import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { Form, Row, Col, Image, ListGroup, Card, Button } from 'react-bootstrap'
 import { FaAngleLeft } from 'react-icons/fa'
-
 import moment from 'moment'
+import 'react-toastify/dist/ReactToastify.css'
+import { ToastContainer, toast } from 'react-toastify'
 
 import Loader from '../components/Loader'
 import Message from '../components/Message'
-import { listMeetingRoomDetails, getAvailablityOfMeetingRoom, bookMeetingRoom } from '../actions/meetingRoomActions'
+import { listMeetingRoomDetails, getAvailablityOfMeetingRoom, bookMeetingRoom, meetingRoomReset } from '../actions/meetingRoomActions'
 
 const BookingPageScreen = ({ history, match }) => {
 
@@ -26,32 +27,35 @@ const BookingPageScreen = ({ history, match }) => {
     const [endTime, setEndTime] = useState(moment(moment(new Date()).add(70, 'm')).format('HH:mm'))
     const [purposeOfBooking, setPurposeOfBooking] = useState('')
     const [message, setMessage] = useState(null)
-    const [bookingAvailable, setBookingAvailable] = useState(false)
     const [variant, setVariant] = useState('error')
+    const [gotDetails, setGotDetails] = useState(false)
 
     useEffect(() => {
         setMessage(null)
         setVariant('error')
-        if (!Object.keys(meetingRoom).length)
+        if(!gotDetails){
             dispatch(listMeetingRoomDetails(match.params.id))
+            setGotDetails(true)
+        }
         if (!userInfo)
             history.push('/login')
         if(available){
-            setBookingAvailable(true)
             setVariant('info')
             setMessage('Meeting room available')
+            setTimeout(()=>dispatch(meetingRoomReset()),5000)
+            setTimeout(()=>setMessage(null),5000)
         }
         else if(available===false){
-            setBookingAvailable(false)
             setVariant('danger')
             setMessage('Meeting room unavailable') 
+            setTimeout(()=>dispatch(meetingRoomReset()),5000)
+            setTimeout(()=>setMessage(null),5000)
         }
     }, [dispatch, match, userInfo, history, meetingRoom,available])
 
     const submitHandler = (e) => {
         e.preventDefault()
         setMessage(null)
-        setBookingAvailable(false)
         var currentDateTime = moment(moment(new Date()).add(30, 'm')).format('yyyy-MM-DD[T]HH:mm')
         var startDateTime = startDate + "T" + startTime
         var endDateTime = endDate + "T" + endTime
@@ -71,8 +75,10 @@ const BookingPageScreen = ({ history, match }) => {
             if (available) {
                 dispatch(bookMeetingRoom(match.params.id, startDateTime, endDateTime, userInfo._id, purposeOfBooking))
                 setMessage('Booking successful')
+                toast.dark(`Booking successful for ${meetingRoom.roomName}`)
                 setVariant('info')
                 setPurposeOfBooking('')
+                setTimeout(dispatch(meetingRoomReset()),5000)
             }
             else {
                 dispatch(getAvailablityOfMeetingRoom(match.params.id, startDateTime, endDateTime))
@@ -138,10 +144,10 @@ const BookingPageScreen = ({ history, match }) => {
                                                     </Form.Group>
 
                                                     <Form.Group controlId='purposeOfBooking'>
-                                                        <Form.Label>Purpose of meeting</Form.Label>
+                                                        <Form.Label>Purpose of meeting </Form.Label>
                                                         <Form.Control type='text' value={purposeOfBooking} onChange={e => setPurposeOfBooking(e.target.value)}></Form.Control>
                                                     </Form.Group>
-                                                    {!bookingAvailable ? (
+                                                    {!available ? (
                                                         <Button variant='primary' type='submit' className='my -3 py-3'>
                                                             GET availability
                                                         </Button>) : (

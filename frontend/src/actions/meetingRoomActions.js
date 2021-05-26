@@ -9,6 +9,7 @@ import {
     MEETING_ROOM_AVAILABILITY_REQUEST,
     MEETING_ROOM_AVAILABILITY_SUCCESS,
     MEETING_ROOM_AVAILABILITY_FAIL,
+    MEETING_ROOM_AVAILABILITY_RESET,
     MEETING_ROOM_BOOKING_REQUEST,
     MEETING_ROOM_BOOKING_SUCCESS,
     MEETING_ROOM_BOOKING_FAIL,
@@ -141,7 +142,7 @@ export const removeMeeting = (roomId, id) => async (dispatch, getState) => {
         }
         const { data } = await axios.put(
             `/api/meetingRooms/deleteMeeting/${id}`,
-            {roomId},
+            { roomId },
             config
         )
         dispatch({ type: DELETE_MEETING_SUCCESS, payload: data })
@@ -154,4 +155,8 @@ export const removeMeeting = (roomId, id) => async (dispatch, getState) => {
                     error.response.data.message : error.message
         })
     }
+}
+
+export const meetingRoomReset = () => async (dispatch, getState) => {
+    dispatch({ type: MEETING_ROOM_AVAILABILITY_RESET })
 }
