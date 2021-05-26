@@ -98,7 +98,7 @@ const getMyMeetings = asyncHandler(async (req, res) => {
             })
         })
         myMeetings.sort((a, b) => (a.startDateTime > b.startDateTime) ? 1 : ((b.startDateTime > a.startDateTime) ? -1 : 0))
-        myMeetings = myMeetings.filter((meets) => meets.endDateTime > today)
+        myMeetings = myMeetings.filter((meets) => meets.startDateTime > today)
         res.json(myMeetings)
     }
     else {

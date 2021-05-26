@@ -19,7 +19,7 @@ import {
     USER_EMAIL_FAILURE
 } from '../constants/userConstants'
 
-import {MY_MEETINGS_RESET} from '../constants/meetingRoomConstants'
+import {MY_MEETINGS_RESET,MEETING_ROOM_AVAILABILITY_RESET} from '../constants/meetingRoomConstants'
 
 export const login = (email, password, keepLoggedIn) => async (dispatch) => {
     try {
@@ -52,6 +52,7 @@ export const logout = () => async (dispatch) => {
     dispatch({ type: USER_LOGOUT })
     dispatch({ type: USER_DETAILS_RESET })    
     dispatch({ type: MY_MEETINGS_RESET })
+    dispatch({ type: MEETING_ROOM_AVAILABILITY_RESET })
 }
 
 export const register = (username, email, password) => async (dispatch) => {

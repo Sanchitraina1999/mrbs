@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import MeetingRoom from '../components/MeetingRoom'
 import { Row, Col } from 'react-bootstrap'
 
-import { listMeetingRooms } from '../actions/meetingRoomActions'
+import { listMeetingRooms,meetingRoomReset } from '../actions/meetingRoomActions'
 import { useDispatch, useSelector } from 'react-redux'
 
 import Loader from '../components/Loader'
@@ -15,6 +15,7 @@ const HomeScreen = ({location, history}) => {
     const userLogin = useSelector(state => state.userLogin)
     const { userInfo } = userLogin
     useEffect(() => {
+        dispatch(meetingRoomReset())
         dispatch(listMeetingRooms())
     }, [dispatch])
     return (

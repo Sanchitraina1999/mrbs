@@ -8,7 +8,7 @@ import { FaTrash } from 'react-icons/fa'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
 import { getUserDetails, updateUserProfileDetails } from '../actions/userActions'
-import { listMeetingRooms, getMyMeetings, removeMeeting } from '../actions/meetingRoomActions'
+import { listMeetingRooms, getMyMeetings, removeMeeting, meetingRoomReset, removeOldMeetings } from '../actions/meetingRoomActions'
 import { USER_UPDATE_PROFILE_RESET } from '../constants/userConstants'
 
 const ProfileScreen = ({ location, history }) => {
@@ -109,7 +109,7 @@ const ProfileScreen = ({ location, history }) => {
                     </Col>
                     <Col md={9}>
                         <h2>My Meetings</h2>
-                        {myMeetings.length === 0 ? <Message>You have no scheduled meetings!<a href='/login' onClick={retryHandler} className='underlined  '> retry ? </a></Message> : (
+                        {myMeetings.length === 0 ? <Message>You have no scheduled meetings!<a href='/login' onClick={retryHandler}> retry ? </a></Message> : (
                             <ListGroup variant='flush'>
                                 {myMeetings.map((item, index) => (
                                     <ListGroup.Item key={index}>
