@@ -6,23 +6,8 @@ Meeting Room Booking System
 
 -------------------------------
 
-The Meeting Room Booking System (MRBS) is a PHP-based application for
-
-booking meeting rooms (surprisingly!). I got annoyed with the piles of books
-
-which were being used to book meetings. They were slow, hard to edit and only
-
-at the reception desk. I thought that a nice web-based system would be much
-
-nicer.
-
-Some parts of this are based on WebCalender 0.9.4 by Craig Knudsen 
-
-(http://www.radix.net/~cknudsen/webcalendar/) but there is now very little
-
-which is similar. There are fundamental design goal differences between
-
-WebCalendar and MRBS - WC is for individuals, MRBS is for meeting rooms.
+The Meeting Room Booking System (MRBS) is a MERN-based application for
+booking meeting rooms. 
 
 ------
 
