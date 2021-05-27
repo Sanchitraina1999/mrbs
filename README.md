@@ -60,10 +60,33 @@ JWT_SECRET = ANY_SECRET_ALPHANUMERIC_STRING
 
 Now, that node modules that installed.
 
-We can concurrenctly start the dev server (client & server) by running:
+Initialize the database with:
+```
+node backend/seeder
+```
+
+We can now start the dev server (concurrenctly, client & server) by running:
 ```
 npm run dev
 ```
+
+The landing page will open at http://localhost:3000
+
+![](screenshots/landingPage.png)
+
+Click on SIGN IN
+
+![](screenshots/signinPage.png)
+
+Click on Register Here
+
+![](screenshots/signupPage.png)
+
+Register here and yoila you are signed up!
+
+![](screenshots/homepage.png)
+
+Now, to book any room you have to 
 
 
 The first thing you'll need to do is login as an administrator and create
