@@ -86,46 +86,25 @@ Register here and yoila you are signed up!
 
 ![](screenshots/homepage.png)
 
-Now, to book any room you have to 
+Now, to book any room you have to hover over that room and click.
 
+![](screenshots/bookingPage.png)
 
-The first thing you'll need to do is login as an administrator and create
+Check the availability and book room, if applicable.
 
-areas and rooms.
+If you have successfully booked the room, check the booked meeting room in my profile section.
 
-The default authentication scheme uses a database table in the MRBS
+![](screenshots/profilePage.png)
 
-database. To create the first user click the "User list" link in the
+You can edit user details in this section as well as delete any booked meeting room.
 
-top-right of the page. If there aren't any users defined in your database
+Forgot your password?:
 
-yet, you will be able to create the first administrator.
+![](screenshots/passwordRecoveryPage.png)
 
-Once you have logged in as an administrator you can click on "Rooms" and
+Check out your email for the new generated password
 
-create first an "Area", and then a "Room" within that area.
-
-There are other ways to configure authentication in MRBS, see the
-
-file AUTHENTICATION for a more complete description.
-
-The latest version was tested with PHP 5.3.3, Apache 2.4, and either
-
-MySQL 5.6+ or PostgreSQL 8.2+. It should work on just about anything
-
-that's got PHP 5.3.3+ with MySQL 5.1+ or PostgreSQL 8.2+.
-
-It should be pretty easy to adjust it to your corporate colours - you can
-
-modify the themes under "Themes" or (preferably) copy an existing theme
-
-to a new directory and modify the new theme.
-
-See COPYING for licensing info.
-
-See NEWS for a history of changes.
-
-See AUTHENTICATION for information about user authentication/passwords.
+![](screenshots/passwordRecoveryEmail.png)
 
 -------------
 
@@ -141,17 +120,38 @@ Recommended:
 
 - CSS-enabled browser
 
-- PHP module connection to the server (also called SAPI) if you want to use any
 
-  of the basic http authentication schemes provided.
+-------------
 
-(If you are considering porting MRBS to another database, see README.sqlapi)
+Contributors:
 
-Warning:
+-------------
+Sanchit Raina @[sanchitraina1999@gmail.com](mailto:sanchitraina1999@gmail.com) [LandingPage, HomePage, Profile Screen, Backend]<br/>
+Sahil Singh [Booking Page Screen]<br/>
+Rajwinder Singh [SignIn, SignUp, ForgotPassword]
 
-- Some users reported errors using some accelerators (APC, PHP Accelerator).
+-------------
 
-  If you get messages like this : "Internal Zend error - Missing class
+Technologies used:
 
-  information for ...", your accelerator is the cause.
+-------------
 
+MongoDB<br/>
+Express.js<br/>
+React.js<br/>
+Node.js<br/>
+
+
+-------------
+
+Set of Dependencies:
+
+-------------
+
+Backend:
+
+![](screenshots/backendDependencies.png)
+
+Frontend:
+
+![](screenshots/frontendDependencies.png)
