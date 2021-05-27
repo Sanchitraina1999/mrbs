@@ -1,11 +1,8 @@
-# mrbs
-
-Hosted [here](https://mrbsapp.herokuapp.com/)
-
+# mrbs - MEETING ROOM BOOKING SYSTEM
 
 Meeting Room Booking System
 
-http://mrbs.sourceforge.net/
+[(https://mrbsapp.herokuapp.com)](https://mrbsapp.herokuapp.com/)
 
 -------------------------------
 
