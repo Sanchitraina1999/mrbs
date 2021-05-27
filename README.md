@@ -43,8 +43,27 @@ To install all the dependencies for frontend:
 ```
 cd frontend
 npm i
+cd ..
 ```
 
+Create .env file by:
+```
+  mkdir .env
+```
+Append these details to .env file:
+```
+NODE_ENV = development
+PORT = 5000
+MONGO_URI = 'YOUR MONGO URI STRING'
+JWT_SECRET = ANY_SECRET_ALPHANUMERIC_STRING
+```
+
+Now, that node modules that installed.
+
+We can concurrenctly start the dev server (client & server) by running:
+```
+npm run dev
+```
 
 
 The first thing you'll need to do is login as an administrator and create
