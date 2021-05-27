@@ -58,7 +58,7 @@ MONGO_URI = 'YOUR MONGO URI STRING'
 JWT_SECRET = ANY_SECRET_ALPHANUMERIC_STRING
 ```
 
-Now, that node modules that installed.
+Now, that the node modules are installed.
 
 Initialize the database with:
 ```
