@@ -14,10 +14,38 @@ booking meeting rooms.
 To Use
 
 ------
+Make sure Node.js is installed in your system. If its not, kindly refer [here](https://nodejs.org/en/download/) to install for your OS.
 
-See the INSTALL file for installation instructions.
+You can download this project or git clone it by running from your terminal:
 
-Once it's installed try going to http://yourhost/mrbs/
+```
+git clone https://github.com/Sanchitraina1999/mrbs
+```
+
+Make sure that you are in the project folder:
+
+```
+ls
+```
+
+should yield you :
+```
+backend  frontend  package.json  package-lock.json  Procfile  README.md
+```
+
+
+Once it's downloaded, install all the dependencies for backend, by:
+```
+npm i
+```
+
+To install all the dependencies for frontend:
+```
+cd frontend
+npm i
+```
+
+
 
 The first thing you'll need to do is login as an administrator and create
 
@@ -63,11 +91,7 @@ Requirements:
 
 -------------
 
-- PHP 5.3.3+ with MySQL and/or PostgreSQL support
-
-- MySQL or PostgreSQL
-
-- Any web server that is supported by PHP
+- Node.js v14.15.4
 
 Recommended:
 
@@ -89,16 +113,3 @@ Warning:
 
   information for ...", your accelerator is the cause.
 
-------
-
-Usage:
-
-------
-
-The current project maintainer reports using it at work with about 150 clients.
-
-Many other reports of successful use have been seen on the MRBS mailing list,
-
-and your report would be welcome there too. Let us know who is using MRBS!
-
-$Id$
