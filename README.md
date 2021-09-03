@@ -46,10 +46,8 @@ npm i
 cd ..
 ```
 
-Create .env file by:
-```
-  mkdir .env
-```
+Create a .env file:
+
 Append these details to .env file:
 ```
 NODE_ENV = development
